@@ -173,8 +173,25 @@
                                     </div>
                                 </li>
                                 <li><a href="receipe-post.html">Receipies</a></li>
-                                <li><a href="receipe-post.html">4 Vegans</a></li>
+{{--                                <li><a href="receipe-post.html">4 Vegans</a></li>--}}
                                 <li><a href="contact.html">Contact</a></li>
+
+                                <li>
+                                @if (Route::has('login'))
+
+                                        @auth
+                                            <li><a href="{{ url('/dashboard') }}" >Dashboard</a></li>
+                                        @else
+                                            <li><a href="{{ route('login') }}" >Log in</a></li>
+
+                                            @if (Route::has('register'))
+                                                <li><a href="{{ route('register') }}" >Register</a></li>
+                                            @endif
+                                        @endauth
+
+                                @endif
+                                </li>
+
                             </ul>
 
                             <!-- Newsletter Form -->
