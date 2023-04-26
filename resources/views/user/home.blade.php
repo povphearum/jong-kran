@@ -181,6 +181,7 @@
 
                                         @auth
                                             <li><a href="{{ url('/dashboard') }}" >Dashboard</a></li>
+
                                         @else
                                             <li><a href="{{ route('login') }}" >Log in</a></li>
 
