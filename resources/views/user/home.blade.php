@@ -157,7 +157,14 @@
                                 @if (Route::has('login'))
 
                                         @auth
-                                            <li><a href="{{ url('/dashboard') }}" >{{ Auth::user()->name }}</a></li>
+                                            <li><a href="{{ url('/dashboard') }}" >{{ Auth::user()->name }}</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="{{ url('/profile') }}">Profile</a></li>
+                                                    <li><a href="{{ url('/recipe') }}">Add Recipe</a></li>
+                                                    <li><a href="{{ url('/out') }}">Log out</a></li>
+
+                                                </ul>
+                                            </li>
 
                                         @else
                                             <li><a href="{{ route('login') }}" >Log in</a></li>
