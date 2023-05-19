@@ -58,6 +58,5 @@ route::get('/us',[HomeController::class,'us'])->name('us');
 route::get('/canada',[HomeController::class,'canada'])->name('canada');
 route::get('/mexico',[HomeController::class,'mexico'])->name('mexico');
 
-route::get('/profile',[HomeController::class,'profile'])->name('profile');
 route::get('/recipe',[HomeController::class,'recipe'])->name('recipe');
 route::get('/out',[HomeController::class,'out'])->name('out');
