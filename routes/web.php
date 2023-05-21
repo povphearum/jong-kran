@@ -60,3 +60,4 @@ route::get('/mexico',[HomeController::class,'mexico'])->name('mexico');
 
 route::get('/recipe',[HomeController::class,'recipe'])->name('recipe');
 route::get('/out',[HomeController::class,'out'])->name('out');
+route::get('/info',[HomeController::class,'Info'])->name('info');

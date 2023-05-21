@@ -11,9 +11,9 @@ class HomeController extends Controller
 {
     public function redirect()
     {
-        $usertype=Auth::user()->usertype;
+        $user=Auth::user();
 
-        if($usertype=='1')
+        if($user->hasRole('admin') && $user->hasRole('manager'))
         {
             return view('admin.home');
         }
@@ -107,6 +107,10 @@ class HomeController extends Controller
     public function out()
     {
         return view('user.Out');
+    }
+
+    public function Info(){
+        return view('user.user_profile.profile');
     }
 
 

@@ -47,7 +47,7 @@
 <header class="header-area">
 
     <!-- Top Header Area -->
-    <div class="top-header-area">
+    <div class="top-header-area" id="close1">
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-between">
                 <!-- Breaking News -->
@@ -102,7 +102,7 @@
                         </div>
 
                         <!-- Nav Start -->
-                        <div class="classynav">
+                        <div class="classynav" id="close">
                             <ul>
                                 <li class="active"><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="#">Pages</a>
@@ -149,9 +149,6 @@
                                         </div>
                                     </div>
                                 </li>
-{{--                                <li><a href="receipe-post.html">Receipies</a></li>--}}
-{{--                                <li><a href="receipe-post.html">4 Vegans</a></li>--}}
-{{--                                <li><a href="contact.html">Contact</a></li>--}}
 
                                 <li>
                                 @if (Route::has('login'))
@@ -160,6 +157,7 @@
                                             <li><a href="#" >{{ Auth::user()->name }}</a>
                                                 <ul class="dropdown">
                                                     <li><a href="{{ url('/dashboard') }}">Profile</a></li>
+                                                    <li><a href="{{route('info')}}">user</a></li>
                                                     <li><a href="{{ url('/recipe') }}">Add Recipe</a></li>
                                                     <li><a href="{{ url('/out') }}">Log out</a></li>
 
@@ -167,15 +165,25 @@
                                             </li>
 
                                         @else
-                                            <li><a href="{{ route('login') }}" >Log in</a></li>
+                                        <li><a href="#" >Profile</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{{ route('login') }}" >Log in</a></li>
 
-                                            @if (Route::has('register'))
-                                                <li><a href="{{ route('register') }}" >Register</a></li>
-                                            @endif
+                                                @if (Route::has('register'))
+                                                    <li><a href="{{ route('register') }}" >Register</a></li>
+                                                @endif
+
+                                            </ul>
+                                        </li>
+
+
                                         @endauth
 
                                 @endif
+
+
                                 </li>
+
 
                             </ul>
 
@@ -183,6 +191,8 @@
                             <div class="search-btn">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </div>
+
+
 
                         </div>
                         <!-- Nav End -->
@@ -233,6 +243,20 @@
 <script src="js/plugins/plugins.js"></script>
 <!-- Active js -->
 <script src="js/active.js"></script>
+
+{{--<script>--}}
+{{--    if (window.location.pathname === "/info") {--}}
+{{--        document.getElementById("close").style.display = "none";--}}
+{{--    } else {--}}
+{{--        document.getElementById("close").style.display = "block";--}}
+{{--    }</script>--}}
+
+{{--<script>--}}
+{{--    if (window.location.pathname === "/info") {--}}
+{{--        document.getElementById("close1").style.display = "none";--}}
+{{--    } else {--}}
+{{--        document.getElementById("close1").style.display = "block";--}}
+{{--    }</script>--}}
 </body>
 
 </html>
