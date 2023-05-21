@@ -42,6 +42,10 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->attachRole('user'); // parameter can be a Role object, BackedEnum, array, id or the role string name
+// equivalent to $user->roles()->attach([$admin->id]);
+
+
         event(new Registered($user));
 
         Auth::login($user);
