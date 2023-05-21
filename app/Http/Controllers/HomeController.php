@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         $user=Auth::user();
 
-        if($user->hasRole('admin') && $user->hasRole('manager'))
+        if($user->hasRole('admin') || $user->hasRole('manager'))
         {
             return view('admin.home');
         }
