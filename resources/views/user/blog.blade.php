@@ -86,7 +86,7 @@
                 <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="{{ url('/') }}"><img src="img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -104,10 +104,10 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+                                <li class="active"><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('/home') }}">Home</a></li>
+                                        <li><a href="{{ url('/') }}">Home</a></li>
                                         <li><a href="{{ url('/about') }}">About Us</a></li>
                                         <li><a href="{{ url('/blog') }}">Blog Post</a></li>
                                         <li><a href="{{ url('/receip') }}">Receipe Post</a></li>
