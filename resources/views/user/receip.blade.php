@@ -156,18 +156,44 @@
                                 @if (Route::has('login'))
 
                                     @auth
-                                        <li><a href="{{ url('/dashboard') }}" >{{ Auth::user()->name }}</a></li>
+                                        <li><a href="#" >{{ Auth::user()->name }}</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{{ url('/dashboard') }}">Profile</a></li>
+                                                <li><a href="{{route('info')}}">user</a></li>
+                                                <li><a href="{{ url('/recipe') }}">Add Recipe</a></li>
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+
+                                                    <x-dropdown-link :href="route('logout')"
+                                                                     onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                                        {{ __('Log Out') }}
+                                                    </x-dropdown-link>
+                                                </form>
+
+
+                                            </ul>
+                                        </li>
 
                                     @else
-                                        <li><a href="{{ route('login') }}" >Log in</a></li>
+                                        <li><a href="#" >Profile</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{{ route('login') }}" >Log in</a></li>
 
-                                        @if (Route::has('register'))
-                                            <li><a href="{{ route('register') }}" >Register</a></li>
-                                            @endif
-                                            @endauth
+                                                @if (Route::has('register'))
+                                                    <li><a href="{{ route('register') }}" >Register</a></li>
+                                                @endif
 
-                                            @endif
-                                            </li>
+                                            </ul>
+                                        </li>
+
+
+                                        @endauth
+
+                                        @endif
+
+
+                                        </li>
                             </ul>
 
                             <!-- Newsletter Form -->
