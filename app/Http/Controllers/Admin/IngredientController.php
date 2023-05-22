@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Recipe;
+use App\Http\Controllers\Controller;
+use App\Models\Ingredient;
 use Illuminate\Http\Request;
 
-class RecipeController extends Controller
+class IngredientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Recipe $recipe)
+    public function show(Ingredient $ingredient)
     {
         //
     }
@@ -42,7 +43,7 @@ class RecipeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Recipe $recipe)
+    public function edit(Ingredient $ingredient)
     {
         //
     }
@@ -50,7 +51,7 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(Request $request, Ingredient $ingredient)
     {
         //
     }
@@ -58,7 +59,7 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Recipe $recipe)
+    public function destroy(Ingredient $ingredient)
     {
         //
     }

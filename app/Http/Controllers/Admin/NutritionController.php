@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Continent;
+use App\Http\Controllers\Controller;
+use App\Models\Nutrition;
 use Illuminate\Http\Request;
 
-class ContinentController extends Controller
+class NutritionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class ContinentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Continent $continent)
+    public function show(Nutrition $nutrition)
     {
         //
     }
@@ -42,7 +43,7 @@ class ContinentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Continent $continent)
+    public function edit(Nutrition $nutrition)
     {
         //
     }
@@ -50,7 +51,7 @@ class ContinentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Continent $continent)
+    public function update(Request $request, Nutrition $nutrition)
     {
         //
     }
@@ -58,7 +59,7 @@ class ContinentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Continent $continent)
+    public function destroy(Nutrition $nutrition)
     {
         //
     }

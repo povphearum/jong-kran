@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\subcategory;
+use App\Http\Controllers\Controller;
+use App\Models\Direction;
 use Illuminate\Http\Request;
 
-class SubcategoryController extends Controller
+class DirectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class SubcategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(subcategory $subcategory)
+    public function show(Direction $direction)
     {
         //
     }
@@ -42,7 +43,7 @@ class SubcategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(subcategory $subcategory)
+    public function edit(Direction $direction)
     {
         //
     }
@@ -50,7 +51,7 @@ class SubcategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, subcategory $subcategory)
+    public function update(Request $request, Direction $direction)
     {
         //
     }
@@ -58,7 +59,7 @@ class SubcategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(subcategory $subcategory)
+    public function destroy(Direction $direction)
     {
         //
     }
