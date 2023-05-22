@@ -23,33 +23,38 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+route::get('/redirect', [HomeController::class, 'redirect']);
+route::get('/', [HomeController::class, 'Index']);
 
-route::get('/redirect',[HomeController::class,'redirect']);
+Route::controller(HomeController::class)->group(function () {
+
+
+
+    route::get('/about',[HomeController::class,'about']);
+    route::get('/blog',[HomeController::class,'blog']);
+    route::get('/contact',[HomeController::class,'contact']);
+    route::get('/receip',[HomeController::class,'receip']);
+    route::get('/elements',[HomeController::class,'elements']);
+
+    route::get('/england',[HomeController::class,'england'])->name('england');
+    route::get('/germany',[HomeController::class,'germany'])->name('germany');
+    route::get('/italy',[HomeController::class,'italy'])->name('italy');
+    route::get('/france',[HomeController::class,'france'])->name('france');
+
+    route::get('/cam',[HomeController::class,'cam'])->name('cam');
+    route::get('/viet',[HomeController::class,'viet'])->name('viet');
+    route::get('/thai',[HomeController::class,'thai'])->name('thai');
+    route::get('/loa',[HomeController::class,'loa'])->name('loa');
+    route::get('/indo',[HomeController::class,'indo'])->name('indo');
+
+    route::get('/us',[HomeController::class,'us'])->name('us');
+    route::get('/canada',[HomeController::class,'canada'])->name('canada');
+    route::get('/mexico',[HomeController::class,'mexico'])->name('mexico');
+
+});
 Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
     Route::controller(HomeController::class)->group(function (){
 
-
-        route::get('/',[HomeController::class,'Index']);
-        route::get('/about',[HomeController::class,'about']);
-        route::get('/blog',[HomeController::class,'blog']);
-        route::get('/contact',[HomeController::class,'contact']);
-        route::get('/receip',[HomeController::class,'receip']);
-        route::get('/elements',[HomeController::class,'elements']);
-
-        route::get('/england',[HomeController::class,'england'])->name('england');
-        route::get('/germany',[HomeController::class,'germany'])->name('germany');
-        route::get('/italy',[HomeController::class,'italy'])->name('italy');
-        route::get('/france',[HomeController::class,'france'])->name('france');
-
-        route::get('/cam',[HomeController::class,'cam'])->name('cam');
-        route::get('/viet',[HomeController::class,'viet'])->name('viet');
-        route::get('/thai',[HomeController::class,'thai'])->name('thai');
-        route::get('/loa',[HomeController::class,'loa'])->name('loa');
-        route::get('/indo',[HomeController::class,'indo'])->name('indo');
-
-        route::get('/us',[HomeController::class,'us'])->name('us');
-        route::get('/canada',[HomeController::class,'canada'])->name('canada');
-        route::get('/mexico',[HomeController::class,'mexico'])->name('mexico');
 
         route::get('/recipe',[HomeController::class,'recipe'])->name('recipe');
         route::get('/out',[HomeController::class,'out'])->name('out');
