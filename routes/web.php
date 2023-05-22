@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,8 +23,46 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::controller(DashboardController::class)->group(function (){
-    Route::get('/admin/home', 'Index')->name('Home');
+
+route::get('/redirect',[HomeController::class,'redirect']);
+Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
+    Route::controller(HomeController::class)->group(function (){
+
+
+        route::get('/',[HomeController::class,'Index']);
+        route::get('/about',[HomeController::class,'about']);
+        route::get('/blog',[HomeController::class,'blog']);
+        route::get('/contact',[HomeController::class,'contact']);
+        route::get('/receip',[HomeController::class,'receip']);
+        route::get('/elements',[HomeController::class,'elements']);
+
+        route::get('/england',[HomeController::class,'england'])->name('england');
+        route::get('/germany',[HomeController::class,'germany'])->name('germany');
+        route::get('/italy',[HomeController::class,'italy'])->name('italy');
+        route::get('/france',[HomeController::class,'france'])->name('france');
+
+        route::get('/cam',[HomeController::class,'cam'])->name('cam');
+        route::get('/viet',[HomeController::class,'viet'])->name('viet');
+        route::get('/thai',[HomeController::class,'thai'])->name('thai');
+        route::get('/loa',[HomeController::class,'loa'])->name('loa');
+        route::get('/indo',[HomeController::class,'indo'])->name('indo');
+
+        route::get('/us',[HomeController::class,'us'])->name('us');
+        route::get('/canada',[HomeController::class,'canada'])->name('canada');
+        route::get('/mexico',[HomeController::class,'mexico'])->name('mexico');
+
+        route::get('/recipe',[HomeController::class,'recipe'])->name('recipe');
+        route::get('/out',[HomeController::class,'out'])->name('out');
+        route::get('/info',[HomeController::class,'Info'])->name('info');
+    });
+
+});
+
+Route::middleware(['auth', 'role:admin|manager'])->group(function (){
+    Route::controller(DashboardController::class)->group(function (){
+        Route::get('/admin/dashboard','Index')->name('home');
+    });
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -34,30 +73,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-route::get('/redirect',[HomeController::class,'redirect']);
 
-route::get('/',[HomeController::class,'index']);
-route::get('/about',[HomeController::class,'about']);
-route::get('/blog',[HomeController::class,'blog']);
-route::get('/contact',[HomeController::class,'contact']);
-route::get('/receip',[HomeController::class,'receip']);
-route::get('/elements',[HomeController::class,'elements']);
-
-route::get('/england',[HomeController::class,'england'])->name('england');
-route::get('/germany',[HomeController::class,'germany'])->name('germany');
-route::get('/italy',[HomeController::class,'italy'])->name('italy');
-route::get('/france',[HomeController::class,'france'])->name('france');
-
-route::get('/cam',[HomeController::class,'cam'])->name('cam');
-route::get('/viet',[HomeController::class,'viet'])->name('viet');
-route::get('/thai',[HomeController::class,'thai'])->name('thai');
-route::get('/loa',[HomeController::class,'loa'])->name('loa');
-route::get('/indo',[HomeController::class,'indo'])->name('indo');
-
-route::get('/us',[HomeController::class,'us'])->name('us');
-route::get('/canada',[HomeController::class,'canada'])->name('canada');
-route::get('/mexico',[HomeController::class,'mexico'])->name('mexico');
-
-route::get('/recipe',[HomeController::class,'recipe'])->name('recipe');
-route::get('/out',[HomeController::class,'out'])->name('out');
-route::get('/info',[HomeController::class,'Info'])->name('info');
