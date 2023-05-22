@@ -15,10 +15,13 @@ class HomeController extends Controller
 
         if($user->hasRole('admin') || $user->hasRole('manager'))
         {
-            return view('admin.home');
+            return view('admin.content.main');
+        }
+        elseif ($user->hasRole('user')){
+            return view('user.main');
         }
         else{
-            return view('user.main');
+            return view('admin.content.main');
         }
     }
     public function index()
