@@ -38,7 +38,7 @@
                                         <input type="text" class="form-control" id="ingredients_3" placeholder="e.g 2 tablespoons butter,softened ">
                                     </div>
                                     <div class="col-4 p-2">
-                                        <button type="button" class="btnIngre">+ ADD INGREDIENT</button>
+                                        <button type="button" class="btnIngre btn-lightGreen btn mt-30">+ ADD INGREDIENT</button>
                                     </div>
                                 </div>
                                 <hr>
@@ -50,7 +50,7 @@
                                         <input type="text" class="form-control" id="ingredients_3" placeholder="e.g ...">
                                     </div>
                                     <div class="col-4 p-2">
-                                        <button type="button" class="btnStep">+ ADD STEP</button>
+                                        <button type="button" class="btnStep btn btn-lightGreen  mt-30">+ ADD STEP</button>
                                     </div>
                                 </div>
                                 <hr>
@@ -97,7 +97,7 @@
                                 <div class="row addNote">
                                     <div class="col-3 p-3">
                                         <h5>Notes</h5>
-                                        <button type="button" class="btnNote" name="addNotes">+ ADD NOTES</button>
+                                        <button type="button" class="btnNote  btn btn-lightGreen mt-30 " name="addNotes">+ ADD NOTES</button>
                                     </div>
                                 </div>
                                 <hr>
@@ -112,10 +112,10 @@
                                         <label class="input-radio-circle-label-inner">Personal Recipe</label><br>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn delicious-btn mt-30" type="submit">Cancel</button>
+                                        <button class="btn btn-danger mt-30" type="submit">Cancel</button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn delicious-btn mt-30" type="submit">Save</button>
+                                        <button class="btn btn-lightGreen mt-30" type="submit">Save</button>
                                     </div>
                                 </div>
                             </form>
