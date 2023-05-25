@@ -18,6 +18,10 @@
 @import url(css/classy-nav.min.css);
 @import url(css/nice-select.min.css);
 /* :: 3.0 Base CSS */
+.btn-lightGreen{
+  background-color: #40ba37;
+}
+
 * {
   margin: 0;
   padding: 0; }
