@@ -20,7 +20,7 @@
             </div>
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg6.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg3.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -64,7 +64,7 @@
                         <div class="top-cta-content">
                             <h3>Strawberry Cake</h3>
                             <h6>Simple &amp; Delicios</h6>
-                            <a href="receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                            <a href="{{route('fullrecipe')}}" class="btn delicious-btn">See Full Receipe</a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         <div class="top-cta-content">
                             <h3>Chinesse Noodles</h3>
                             <h6>Simple &amp; Delicios</h6>
-                            <a href="receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                            <a href="{{route('fullrecipe')}}" class="btn delicious-btn">See Full Receipe</a>
                         </div>
                     </div>
                 </div>
