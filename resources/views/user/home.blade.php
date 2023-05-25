@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Delicious - Food Blog Template | Home</title>
+    <title>Jong-Kran</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -225,7 +225,7 @@
                 </div>
                 <!-- Footer Logo -->
                 <div class="footer-logo">
-                    <a href="index.html"><img height="120" width="120" src="img/core-img/logo.png" alt=""></a>
+                    <a href="{{ url('/') }}"><img height="120" width="120" src="img/core-img/logo.png" alt=""></a>
                 </div>
                 <!-- Copywrite -->
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
