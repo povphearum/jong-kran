@@ -38,7 +38,7 @@ Route::controller(HomeController::class)->group(function () {
     route::get('/about',[HomeController::class,'about']);
     route::get('/blog',[HomeController::class,'blog']);
     route::get('/contact',[HomeController::class,'contact']);
-    route::get('/receip',[HomeController::class,'receip']);
+    route::get('/fullrecipe',[HomeController::class,'fullrecipe'])->name('fullrecipe');
     route::get('/elements',[HomeController::class,'elements']);
 
     route::get('/england',[HomeController::class,'england'])->name('england');
