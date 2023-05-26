@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Delicious - Food Blog Template | Home</title>
+    <title>Jong-Kran</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -66,11 +66,9 @@
                 <!-- Top Social Info -->
                 <div class="col-12 col-sm-6">
                     <div class="top-social-info text-right">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -86,7 +84,7 @@
                 <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="{{ url('/') }}"><img src="img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="{{ url('/') }}"><img height="180" width="180" src="img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -110,7 +108,7 @@
                                         <li><a href="{{ url('/') }}">Home</a></li>
                                         <li><a href="{{ url('/about') }}">About Us</a></li>
                                         <li><a href="{{ url('/blog') }}">Blog Post</a></li>
-                                        <li><a href="{{ url('/receip') }}">Receipe Post</a></li>
+                                        <li><a href="{{ url('/fullrecipe') }}">Receipe Post</a></li>
                                         <li><a href="{{ url('/contact') }}">Contact</a></li>
                                         <li><a href="{{ url('/elements') }}">Elements</a></li>
 
@@ -156,7 +154,7 @@
                                         @auth
                                             <li><a href="#" >{{ Auth::user()->name }}</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="{{ url('/dashboard') }}">Profile</a></li>
+                                                    <li><a href="{{ url('/user/profile') }}">Profile</a></li>
                                                     <li><a href="{{route('info')}}">user</a></li>
                                                     <li><a href="{{ url('/recipe') }}">Add Recipe</a></li>
                                                     <form method="POST" action="{{ route('logout') }}">
@@ -220,16 +218,14 @@
             <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
                 <!-- Footer Social Info -->
                 <div class="footer-social-info text-right">
-                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 </div>
                 <!-- Footer Logo -->
                 <div class="footer-logo">
-                    <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="{{ url('/') }}"><img height="120" width="120" src="img/core-img/logo.png" alt=""></a>
                 </div>
                 <!-- Copywrite -->
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

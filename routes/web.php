@@ -1,7 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\RecipeController;
+use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +39,7 @@ Route::controller(HomeController::class)->group(function () {
     route::get('/about',[HomeController::class,'about']);
     route::get('/blog',[HomeController::class,'blog']);
     route::get('/contact',[HomeController::class,'contact']);
-    route::get('/receip',[HomeController::class,'receip']);
+    route::get('/fullrecipe',[HomeController::class,'fullrecipe'])->name('fullrecipe');
     route::get('/elements',[HomeController::class,'elements']);
 
     route::get('/england',[HomeController::class,'england'])->name('england');
@@ -65,9 +71,38 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
 
 Route::middleware(['auth', 'role:admin|manager'])->group(function (){
     Route::controller(DashboardController::class)->group(function (){
-        Route::get('/admin/dashboard','Index')->name('home');
+        Route::get('/admin/dashboard','Index')->name('adminhome');
+
+
     });
 
+    Route::controller(AdminController::class)->group(function (){
+
+
+    });
+
+    Route::controller(CategoryController::class)->group(function (){
+        Route::get('/admin/category','Category')->name('category');
+
+    });
+    Route::controller(SubcategoryController::class)->group(function (){
+        Route::get('/admin/subcategory','Subcategory')->name('subcategory');
+
+    });
+    Route::controller(RecipeController::class)->group(function (){
+        Route::get('/admin/recipe','Recipe')->name('recipe');
+
+    });
+    Route::controller(ReviewController::class)->group(function (){
+        Route::get('/admin/comment','Comment')->name('comment');
+        Route::get('/admin/reviews','Review')->name('review');
+    });
+
+
+
+    Route::controller(UserController::class)->group(function (){
+        Route::get('/admin/user','User')->name('user');
+    });
 });
 
 Route::middleware('auth')->group(function () {

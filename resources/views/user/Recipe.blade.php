@@ -31,17 +31,26 @@
                                 </div>
                                 <hr>
                                 <div class="row">    
-                                    <div class="col-12">
+                                    <div class="col-12 addIngre">
                                         <h5 class="mx-3">Ingredients</h5>
                                         <input type="text" class="form-control" id="ingredients_1" placeholder="e.g 2 cups flour,sifted">
                                         <input type="text" class="form-control" id="ingredients_2" placeholder="e.g 1 cup sugar">
                                         <input type="text" class="form-control" id="ingredients_3" placeholder="e.g 2 tablespoons butter,softened ">
                                     </div>
                                     <div class="col-4 p-2">
-                                        <button type="button">+ ADD INGREDIENT</button>
+                                        <button type="button" class="btnIngre btn-lightGreen btn mt-30">+ ADD INGREDIENT</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">    
+                                    <div class="col-12 addStep">
+                                        <h5 class="mx-3">Step</h5>
+                                        <input type="text" class="form-control" id="ingredients_1" placeholder="e.g ...">
+                                        <input type="text" class="form-control" id="ingredients_2" placeholder="e.g ...">
+                                        <input type="text" class="form-control" id="ingredients_3" placeholder="e.g ...">
                                     </div>
                                     <div class="col-4 p-2">
-                                        <button type="button">+ ADD HEADER</button>
+                                        <button type="button" class="btnStep btn btn-lightGreen  mt-30">+ ADD STEP</button>
                                     </div>
                                 </div>
                                 <hr>
@@ -85,11 +94,14 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
+                                <div class="row addNote">
                                     <div class="col-3 p-3">
                                         <h5>Notes</h5>
-                                        <button type="button" name="addNotes">+ ADD NOTES</button>
+                                        <button type="button" class="btnNote  btn btn-lightGreen mt-30 " name="addNotes">+ ADD NOTES</button>
                                     </div>
+                                </div>
+                                <hr>
+                                <div class="row">
                                     <div class="col-12">
                                         <h5>Make this recipe public?</h5>
                                         <input type="radio" name="yes">
@@ -100,10 +112,10 @@
                                         <label class="input-radio-circle-label-inner">Personal Recipe</label><br>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn delicious-btn mt-30" type="submit">Cancel</button>
+                                        <button class="btn btn-danger mt-30" type="submit">Cancel</button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn delicious-btn mt-30" type="submit">Save</button>
+                                        <button class="btn btn-lightGreen mt-30" type="submit">Save</button>
                                     </div>
                                 </div>
                             </form>
@@ -113,4 +125,5 @@
             </div>
         </div>
     </div>
+    <script src="home/recipe.js"></script>
 @endsection

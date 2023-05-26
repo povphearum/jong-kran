@@ -42,9 +42,9 @@ class HomeController extends Controller
     {
         return view('user.contact');
     }
-    public function receip()
+    public function fullrecipe()
     {
-        return view('user.receip');
+        return view('user.fullrecipe');
     }
     public function elements()
     {
