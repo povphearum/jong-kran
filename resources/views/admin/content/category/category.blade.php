@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">User</h1>
+                    <h1 class="m-0">Category</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('adminhome')}}">Home</a></li>
-                        <li class="breadcrumb-item active">User</li>
+                        <li class="breadcrumb-item active">Category</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -23,7 +23,7 @@
                 <!-- /.content-header -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">All Recipes</h3>
+                        <h3 class="card-title">All Category</h3>
                     </div>
 
                     <!-- /.card-header -->
@@ -31,11 +31,9 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th>User </th>
-                                <th>Recipe Name</th>
-                                <th>Subcategory</th>
-                                <th>Rating</th>
-
+                                <th>Name</th>
+                                <th>Subcategory_count</th>
+                                <th>recipe_count</th>
 
                             </tr>
                             </thead>
@@ -45,8 +43,7 @@
                                 <td>Internet
                                     Explorer 4.0
                                 </td>
-                                <td>Win 95+</td>
-                                <td>4.9</td>
+                                    <td>Win 95+</td>
 
                             </tr>
 
@@ -59,5 +56,4 @@
             </div>
         </div>
     </div>
-
 @endsection

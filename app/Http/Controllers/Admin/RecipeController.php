@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
+    public function Recipe(){
+        return view('admin.content.recipe.recipe');
+    }
     /**
      * Display a listing of the resource.
      */
