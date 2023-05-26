@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
 {
+
+    public function Subcategory(){
+        return view('admin.content.subcategory.subcategory');
+    }
     /**
      * Display a listing of the resource.
      */

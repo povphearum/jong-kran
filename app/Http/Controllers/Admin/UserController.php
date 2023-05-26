@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
+    public function User(){
+        return view('admin.content.user');
+    }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RecipeController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ClientController;
@@ -70,15 +71,14 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
 
 Route::middleware(['auth', 'role:admin|manager'])->group(function (){
     Route::controller(DashboardController::class)->group(function (){
-        Route::get('/admin/dashboard','Index')->name('home');
+        Route::get('/admin/dashboard','Index')->name('adminhome');
 
 
     });
 
     Route::controller(AdminController::class)->group(function (){
-        Route::get('/admin/comment','Comment')->name('comment');
-        Route::get('/admin/reviews','Review')->name('review');
-        Route::get('/admin/user','User')->name('user');
+
+
     });
 
     Route::controller(CategoryController::class)->group(function (){
@@ -93,11 +93,15 @@ Route::middleware(['auth', 'role:admin|manager'])->group(function (){
         Route::get('/admin/recipe','Recipe')->name('recipe');
 
     });
+    Route::controller(ReviewController::class)->group(function (){
+        Route::get('/admin/comment','Comment')->name('comment');
+        Route::get('/admin/reviews','Review')->name('review');
+    });
 
 
 
     Route::controller(UserController::class)->group(function (){
-
+        Route::get('/admin/user','User')->name('user');
     });
 });
 
