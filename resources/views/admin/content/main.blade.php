@@ -3,7 +3,7 @@
 
 
         <!-- Content Header (Page header) -->
-        <div class="content-header">
+        <div class="content-header ">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
@@ -22,7 +22,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid bg-gray">
+            <div class="container-fluid ">
                 <!-- Info boxes -->
                 <div class="row">
                     <div class="col-12 col-sm-6 col-md-3">
@@ -276,7 +276,7 @@
                         </div>
                         <!-- /.card -->
                         <div class="row">
-                            <div class="col-md-6 bg-gradient-gray-dark">
+                            <div class="col-md-6">
                                 <!-- DIRECT CHAT -->
                                 <div class="card direct-chat direct-chat-warning bg-gradient-gray-dark">
                                     <div class="card-header bg-gradient-gray-dark">
@@ -484,7 +484,7 @@
                             <div class="col-md-6">
                                 <!-- USERS LIST -->
                                 <div class="card">
-                                    <div class="card-header">
+                                    <div class="card-header bg-gradient-gray-dark">
                                         <h3 class="card-title">Latest Members</h3>
 
                                         <div class="card-tools">
@@ -498,7 +498,7 @@
                                         </div>
                                     </div>
                                     <!-- /.card-header -->
-                                    <div class="card-body p-0">
+                                    <div class="card-body p-0 bg-gradient-gray-dark">
                                         <ul class="users-list clearfix">
                                             <li>
                                                 <img src="dist/img/user1-128x128.jpg" alt="User Image">
@@ -544,7 +544,7 @@
                                         <!-- /.users-list -->
                                     </div>
                                     <!-- /.card-body -->
-                                    <div class="card-footer text-center">
+                                    <div class="card-footer text-center bg-gradient-gray-dark">
                                         <a href="javascript:">View All Users</a>
                                     </div>
                                     <!-- /.card-footer -->
@@ -557,7 +557,7 @@
 
                         <!-- TABLE: LATEST ORDERS -->
                         <div class="card">
-                            <div class="card-header border-transparent">
+                            <div class="card-header border-transparent bg-gradient-gray-dark">
                                 <h3 class="card-title">Latest Orders</h3>
 
                                 <div class="card-tools">
@@ -570,7 +570,7 @@
                                 </div>
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body p-0">
+                            <div class="card-body p-0 bg-gradient-gray-dark">
                                 <div class="table-responsive">
                                     <table class="table m-0">
                                         <thead>
@@ -644,7 +644,7 @@
                                 <!-- /.table-responsive -->
                             </div>
                             <!-- /.card-body -->
-                            <div class="card-footer clearfix">
+                            <div class="card-footer clearfix bg-gradient-gray-dark">
                                 <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
                                 <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
                             </div>
@@ -698,7 +698,7 @@
                         <!-- /.info-box -->
 
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header bg-gradient-gray-dark">
                                 <h3 class="card-title">Browser Usage</h3>
 
                                 <div class="card-tools">
@@ -711,7 +711,7 @@
                                 </div>
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body">
+                            <div class="card-body bg-gradient-gray-dark">
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="chart-responsive">
@@ -735,7 +735,7 @@
                                 <!-- /.row -->
                             </div>
                             <!-- /.card-body -->
-                            <div class="card-footer p-0">
+                            <div class="card-footer p-0 bg-gradient-gray-dark">
                                 <ul class="nav nav-pills flex-column">
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">
@@ -769,7 +769,7 @@
 
                         <!-- PRODUCT LIST -->
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header bg-gradient-gray-dark">
                                 <h3 class="card-title">Recently Added Products</h3>
 
                                 <div class="card-tools">
@@ -782,67 +782,68 @@
                                 </div>
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body p-0">
+                            <div class="card-body p-0 bg-gradient-gray-dark">
                                 <ul class="products-list product-list-in-card pl-2 pr-2">
-                                    <li class="item">
+                                    <li class="item bg-gradient-gray-dark">
                                         <div class="product-img">
                                             <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">Samsung TV
                                                 <span class="badge badge-warning float-right">$1800</span></a>
-                                            <span class="product-description">
-                        Samsung 32" 1080p 60Hz LED Smart HDTV.
-                      </span>
+                                            <span class="product-description text-white">
+                                                Samsung 32" 1080p 60Hz LED Smart HDTV.
+                                            </span>
                                         </div>
                                     </li>
                                     <!-- /.item -->
-                                    <li class="item">
+                                    <li class="item bg-gradient-gray-dark">
                                         <div class="product-img">
                                             <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">Bicycle
                                                 <span class="badge badge-info float-right">$700</span></a>
-                                            <span class="product-description">
-                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                      </span>
+                                            <span class="product-description text-white">
+                                                26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                                            </span>
                                         </div>
                                     </li>
                                     <!-- /.item -->
-                                    <li class="item">
+                                    <li class="item bg-gradient-gray-dark">
                                         <div class="product-img">
                                             <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">
-                                                Xbox One <span class="badge badge-danger float-right">
-                        $350
-                      </span>
+                                                Xbox One
+                                                <span class="badge badge-danger float-right">
+                                                    $350
+                                                </span>
                                             </a>
-                                            <span class="product-description">
-                        Xbox One Console Bundle with Halo Master Chief Collection.
-                      </span>
+                                            <span class="product-description text-white">
+                                                Xbox One Console Bundle with Halo Master Chief Collection.
+                                            </span>
                                         </div>
                                     </li>
                                     <!-- /.item -->
-                                    <li class="item">
+                                    <li class="item bg-gradient-gray-dark">
                                         <div class="product-img">
                                             <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">PlayStation 4
                                                 <span class="badge badge-success float-right">$399</span></a>
-                                            <span class="product-description">
-                        PlayStation 4 500GB Console (PS4)
-                      </span>
+                                            <span class="product-description text-white">
+                                                PlayStation 4 500GB Console (PS4)
+                                            </span>
                                         </div>
                                     </li>
                                     <!-- /.item -->
                                 </ul>
                             </div>
                             <!-- /.card-body -->
-                            <div class="card-footer text-center">
+                            <div class="card-footer text-center bg-gradient-gray-dark">
                                 <a href="javascript:void(0)" class="uppercase">View All Products</a>
                             </div>
                             <!-- /.card-footer -->
