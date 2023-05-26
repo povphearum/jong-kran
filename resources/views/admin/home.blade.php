@@ -276,7 +276,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-@yield('content')
+        @yield('content')
     </div>
     <!-- /.content-wrapper -->
 
@@ -288,10 +288,9 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
+        <strong> Develop By Students of<a href="https://www.cadt.edu.kh/"> Cambodia Academy of Digital Technology</a> . IDT</strong>
         <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.2.0
+            <strong>Generation_8_Group_B</strong>
         </div>
     </footer>
 </div>
