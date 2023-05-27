@@ -110,7 +110,6 @@
                                         <li><a href="{{ url('/blog') }}">Blog Post</a></li>
                                         <li><a href="{{ url('/fullrecipe') }}">Receipe Post</a></li>
                                         <li><a href="{{ url('/contact') }}">Contact</a></li>
-                                        <li><a href="{{ url('/elements') }}">Elements</a></li>
 
                                     </ul>
                                 </li>
@@ -155,7 +154,7 @@
                                             <li><a href="#" >{{ Auth::user()->name }}</a>
                                                 <ul class="dropdown">
                                                     <li><a href="{{ url('/user/profile') }}">Profile</a></li>
-                                                    <li><a href="{{route('info')}}">user</a></li>
+                                                    <li><a href="{{route('info')}}">User</a></li>
                                                     <li><a href="{{ url('/recipe') }}">Add Recipe</a></li>
                                                     <form method="POST" action="{{ route('logout') }}">
                                                         @csrf
@@ -163,10 +162,9 @@
                                                         <x-dropdown-link :href="route('logout')"
                                                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                            {{ __('Log Out') }}
+                                                            {{ ('Log Out') }}
                                                         </x-dropdown-link>
                                                     </form>
-
 
                                                 </ul>
                                             </li>
@@ -229,7 +227,7 @@
                 </div>
                 <!-- Copywrite -->
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by Jong-Kran</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
         </div>

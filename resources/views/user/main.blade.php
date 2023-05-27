@@ -224,7 +224,7 @@
                     <div class="cta-content text-center">
                         <h2>Gluten Free Receipies</h2>
                         <p>Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sed accumsan neque. Ut vulputate, lectus vel aliquam congue, risus leo elementum nibh</p>
-                        <a href="#" class="btn delicious-btn">Discover all the receipies</a>
+                        <a href="{{route('fullrecipe')}}" class="btn delicious-btn">Discover all the receipies</a>
                     </div>
                 </div>
             </div>
@@ -250,20 +250,18 @@
                         <h4>Nothing is better than going home to family and eating good food and relaxing</h4>
                         <p>John Smith</p>
                         <div class="date-comments d-flex justify-content-between">
-                            <div class="date">January 04, 2018</div>
-                            <div class="comments">2 Comments</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Newsletter -->
                 <div class="col-12 col-lg-4">
-                    <div class="newsletter-area">
-                        <h4>Subscribe to our newsletter</h4>
+                    <div class="feedback">
+                        <h4>Give your feedback here</h4>
                         <!-- Form -->
                         <div class="newsletter-form bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
                             <form action="#" method="post">
-                                <input type="email" name="email" placeholder="Subscribe to newsletter">
+                                <input type="email" name="email" placeholder="feedback here">
                                 <button type="submit" class="btn delicious-btn w-100">Subscribe</button>
                             </form>
                             <p>Fusce nec ante vitae lacus aliquet vulputate. Donec sceleri sque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>

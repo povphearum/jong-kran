@@ -154,7 +154,7 @@ img {
 .section-heading {
   position: relative;
   z-index: 1;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   text-align: center; }
   .section-heading h3 {
     font-size: 30px;
@@ -816,7 +816,7 @@ textarea:focus {
     color: #9b9b9b; }
 
 /* :: 12.0 Newsletter Area */
-.newsletter-area {
+.feedback {
   position: relative;
   z-index: 1;
   margin-bottom: 80px; }
@@ -1011,7 +1011,7 @@ textarea:focus {
 .receipe-headline h2 {
   font-size: 36px;
   color: #474747;
-  margin-bottom: 30px; }
+  margin-bottom: 10px; }
   @media only screen and (max-width: 767px) {
     .receipe-headline h2 {
       font-size: 24px; } }
