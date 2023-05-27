@@ -35,7 +35,7 @@ function urLIs($value): bool
     </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-dark bg-success">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -177,7 +177,7 @@ function urLIs($value): bool
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-white">
         <!-- Brand Logo -->
         <a class="nav-brand mx-4"   href="{{ url('/') }}">
             <img height="100" width="180" src="{{asset('/logo/logo.png')}}" alt="">
@@ -223,9 +223,9 @@ function urLIs($value): bool
                          with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="{{route('adminhome')}}" class="nav-link <?php echo urLIs('/admin/dashboard') ? 'active' : 'nav-link';?>">
+                        <a href="{{route('adminhome')}}"  class="nav-link <?php echo urLIs('/admin/dashboard') ? 'active' : 'nav-link';?> ">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>
+                            <p >
                                 Dashboard
                             </p>
                         </a>
