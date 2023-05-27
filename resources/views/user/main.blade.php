@@ -261,10 +261,11 @@
                         <!-- Form -->
                         <div class="newsletter-form bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
                             <form action="#" method="post">
-                                <input type="email" name="email" placeholder="feedback here">
-                                <button type="submit" class="btn delicious-btn w-100">Subscribe</button>
+                                <input type="email" name="email" placeholder="Input name here">
+                                <input type="email" name="email" placeholder="Feedback here">
+                                <button type="submit" class="btn delicious-btn w-100">Submit</button>
                             </form>
-                            <p>Fusce nec ante vitae lacus aliquet vulputate. Donec sceleri sque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                            <p>Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.</p>
                         </div>
                     </div>
                 </div>
