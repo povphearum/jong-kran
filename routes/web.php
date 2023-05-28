@@ -33,6 +33,9 @@ route::get('/redirect', [HomeController::class, 'redirect']);
 route::get('/', [HomeController::class, 'Index']);
 
 Route::controller(HomeController::class)->group(function () {
+
+
+
     route::get('/about',[HomeController::class,'about']);
     route::get('/blog',[HomeController::class,'blog']);
     route::get('/contact',[HomeController::class,'contact']);
