@@ -72,7 +72,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <img class="mb-70" src="img/bg-img/about.png" alt="">
+                    <img class="mb-50" src="img/bg-img/about.png" alt="">
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
     <!-- ##### About Area End ##### -->
 
     <!-- ##### Contact Area Start ##### -->
-    <div class="contact-area section-padding-0-80">
+    <div class="contact-area section-padding-0-40">
         <div class="container">
             <div class="row">
                 <div class="col-12">

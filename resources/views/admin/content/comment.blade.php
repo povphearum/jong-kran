@@ -28,7 +28,21 @@
 
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div id="example1_filter" class="dataTables_filter text-right">
+                            <label>Search:<input type="search" class="form-control form-control-sm"
+                                placeholder aria-controls="example1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table id="example1" class="table table-bordered table-striped dataTable dtr-inline collapsed"
+            aria-describedby="example1_info">
                 <thead>
                 <tr>
                     <th>Rendering engine</th>

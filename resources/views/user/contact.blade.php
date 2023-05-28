@@ -6,6 +6,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-text text-center">
+                        <h2>A recipe has no soul. You, as the cook, must bring soul to the recipe</h2>
                     </div>
                 </div>
             </div>
@@ -18,8 +19,8 @@
     <div class="contact-area section-padding-0-80">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
+                <div class="col-12 my-5">
+                    <div class="section-heading my-2">
                         <h3>Contact Us</h3>
                     </div>
                 </div>
