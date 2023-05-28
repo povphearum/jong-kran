@@ -30,8 +30,12 @@ function urLIs($value): bool
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
+<<<<<<< HEAD
+        <img class="animation__wobble" src="{{asset('img/core-img/logo.png')}}" alt="" height="60" width="60">
+=======
         <img class="animation__wobble" src="{{asset('Admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60"
              width="60">
+>>>>>>> 5d812a670e2ee7d222f0ad75e7c3c2b5abd195ad
     </div>
 
     <!-- Navbar -->
