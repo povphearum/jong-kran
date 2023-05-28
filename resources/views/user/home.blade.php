@@ -17,6 +17,43 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- User profile Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            height: 45%;
+            display: flex;
+        }
+
+        .swiper-slide img {
+            display: block;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -246,7 +283,31 @@
 <script src="js/plugins/plugins.js"></script>
 <!-- Active js -->
 <script src="js/active.js"></script>
+<!-- User profile js -->
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+        },
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>
 {{--<script>--}}
 {{--    if (window.location.pathname === "/info") {--}}
 {{--        document.getElementById("close").style.display = "none";--}}
@@ -260,6 +321,7 @@
 {{--    } else {--}}
 {{--        document.getElementById("close1").style.display = "block";--}}
 {{--    }</script>--}}
+
 </body>
 
 </html>
