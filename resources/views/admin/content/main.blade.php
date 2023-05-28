@@ -116,7 +116,7 @@
                                     </p>
 
                                     <div class="progress-group">
-                                        Add Products to Cart
+                                        Add Recipe to Cart
                                         <span class="float-right"><b>160</b>/200</span>
                                         <div class="progress progress-sm">
                                             <div class="progress-bar bg-primary" style="width: 80%"></div>
@@ -134,7 +134,7 @@
 
                                     <!-- /.progress-group -->
                                     <div class="progress-group">
-                                        <span class="progress-text">Visit Premium Page</span>
+                                        <span class="progress-text">Visit Our Page</span>
                                         <span class="float-right"><b>480</b>/800</span>
                                         <div class="progress progress-sm">
                                             <div class="progress-bar bg-success" style="width: 60%"></div>
@@ -211,7 +211,7 @@
                     <!-- MAP & BOX PANE -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">US-Visitors Report</h3>
+                            <h3 class="card-title">Visitors Report</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -355,10 +355,10 @@
                                                     <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
 
                                                     <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Count Dracula
-                                <small class="contacts-list-date float-right">2/28/2015</small>
-                              </span>
+                                                        <span class="contacts-list-name">
+                                                            Count Dracula
+                                                            <small class="contacts-list-date float-right">2/28/2015</small>
+                                                        </span>
                                                         <span class="contacts-list-msg">How have you been? I was...</span>
                                                     </div>
                                                     <!-- /.contacts-list-info -->
@@ -370,10 +370,10 @@
                                                     <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
 
                                                     <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Sarah Doe
-                                <small class="contacts-list-date float-right">2/23/2015</small>
-                              </span>
+                                                        <span class="contacts-list-name">
+                                                            Sarah Doe
+                                                            <small class="contacts-list-date float-right">2/23/2015</small>
+                                                        </span>
                                                         <span class="contacts-list-msg">I will be waiting for...</span>
                                                     </div>
                                                     <!-- /.contacts-list-info -->
@@ -539,7 +539,7 @@
                     <!-- TABLE: LATEST ORDERS -->
                     <div class="card">
                         <div class="card-header border-transparent">
-                            <h3 class="card-title">Latest Orders</h3>
+                            <h3 class="card-title">Latest Recipes</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -556,10 +556,10 @@
                                 <table class="table m-0">
                                     <thead>
                                     <tr>
-                                        <th>Order ID</th>
-                                        <th>Item</th>
-                                        <th>Status</th>
-                                        <th>Popularity</th>
+                                        <th>Recipe ID</th>
+                                        <th>Recipe Name</th>
+                                        <th>Subcategory</th>
+                                        <th>Rating</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -720,7 +720,7 @@
                             <ul class="nav nav-pills flex-column">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        United States of America
+                                        Cambodia
                                         <span class="float-right text-danger">
                         <i class="fas fa-arrow-down text-sm"></i>
                         12%</span>
@@ -751,7 +751,7 @@
                     <!-- PRODUCT LIST -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Recently Added Products</h3>
+                            <h3 class="card-title">Recently Added Recipes</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
