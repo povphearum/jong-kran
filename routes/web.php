@@ -102,6 +102,7 @@ Route::middleware(['auth', 'role:admin|manager'])->group(function (){
 
     Route::controller(UserController::class)->group(function (){
         Route::get('/admin/user','User')->name('user');
+        Route::get('/admin/user/show/{id}','UserShow')->name('usershow');
     });
 });
 

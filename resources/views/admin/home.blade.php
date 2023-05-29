@@ -42,7 +42,7 @@ function urLIs($value): bool
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{asset('Admin/')}}index3.html" class="nav-link">Home</a>
+                <a href="{{route('adminhome')}}" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
@@ -225,7 +225,7 @@ function urLIs($value): bool
                     <li class="nav-item">
                         <a href="{{route('adminhome')}}"  class="nav-link act <?php echo urLIs('/admin/dashboard') ? 'active bg-green' : 'nav-link';?> ">
                             <i class="nav-icon fas fa-th"></i>
-                            <p >
+                            <p class="text-dark" >
                                 Dashboard
                             </p>
                         </a>
@@ -233,7 +233,7 @@ function urLIs($value): bool
                     <li class="nav-item">
                         <a href="{{route('category')}}" class="nav-link <?php echo urLIs('/admin/category') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>
+                            <p class="text-dark">
                                 Category
                             </p>
                         </a>
@@ -241,7 +241,7 @@ function urLIs($value): bool
                     <li class="nav-item">
                         <a href="{{route('subcategory')}}" class="nav-link <?php echo urLIs('/admin/subcategory') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>
+                            <p class="text-dark">
                                 Subcategory
                             </p>
                         </a>
@@ -249,7 +249,7 @@ function urLIs($value): bool
                     <li class="nav-item">
                         <a href="{{route('recipe')}}" class="nav-link <?php echo urLIs('/admin/recipe') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>
+                            <p class="text-dark">
                                 Recipe
                             </p>
                         </a>
@@ -257,7 +257,7 @@ function urLIs($value): bool
                     <li class="nav-item">
                         <a href="{{route('user')}}" class="nav-link <?php echo urLIs('/admin/user') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>
+                            <p class="text-dark">
                                 User
                             </p>
                         </a>
@@ -265,7 +265,7 @@ function urLIs($value): bool
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p class="text-white">
+                            <p class="class="text-dark">
                                 Reviews
                                 <i class="right fas fa-angle-left"></i>
                             </p>
@@ -274,13 +274,13 @@ function urLIs($value): bool
                             <li class="nav-item">
                                 <a href="{{route('comment')}}" class="nav-link <?php echo urLIs('/admin/comment') ? 'active bg-green' : 'nav-link';?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>comment</p>
+                                    <p class="text-dark">comment</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('review')}}" class="nav-link <?php echo urLIs('/admin/reviews') ? 'active bg-green' : 'nav-link';?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Rating</p>
+                                    <p class="text-dark">Rating</p>
                                 </a>
                             </li>
                         </ul>

@@ -35,6 +35,7 @@
                                 <th>User</th>
                                 <th>email</th>
                                 <th>Role</th>
+                                <th>Create At</th>
                                 <th>Action</th>
 
 
@@ -44,14 +45,20 @@
                             @foreach($users as $user)
                             <tr>
                                 <td>{{$user->id}}</td>
-                                <td>{{$user->name}}</td>
+                                <td><img src="{{ $user->profile_photo_url }}" class="img-circle" height="40" width="40"
+                                         alt="{{ $user->name }}">
+                                    {{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 @foreach($user->roles as $role)
                                 <td>
-                                    {{$role->name}}
+                                    {{$role->display_name}}
                                    </td>
                                 @endforeach
-                                <td>actions</td>
+                                <td>{{$user->created_at}}</td>
+                                <td><a href="{{route('usershow',$user->id)}}" class="btn btn-secondary btn-sm"><i class="fa fa-info"></i></a>
+                                    <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                </td>
 
                             </tr>
                             @endforeach
