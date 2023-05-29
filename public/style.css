@@ -1382,3 +1382,13 @@ textarea:focus {
     padding-left: 30px; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* User_PF*/
+.pf-img{
+    border-radius: 50%;
+    border: 2px solid #adb5bd;
+    padding: 2px;
+    height: 80%;
+    width: 80%;
+
+}
