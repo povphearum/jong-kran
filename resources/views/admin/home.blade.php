@@ -25,13 +25,13 @@ function urLIs($value): bool
     <link rel="stylesheet" href="{{asset('Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('Admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble" src="{{asset('Admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60"
-             width="60">
+        <img class="animation__shake" src="{{asset('logo/logo.png')}}" alt="AdminLTELogo" height="100"
+             width="100">
     </div>
 
     <!-- Navbar -->
@@ -180,13 +180,13 @@ function urLIs($value): bool
     <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-white">
         <!-- Brand Logo -->
         <a class="nav-brand mx-4"   href="{{ url('/') }}">
-            <img height="100" width="180" src="{{asset('/logo/logo.png')}}" alt="">
+            <img height="100" width="180" src="{{asset('')}}" alt="Jong-Kran">
         </a>
-{{--        <a href="{{asset('Admin/')}}index3.html" class="brand-link">--}}
-{{--            <img src="{{asset('Admin/')}}dist/img/AdminLTELogo.png" alt="AdminLTE Logo"--}}
-{{--                 class="brand-image img-circle elevation-3" style="opacity: .8">--}}
-{{--            <span class="brand-text font-weight-light">AdminLTE 3</span>--}}
-{{--        </a>--}}
+        <a href="{{route('adminhome')}}" class="brand-link">
+            <img src="{{asset('/logo/logo.png')}}" alt="Jong-Kran Logo"
+                 class="brand-image img-fluid elevation-3 bg-white" style="opacity: .8">
+            <span class="brand-text font-weight-light bg-white">Jong-Kran</span>
+        </a>
 
         <!-- Sidebar -->
         <div class="sidebar">
