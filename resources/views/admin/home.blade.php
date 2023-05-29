@@ -239,6 +239,14 @@ function urLIs($value): bool
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{route('addcate')}}" class="nav-link <?php echo urLIs('/admin/category/add') ? 'active bg-green' : 'nav-link';?>">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p class="text-dark">
+                                Add Category
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('subcategory')}}" class="nav-link <?php echo urLIs('/admin/subcategory') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p class="text-dark">

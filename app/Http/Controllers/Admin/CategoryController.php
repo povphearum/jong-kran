@@ -9,8 +9,63 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function Category(){
-        return view('admin.content.category.category');
+        $categories = Category::get();
+        return view('admin.content.category.category',compact('categories'));
     }
+
+    public function AddCategory(){
+        return view('admin.content.category.addcategory');
+    }
+
+    public function StoreCategory(Request $request){
+            $request->validate([
+                'name'=>'required|unique:categories',
+                'display_name'=>'required|unique:categories'
+            ]);
+
+            Category::insert([
+                'name' => $request->name,
+                'display_name'=>$request->display_name,
+
+
+            ]);
+            return redirect()->route('category')->with('message','Category Added Successfully!');
+    }
+
+    public function UpdateCategory($id){
+        $category = Category::findOrFail($id);
+        return view('admin.content.category.updatecategory',compact('category'));
+
+    }
+
+    public function EditCategory(Request $request){
+        $category_id = $request->id;
+
+        $request->validate([
+            'name'=> 'required|unique:categories',
+            'display_name'=> 'required|unique:categories'
+        ]);
+        Category::findOrFail($category_id)->update([
+            'name' => $request->name,
+            'display_name' => $request->display_name,
+        ]);
+        return redirect()->route('category')->with('message','Category Updated Successfully!');
+    }
+
+    public function DeleteCategory($id){
+        Category::findOrFail($id)->delete();
+        return redirect()->route('category')->with('message','Category Delete Successfully');
+
+    }
+
+
+
+
+
+
+
+
+
     /**
      * Display a listing of the resource.
      */

@@ -83,6 +83,11 @@ Route::middleware(['auth', 'role:admin|manager'])->group(function (){
 
     Route::controller(CategoryController::class)->group(function (){
         Route::get('/admin/category','Category')->name('category');
+        Route::get('/admin/category/add','AddCategory')->name('addcate');
+        Route::get('/admin/category/update/{id}','UpdateCategory')->name('updatecate');
+        Route::get('/admin/category/delete/{id}','DeleteCategory')->name('deletecate');
+        Route::post('/admin/category/storecate','StoreCategory')->name('storecate');
+        Route::post('/admin/category/edit-category','EditCategory')->name('editcate');
 
     });
     Route::controller(SubcategoryController::class)->group(function (){

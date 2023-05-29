@@ -9,6 +9,10 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        'name',
+        'display_name'
+    ];
     public function subcate(){
         $this->hasOne('App\Models\subcategory');
     }

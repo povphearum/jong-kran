@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('display_name');
             $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('recipe_count');
+            $table->integer('recipe_count')->default(0);
             $table->timestamps();
         });
     }

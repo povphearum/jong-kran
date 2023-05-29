@@ -117,7 +117,7 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
-                                                    <label for="inputEmail">Zip Code</label>
+                                                    <label for="inputZipCode">Zip Code</label>
                                                     <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->info->zip_code}}" readonly>
                                                 </div>
                                             </div>

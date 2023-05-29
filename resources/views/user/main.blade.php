@@ -98,12 +98,13 @@
 
             <div class="row">
                 <!-- Single Best Receipe Area -->
+                @foreach($recipes as $recipe)
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="img/bg-img/r1.jpg" alt="">
+                        <img src="{{$recipe->image}}" alt="">
                         <div class="receipe-content">
                             <a href="{{route('fullrecipe')}}">
-                                <h5>Sushi Easy Receipy</h5>
+                                <h5>{{$recipe->name}}</h5>
                             </a>
                             <div class="ratings">
                                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -115,6 +116,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
 
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
