@@ -182,10 +182,10 @@ function urLIs($value): bool
         <a class="nav-brand mx-4"   href="{{ url('/') }}">
             <img height="100" width="180" src="{{asset('')}}" alt="Jong-Kran">
         </a>
-        <a href="{{route('adminhome')}}" class="brand-link">
+        <a href="{{route('adminhome')}}" class="brand-link bg-white">
             <img src="{{asset('/logo/logo.png')}}" alt="Jong-Kran Logo"
-                 class="brand-image img-fluid elevation-3 bg-white" style="opacity: .8">
-            <span class="brand-text font-weight-light bg-white">Jong-Kran</span>
+                 class="brand-image bg-white" style="opacity: .8">
+            <span class="brand-text text-dark font-weight-light bg-white">Jong-Kran</span>
         </a>
 
         <!-- Sidebar -->
@@ -193,37 +193,37 @@ function urLIs($value): bool
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{asset('Admin/')}}dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                         alt="User Image">
+                    <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle elevation-2"
+                         alt="{{ Auth::user()->name }}">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-{{--                    <a href="#" class="d-block">Alexander Pierce</a>--}}
+                    <a href="#" class="d-block text-dark">{{ Auth::user()->name }}</a>
+                    {{--                    <a href="#" class="d-block">Alexander Pierce</a>--}}
                 </div>
             </div>
 
-            <!-- SidebarSearch Form -->
-            <div class="form-inline">
-                <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                           aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-sidebar">
-                            <i class="fas fa-search fa-fw"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            {{--            <!-- SidebarSearch Form -->--}}
+            {{--            <div class="form-inline">--}}
+            {{--                <div class="input-group" data-widget="sidebar-search">--}}
+            {{--                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"--}}
+            {{--                           aria-label="Search">--}}
+            {{--                    <div class="input-group-append">--}}
+            {{--                        <button class="btn btn-sidebar">--}}
+            {{--                            <i class="fas fa-search fa-fw"></i>--}}
+            {{--                        </button>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                <ul class="nav nav-pills nav-sidebar flex-column text-dark" data-widget="treeview" role="menu"
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="{{route('adminhome')}}"  class="nav-link <?php echo urLIs('/admin/dashboard') ? 'active' : 'nav-link';?> ">
+                        <a href="{{route('adminhome')}}"  class="nav-link act <?php echo urLIs('/admin/dashboard') ? 'active bg-green' : 'nav-link';?> ">
                             <i class="nav-icon fas fa-th"></i>
                             <p >
                                 Dashboard
@@ -231,7 +231,7 @@ function urLIs($value): bool
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('category')}}" class="nav-link <?php echo urLIs('/admin/category') ? 'active' : 'nav-link';?>">
+                        <a href="{{route('category')}}" class="nav-link <?php echo urLIs('/admin/category') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Category
@@ -239,7 +239,7 @@ function urLIs($value): bool
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('subcategory')}}" class="nav-link <?php echo urLIs('/admin/subcategory') ? 'active' : 'nav-link';?>">
+                        <a href="{{route('subcategory')}}" class="nav-link <?php echo urLIs('/admin/subcategory') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Subcategory
@@ -247,7 +247,7 @@ function urLIs($value): bool
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('recipe')}}" class="nav-link <?php echo urLIs('/admin/recipe') ? 'active' : 'nav-link';?>">
+                        <a href="{{route('recipe')}}" class="nav-link <?php echo urLIs('/admin/recipe') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Recipe
@@ -255,30 +255,30 @@ function urLIs($value): bool
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('user')}}" class="nav-link <?php echo urLIs('/admin/user') ? 'active' : 'nav-link';?>">
+                        <a href="{{route('user')}}" class="nav-link <?php echo urLIs('/admin/user') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 User
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item  <?php echo urLIs('/admin/comment') ? 'menu-open' : 'nav-link';?><?php echo urLIs('/admin/reviews') ? 'menu-open' : 'nav-link';?>">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p>
+                            <p class="text-white">
                                 Reviews
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('comment')}}" class="nav-link <?php echo urLIs('/admin/comment') ? 'active' : 'nav-link';?>">
+                                <a href="{{route('comment')}}" class="nav-link <?php echo urLIs('/admin/comment') ? 'active bg-green' : 'nav-link';?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>comment</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('review')}}" class="nav-link <?php echo urLIs('/admin/reviews') ? 'active' : 'nav-link';?>">
+                                <a href="{{route('review')}}" class="nav-link <?php echo urLIs('/admin/reviews') ? 'active bg-green' : 'nav-link';?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Rating</p>
                                 </a>
