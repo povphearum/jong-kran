@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Subcategory extends Model
 {
     use HasFactory;
+
+    public function cate(){
+        $this->belongsTo('App\Models\Category');
+    }
+    public function recipe(){
+        $this->hasMany('App\Models\Recipe');
+    }
 }

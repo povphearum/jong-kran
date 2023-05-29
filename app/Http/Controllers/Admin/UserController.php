@@ -20,7 +20,13 @@ class UserController extends Controller
         public function User(){
           $users = Auth::user();
           $users = User::get();
-            return view('admin.content.user',compact('users'));
+            return view('admin.content.user.user',compact('users'));
+        }
+
+        public function UserShow($id){
+        $user = User::findOrFail($id);
+        return view('admin.content.user.singleuser',compact('user'));
+
         }
 
 }
