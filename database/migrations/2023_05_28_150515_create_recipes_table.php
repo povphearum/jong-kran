@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
             $table->string('name');
             $table->string('description');
             $table->integer('serving');
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->integer('cook_time');
             $table->string('image');
             $table->string('status');
-            $table->foreignId('subcate_id')->constrained('subcategories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('bcate_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('event_id')->constrained('events')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('country_id')->constrained('countries')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

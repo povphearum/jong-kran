@@ -31,25 +31,30 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th>User </th>
-                                <th>Recipe Name</th>
-                                <th>Subcategory</th>
-                                <th>Rating</th>
+                                <th>Id </th>
+                                <th>User</th>
+                                <th>email</th>
+                                <th>Role</th>
+                                <th>Action</th>
 
 
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($users as $user)
                             <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 4.0
-                                </td>
-                                <td>Win 95+</td>
-                                <td>4.9</td>
+                                <td>{{$user->id}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                                @foreach($user->roles as $role)
+                                <td>
+                                    {{$role->name}}
+                                   </td>
+                                @endforeach
+                                <td>actions</td>
 
                             </tr>
-
+                            @endforeach
                             </tbody>
 
                         </table>
