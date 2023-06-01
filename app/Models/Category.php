@@ -9,10 +9,14 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function subcate(){
-        $this->hasOne('App\Models\subcategory');
+    protected $fillable=[
+        'name',
+        'display_name'
+    ];
+    public function tags(){
+      return  $this->hasMany(Tag::class);
     }
     public function recipe(){
-        $this->hasMany('App\Models\Recipe');
+      return  $this->hasMany(Recipe::class);
     }
 }

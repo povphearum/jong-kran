@@ -11,6 +11,23 @@ class RecipeController extends Controller
     public function Recipe(){
         return view('admin.content.recipe.recipe');
     }
+
+    public function AddRecipe()
+    {
+        return view('user.Recipe');
+    }
+
+    public function StoreRecipe(Request $request){
+        $request->validate([
+            'name'=>'required|unique:recipes',
+            'category_id'=>'required',
+        'description'=>'required',
+        'serving'=>'required',
+        'prep_time'=>'required',
+        'cook_time'=>'required',
+        ]);
+
+    }
     /**
      * Display a listing of the resource.
      */

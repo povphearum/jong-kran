@@ -1,6 +1,6 @@
 @extends('user.home')
 @section('main-content')
-<link rel="stylesheet" href="home/recipe.css">
+<link rel="stylesheet" href="{{asset('home/recipe.css')}}">
     <div class="receipe-post-area section-padding-80">
         <div class="receipe-content-area">
             <div class="container">
@@ -45,8 +45,23 @@
                                         <textarea name="text" class="form-control" id="description" cols="30" rows="10" placeholder="discription"></textarea>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <h5>Tag:</h5>
+                                            <select class=" form-control" name="state[]" multiple>
+                                                <option selected>Kebab</option>
+                                                <option>Pizza</option>
+                                                <option>Taco</option>
+                                                <option selected>Kofte</option>
+                                                <option selected>Burger</option>
+                                                <option>Chicken</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                    </div>
                                 <hr>
-                                <div class="row">    
+                                <div class="row">
                                     <div class="col-12 addIngre">
                                         <h5 class="mx-3">Ingredients</h5>
                                         <input type="text" class="form-control" id="ingredients_1" placeholder="e.g 2 cups flour,sifted">
@@ -58,7 +73,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">    
+                                <div class="row">
                                     <div class="col-12 addStep">
                                         <h5 class="mx-3">Step</h5>
                                         <input type="text" class="form-control" id="ingredients_1" placeholder="e.g ...">
@@ -141,5 +156,20 @@
             </div>
         </div>
     </div>
-    <script src="home/recipe.js"></script>
+
+
+@endsection
+@section('scripts')
+    <!-- Bootstrap 4 -->
+    <script src="{{asset('Admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <script src="{{asset('home/recipe.js')}}"></script>
+    <script>
+        $(document).ready(function (){
+            $(".select-tag").select2({
+                tags: true
+            });
+        });
+</script>
+
 @endsection

@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
             $table->string('name');
-            $table->string('description');
+            $table->mediumText('description');
             $table->integer('serving');
             $table->integer('prep_time');
             $table->integer('cook_time');
-            $table->string('image');
-            $table->string('status');
-            $table->foreignId('bcate_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('image')->nullable();
+            $table->string('video')->nullable();
+            $table->string('status')->default('pending');
+            $table->foreignId('cate_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('event_id')->constrained('events')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('country_id')->constrained('countries')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

@@ -9,7 +9,19 @@ class UserInformation extends Model
 {
     use HasFactory;
 
-    public function user(){
+    protected $fillable=[
+        'user_id',
+        'first_name',
+        'last_name',
+        'age',
+        'phone_number',
+        'date_birth',
+        'country',
+        'city',
+        'zip_code',
+    ];
+
+    public function thisuser(){
         $this->belongsTo('App\Models\User');
     }
 }

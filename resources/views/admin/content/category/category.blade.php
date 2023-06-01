@@ -22,6 +22,12 @@
             <div class="col-12">
                 <!-- /.content-header -->
                 <div class="card">
+                    @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{session()->get('message')}}
+                        </div>
+
+                    @endif
                     <div class="card-header">
                         <h3 class="card-title">All Category</h3>
                     </div>
@@ -31,21 +37,29 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Name</th>
+                                <th>Display Name</th>
                                 <th>Subcategory_count</th>
                                 <th>recipe_count</th>
+                                <th>Action</th>
 
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($categories as $category)
                             <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 4.0
-                                </td>
-                                    <td>Win 95+</td>
+                                <td>{{$category->id}}</td>
+                                <td>{{$category->name}}</td>
+                                <td>{{$category->display_name}}</td>
+                                    <td>{{$category->tag_count}}</td>
+                                    <td>{{$category->recipe_count}}</td>
+                                    <td><a href="{{route('updatecate',$category->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{route('deletecate',$category->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                    </td>
 
                             </tr>
+                            @endforeach
 
                             </tbody>
 

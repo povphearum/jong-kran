@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('nutrition', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('recipe_id')->constrained('recipes')->onUpdate('cascade')->onDelete('cascade');
             $table->double('caloarie');
             $table->double('fat');
             $table->double('carb');
             $table->double('protein');
-            $table->foreignId('recipe_id')->constrained('recipes')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
