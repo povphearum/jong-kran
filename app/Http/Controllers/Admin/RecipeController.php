@@ -25,7 +25,20 @@ class RecipeController extends Controller
         'serving'=>'required',
         'prep_time'=>'required',
         'cook_time'=>'required',
+            'video' => 'nullable|file|mimetypes:video/mp4,video/mpeg,video/quicktime,video/x-msvideo,video/x-flv|max:20480',
+                        'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+
         ]);
+        $image = $request->file('image');
+        $image_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $request->image->move(public_path('upload/images'),$image_name);
+        $img_url = 'upload/images'.$image_name;
+
+        $video = $request->file('video');
+        $video_name = hexdec(uniqid()).'.'.$video->getClientOriginalExtension();
+        $request->video->move(public_path('upload/videos'),$video_name);
+        $img_url = 'upload/videos'.$video_name;
 
     }
     /**

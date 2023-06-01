@@ -439,7 +439,7 @@ var Lightbox = (function ($) {
 		}, {
 			key: '_showVideoIframe',
 			value: function _showVideoIframe(url, width, height, $containerForElement) {
-				// should be used for videos only. for remote content use loadRemoteContent (data-type=url)
+				// should be used for video only. for remote content use loadRemoteContent (data-type=url)
 				height = height || width; // default to square
 				$containerForElement.html('<div class="embed-responsive embed-responsive-16by9"><iframe width="' + width + '" height="' + height + '" src="' + url + '" frameborder="0" allowfullscreen class="embed-responsive-item"></iframe></div>');
 				this._resize(width, height);
@@ -451,7 +451,7 @@ var Lightbox = (function ($) {
 		}, {
 			key: '_showHtml5Video',
 			value: function _showHtml5Video(url, $containerForElement) {
-				// should be used for videos only. for remote content use loadRemoteContent (data-type=url)
+				// should be used for video only. for remote content use loadRemoteContent (data-type=url)
 				var width = this._$element.data('width') || 560;
 				var height = this._$element.data('height') || width / (560 / 315);
 				$containerForElement.html('<div class="embed-responsive embed-responsive-16by9"><video width="' + width + '" height="' + height + '" src="' + url + '" preload="auto" autoplay controls class="embed-responsive-item"></video></div>');
