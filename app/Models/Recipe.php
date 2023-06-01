@@ -9,11 +9,26 @@ class Recipe extends Model
 {
     use HasFactory;
 
-    public function subcate(){
-        $this->belongsToMany('App\Models\Subcategory');
+    protected $fillable=[
+        'user_id',
+        'name',
+        'description',
+        'serving',
+        'prep_time',
+        'cook_time',
+        'image',
+        'video',
+        'status',
+        'cate_id',
+        'event_id',
+        'country_id',
+    ];
+
+    public function tags(){
+       return $this->belongsToMany(Tag::class);
     }
 
-    public function cate(){
-        $this->belongsTo('App\Models\Category');
+    public function category(){
+      return  $this->belongsTo(Category::class);
     }
 }

@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\ReviewController;
-use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
@@ -62,9 +62,14 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
     Route::controller(HomeController::class)->group(function (){
 
 
-        route::get('/recipe',[HomeController::class,'recipe'])->name('recipe');
         route::get('/out',[HomeController::class,'out'])->name('out');
         route::get('/info',[HomeController::class,'Info'])->name('info');
+    });
+
+    Route::controller(RecipeController::class)->group(function (){
+        Route::get('/add-recipe','AddRecipe')->name('addrecipe');
+        Route::post('/recipe/store-recipe','StoreRecipe')->name('storerecipe');
+
     });
 
 });
@@ -75,12 +80,6 @@ Route::middleware(['auth', 'role:admin|manager'])->group(function (){
 
 
     });
-
-    Route::controller(AdminController::class)->group(function (){
-
-
-    });
-
     Route::controller(CategoryController::class)->group(function (){
         Route::get('/admin/category','Category')->name('category');
         Route::get('/admin/category/add','AddCategory')->name('addcate');
@@ -90,8 +89,14 @@ Route::middleware(['auth', 'role:admin|manager'])->group(function (){
         Route::post('/admin/category/edit-category','EditCategory')->name('editcate');
 
     });
-    Route::controller(SubcategoryController::class)->group(function (){
-        Route::get('/admin/subcategory','Subcategory')->name('subcategory');
+    Route::controller(TagController::class)->group(function (){
+        Route::get('/admin/tags','Tags')->name('tag');
+        Route::get('/admin/tag/add','AddTag')->name('addtag');
+        Route::get('/admin/tag/update/{id}','UpdateTag')->name('updatetag');
+        Route::get('/admin/tag/delete{id}','DeleteTag')->name('deletetag');
+        Route::post('/admin/tag/storetag','StoreTag')->name('storetag');
+        Route::post('/admin/tag/edit-tag','EditTag')->name('edittag');
+
 
     });
     Route::controller(RecipeController::class)->group(function (){

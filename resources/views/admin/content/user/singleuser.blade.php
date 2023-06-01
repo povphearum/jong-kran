@@ -31,7 +31,7 @@
                         </div>
 
                         <h3 class="profile-username text-center"></h3>
-                        @foreach($user->roles as $role)
+                        @foreach($user->user_roles as $role)
                         <p class="text-muted text-center">Role: "{{$role->name}}"</p>
                         @endforeach
                         <ul class="list-group list-group-unbordered mb-3">
@@ -73,7 +73,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="inputName">Full Name</label>
-                                                    <input type="email" class="form-control" id="inputName" placeholder="{{$user->info->last_name}} {{$user->info->first_name}}" readonly>
+                                                    <input type="email" class="form-control" id="inputName" placeholder="{{$user->user_info->last_name}} {{$user->user_info->first_name}}" readonly>
                                                 </div>
                                             </div>
 
@@ -88,13 +88,13 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="inputName">Phone Number</label>
-                                                    <input type="email" class="form-control" id="inputName" placeholder="{{$user->info->phone_number}}" readonly>
+                                                    <input type="email" class="form-control" id="inputName" placeholder="{{$user->user_info->phone_number}}" readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="inputEmail">Date Of Birth</label>
-                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->info->date_birth}}" readonly>
+                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->user_info->date_birth}}" readonly>
                                                     <div class="row justify-content-end">
                                                     </div>
                                                 </div>
@@ -102,7 +102,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="inputEmail">Country</label>
-                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->info->country}}" readonly>
+                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->user_info->country}}" readonly>
                                                     <div class="row justify-content-end">
                                                     </div>
                                                 </div>
@@ -110,7 +110,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="inputEmail">Country</label>
-                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->info->city}}" readonly>
+                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->user_info->city}}" readonly>
                                                 </div>
 
 
@@ -118,7 +118,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="inputZipCode">Zip Code</label>
-                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->info->zip_code}}" readonly>
+                                                    <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->user_info->zip_code}}" readonly>
                                                 </div>
                                             </div>
                                         </div>

@@ -105,10 +105,7 @@ class HomeController extends Controller
     {
         return view('user.Profile');
     }
-    public function recipe()
-    {
-        return view('user.Recipe');
-    }
+
     public function out()
     {
         return view('user.Out');

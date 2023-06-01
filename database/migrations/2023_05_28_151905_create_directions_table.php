@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('directions', function (Blueprint $table) {
             $table->id();
-            $table->string('step');
             $table->foreignId('recipe_id')->constrained('recipes')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('step');
             $table->timestamps();
         });
     }

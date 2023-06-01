@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subcategories', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('display_name');
-            $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('recipe_count')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subcategories');
+        Schema::dropIfExists('feedback');
     }
 };

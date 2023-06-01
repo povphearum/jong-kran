@@ -13,10 +13,10 @@ class Category extends Model
         'name',
         'display_name'
     ];
-    public function subcate(){
-        $this->hasOne('App\Models\subcategory');
+    public function tags(){
+      return  $this->hasMany(Tag::class);
     }
     public function recipe(){
-        $this->hasMany('App\Models\Recipe');
+      return  $this->hasMany(Recipe::class);
     }
 }

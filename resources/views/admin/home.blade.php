@@ -45,7 +45,14 @@ function urLIs($value): bool
                 <a href="{{route('adminhome')}}" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <x-dropdown-link :href="route('logout')"
+                                     onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                        {{ ('Log Out') }}
+                    </x-dropdown-link>
+                </form>
             </li>
         </ul>
 
@@ -247,10 +254,18 @@ function urLIs($value): bool
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('subcategory')}}" class="nav-link <?php echo urLIs('/admin/subcategory') ? 'active bg-green' : 'nav-link';?>">
+                        <a href="{{route('tag')}}" class="nav-link <?php echo urLIs('/admin/tags') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p class="text-dark">
-                                Subcategory
+                                Tag
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('addtag')}}" class="nav-link <?php echo urLIs('/admin/tag/add') ? 'active bg-green' : 'nav-link';?>">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p class="text-dark">
+                                Add Tag
                             </p>
                         </a>
                     </li>
@@ -273,7 +288,7 @@ function urLIs($value): bool
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p class="class="text-dark">
+                            <p class="text-dark">
                                 Reviews
                                 <i class="right fas fa-angle-left"></i>
                             </p>
@@ -347,7 +362,6 @@ function urLIs($value): bool
 <script src="{{asset('Admin/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('Admin/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('Admin/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
-
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="{{asset('Admin/plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
@@ -361,6 +375,25 @@ function urLIs($value): bool
 <script src="{{asset('Admin/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('Admin/dist/js/pages/dashboard2.js')}}"></script>
+
+<!-- Page specific script -->
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+
 
 </body>
 

@@ -34,8 +34,11 @@
                             <tr>
                                 <th>User </th>
                                 <th>Recipe Name</th>
+                                <th>Category</th>
                                 <th>Subcategory</th>
-                                <th>Rating</th>
+                                <th>Ingredients</th>
+                                <th>Review</th>
+                                <th>Overall Rating</th>
 
 
                             </tr>

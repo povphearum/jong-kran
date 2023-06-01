@@ -22,6 +22,12 @@
             <div class="col-12">
                 <!-- /.content-header -->
                 <div class="card">
+                    @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{session()->get('message')}}
+                        </div>
+
+                    @endif
                     <div class="card-header">
                         <h3 class="card-title">All Category</h3>
                     </div>
@@ -46,7 +52,7 @@
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
                                 <td>{{$category->display_name}}</td>
-                                    <td>{{$category->subcategory_count}}</td>
+                                    <td>{{$category->tag_count}}</td>
                                     <td>{{$category->recipe_count}}</td>
                                     <td><a href="{{route('updatecate',$category->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                         <a href="{{route('deletecate',$category->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>

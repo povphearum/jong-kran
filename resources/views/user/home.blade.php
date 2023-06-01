@@ -15,7 +15,7 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
     <!-- User Stylesheet-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -51,8 +51,14 @@
         .swiper-slide img {
             display: block;
         }
+        .select2-selection__choice{
+            border: none !important;
+            font-size: 12px;
+            font-size: 0.85rem !important;
+        }
     </style>
-
+    <link href="{{asset('home/dist/css/select2.min.css')}}" rel="stylesheet" />
+    <script src="{{asset('home/dist/js/select2.min.js')}}"></script>
 </head>
 
 <body>
@@ -191,7 +197,7 @@
                                                 <ul class="dropdown">
                                                     <li><a href="{{ url('/user/profile') }}">Profile</a></li>
                                                     <li><a href="{{route('info')}}">User</a></li>
-                                                    <li><a href="{{ url('/recipe') }}">Add Recipe</a></li>
+                                                    <li><a href="{{route('addrecipe')}}">Add Recipe</a></li>
                                                     <form method="POST" action="{{ route('logout') }}">
                                                         @csrf
 
@@ -273,15 +279,15 @@
 
 <!-- ##### All Javascript Files ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{asset('js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{asset('js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{asset('js/active.js')}}"></script>
 
 <!-- User js-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -308,6 +314,9 @@
         },
     });
 </script>
+<!-- Select2 -->
+<script src="{{asset('Admin/plugins/select2/js/select2.full.min.js')}}"></script>
+
 
 {{--<script>--}}
 {{--    if (window.location.pathname === "/info") {--}}
@@ -322,6 +331,8 @@
 {{--    } else {--}}
 {{--        document.getElementById("close1").style.display = "block";--}}
 {{--    }</script>--}}
+
+@yield('scripts')
 </body>
 
 </html>

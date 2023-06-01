@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('display_name');
-            $table->integer('subcategory_count')->default(0);
+            $table->integer('tag_count')->default(0);
             $table->integer('recipe_count')->default(0);
             $table->timestamps();
         });

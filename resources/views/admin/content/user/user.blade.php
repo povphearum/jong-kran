@@ -49,7 +49,7 @@
                                          alt="{{ $user->name }}">
                                     {{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                @foreach($user->roles as $role)
+                                @foreach($user->user_roles as $role)
                                 <td>
                                     {{$role->display_name}}
                                    </td>

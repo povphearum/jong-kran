@@ -5,12 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subcategory extends Model
+class Tag extends Model
 {
     use HasFactory;
 
-    public function cate(){
-        $this->belongsTo('App\Models\Category');
+    protected $fillable=[
+        'name',
+        'display_name',
+        'category_id',
+    ];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+
     }
     public function recipe(){
         $this->hasMany('App\Models\Recipe');
