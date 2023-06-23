@@ -11,7 +11,7 @@ class Recipe extends Model
 
     protected $fillable=[
         'user_id',
-        'name',
+        'recipe_name',
         'description',
         'serving',
         'prep_time',
@@ -19,13 +19,13 @@ class Recipe extends Model
         'image',
         'video',
         'status',
-        'cate_id',
         'event_id',
         'country_id',
     ];
 
-    public function tags(){
-       return $this->belongsToMany(Tag::class);
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'tag_recipes','tag_id','recipe_id');
     }
 
     public function category(){

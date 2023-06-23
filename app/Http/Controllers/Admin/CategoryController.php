@@ -19,13 +19,13 @@ class CategoryController extends Controller
 
     public function StoreCategory(Request $request){
             $request->validate([
-                'name'=>'required|unique:categories',
-                'display_name'=>'required|unique:categories'
+                'category_name'=>'required|unique:categories',
+                'category_display_name'=>'required|unique:categories'
             ]);
 
             Category::insert([
-                'name' => $request->name,
-                'display_name'=>$request->display_name,
+                'category_name' => $request->category_name,
+                'category_display_name'=>$request->category_display_name,
 
 
             ]);
@@ -42,12 +42,12 @@ class CategoryController extends Controller
         $category_id = $request->id;
 
         $request->validate([
-            'name'=> 'required|unique:categories',
-            'display_name'=> 'required|unique:categories'
+            'category_name'=> 'required|unique:categories',
+            'category_display_name'=> 'required|unique:categories'
         ]);
         Category::findOrFail($category_id)->update([
-            'name' => $request->name,
-            'display_name' => $request->display_name,
+            'category_name' => $request->category_name,
+            'category_display_name' => $request->category_display_name,
         ]);
         return redirect()->route('category')->with('message','Category Updated Successfully!');
     }

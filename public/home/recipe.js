@@ -1,28 +1,28 @@
 
-const addIngre = document.querySelector('.addIngre')
+// const addIngre = document.querySelector('.addIngre')
 
-const addStep = document.querySelector('.addStep')
+// const addStep = document.querySelector('.addStep')
 
 const addNote = document.querySelector('.addNote')
 
+//
+// document.querySelector('.btnIngre').onclick = () =>{
+//     const input = document.createElement('input')
+//     input.type = 'text'
+//     input.className = 'form-control'
+//     input.placeholder = 'e.g ...'
+//
+//     addIngre.appendChild(input)
+// }
 
-document.querySelector('.btnIngre').onclick = () =>{
-    const input = document.createElement('input')
-    input.type = 'text'
-    input.className = 'form-control'
-    input.placeholder = 'e.g ...'
-
-    addIngre.appendChild(input)
-}
-
-document.querySelector('.btnStep').onclick = () =>{
-    const input = document.createElement('input')
-    input.type = 'text'
-    input.className = 'form-control'
-    input.placeholder = 'e.g ...'
-
-    addStep.appendChild(input)
-}
+// document.querySelector('.btnStep').onclick = () =>{
+//     const input = document.createElement('input')
+//     input.type = 'text'
+//     input.className = 'form-control'
+//     input.placeholder = 'e.g ...'
+//
+//     addStep.appendChild(input)
+// }
 var n = 0
 
 document.querySelector('.btnNote').onclick = () =>{
@@ -57,25 +57,25 @@ document.querySelector('.btnNote').onclick = () =>{
 
 function readURL(input) {
     if (input.files && input.files[0]) {
-  
+
       var reader = new FileReader();
-  
+
       reader.onload = function(e) {
         $('.image-upload-wrap').hide();
-  
+
         $('.file-upload-image').attr('src', e.target.result);
         $('.file-upload-content').show();
-  
+
         $('.image-title').html(input.files[0].name);
       };
-  
+
       reader.readAsDataURL(input.files[0]);
-  
+
     } else {
       removeUpload();
     }
   }
-  
+
   function removeUpload() {
     $('.file-upload-input').replaceWith($('.file-upload-input').clone());
     $('.file-upload-content').hide();
@@ -87,4 +87,3 @@ function readURL(input) {
       $('.image-upload-wrap').bind('dragleave', function () {
           $('.image-upload-wrap').removeClass('image-dropping');
   });
-  

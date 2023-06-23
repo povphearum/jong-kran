@@ -10,8 +10,8 @@ class Tag extends Model
     use HasFactory;
 
     protected $fillable=[
-        'name',
-        'display_name',
+        'tag_name',
+        'tag_display_name',
         'category_id',
     ];
 
@@ -19,7 +19,8 @@ class Tag extends Model
         return $this->belongsTo(Category::class);
 
     }
-    public function recipe(){
-        $this->hasMany('App\Models\Recipe');
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class, 'tag_recipes','recipe_id','tag_id');
     }
 }

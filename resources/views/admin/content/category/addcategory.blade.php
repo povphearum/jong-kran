@@ -39,10 +39,10 @@
                         <form action="{{route('storecate')}}" method="POST">
                             @csrf
                         <label for="Category_name">Category Name:</label>                        <br>
-                        <input class="form-control" type="text" id="Category_name" name="name" placeholder="Enter Category Name">
+                        <input class="form-control" type="text" id="Category_name" name="category_name" placeholder="Enter Category Name">
                         <br>
                         <label for="display_name">Display Name:</label>                        <br>
-                        <input class="form-control" type="text" id="display_name" name="display_name" placeholder="Enter Display Name">
+                        <input class="form-control" type="text" id="display_name" name="category_display_name" placeholder="Enter Display Name">
                         <br>
 
                             <div class="justify-content-end">

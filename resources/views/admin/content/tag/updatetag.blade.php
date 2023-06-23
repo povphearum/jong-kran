@@ -40,10 +40,10 @@
                             @csrf
                             <input type="hidden" value="{{$tag->id}}" name="id">
                             <label for="name">Tag Name:</label>                        <br>
-                            <input class="form-control" type="text" id="name" name="name" placeholder="{{$tag->name}}">
+                            <input class="form-control" type="text" id="name" name="tag_name" placeholder="{{$tag->tag_name}}">
                             <br>
                             <label for="display_name">Display Name:</label>                        <br>
-                            <input class="form-control" type="text" id="display_name" name="display_name" placeholder="{{$tag->display_name}}">
+                            <input class="form-control" type="text" id="display_name" name="tag_display_name" placeholder="{{$tag->tag_display_name}}">
                             <br>
 
                             <div class="justify-content-end">
