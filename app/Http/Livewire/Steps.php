@@ -21,7 +21,7 @@ class Steps extends Component
 
     public function removeStep($index){
         unset($this->steps[$index]);
-        array_values($this->steps);
+        $this->steps = array_values($this->steps);
     }
 
     public function render()

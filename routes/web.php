@@ -30,7 +30,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 route::get('/redirect', [HomeController::class, 'redirect']);
-route::get('/', [HomeController::class, 'Index']);
+route::get('/', [HomeController::class, 'Index'])->name('index-home');
 
 Route::controller(HomeController::class)->group(function () {
 

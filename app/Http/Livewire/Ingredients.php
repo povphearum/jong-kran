@@ -21,7 +21,7 @@ class Ingredients extends Component
 
     public function removeIngredient($index){
             unset($this->ingredients[$index]);
-            array_values($this->ingredients);
+        $this->ingredients = array_values($this->ingredients);
     }
 
     public function render()

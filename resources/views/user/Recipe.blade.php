@@ -15,34 +15,48 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="contact-form-area">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form action="{{route('storerecipe')}}" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col-12">
                                         <h5>Recipe Title</h5>
-                                        <input type="text" class="form-control" id="recipe_name" placeholder="Recipe Name">
+                                        <input type="text" class="form-control" id="recipe_name" name="recipe_name" placeholder="Recipe Name">
                                         <h5>Add imgae</h5>
-                                        <div class="file-upload col-12">
-                                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
-                                            <div class="image-upload-wrap">
-                                                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                                                <div class="drag-text">
-                                                    <h3>Drag and drop a file or select add Image</h3>
-                                                </div>
-                                            </div>
-                                            <div class="file-upload-content">
-                                                <img class="file-upload-image" src="#" alt="your image" />
-                                                <div class="image-title-wrap">
-                                                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <input type="file" id="image" name="image"/>
+
+{{--                                        <div class="file-upload col-12">--}}
+{{--                                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>--}}
+{{--                                            <div class="image-upload-wrap">--}}
+{{--                                                <input class="file-upload-input" name="image" type='file' onchange="readURL(this);" accept="image/*" />--}}
+{{--                                                <div class="drag-text">--}}
+{{--                                                    <h3>Drag and drop a file or select add Image</h3>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="file-upload-content">--}}
+{{--                                                <img class="file-upload-image" src="#" alt="your image" />--}}
+{{--                                                <div class="image-title-wrap">--}}
+{{--                                                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+
+                                            <input type="file" id="video" name="video">
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-12">
-                                        <h5>Discription</h5>
-                                        <textarea name="text" class="form-control" id="description" cols="30" rows="10" placeholder="discription"></textarea>
+                                        <h5>Description</h5>
+                                        <textarea name="recipe_description" class="form-control" id="description" cols="30" rows="10" placeholder="discription"></textarea>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -56,7 +70,7 @@
                                             </select>
                                         </div>
                                         </div>
-                    </div>
+                                </div>
                                 <hr>
                                 @livewire('ingredients')
 
@@ -66,11 +80,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <h5 class="mx-3">Servings</h5>
-                                        <input type="text" class="form-control" id="serving" placeholder="e.g 8">
-                                    </div>
-                                    <div class="col-6">
-                                        <h5 class="">Yield</h5>
-                                        <input type="text" class="form-control" id="serving" placeholder="e.g 1 9-inch cake">
+                                        <input name="serving" type="text" class="form-control" id="serving" placeholder="e.g 8">
                                     </div>
                                 </div>
                                 <hr>
@@ -79,26 +89,26 @@
                                         <p>Prep Time</p>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" class="form-control" id="pre_time" placeholder="0">
+                                        <input type="text" name="prep_time" class="form-control" id="pre_time" placeholder="0">
                                     </div>
                                     <div class="col-6">
-                                        <select name="prepTimeMHD" id="prepTimeMHD">
-                                            <option value="mins">mins</option>
-                                            <option value="hours">hours</option>
-                                            <option value="days">days</option>
+                                        <select class="form-select" name="prepMHD" id="prepMHD">
+                                            <option value="min">min</option>
+                                            <option value="hour">hour</option>
+                                            <option value="day">day</option>
                                         </select>
                                     </div>
                                     <div class="col-4">
                                         <p>Cock Time</p>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" class="form-control" id="pre_time" placeholder="0">
+                                        <input type="text" name="cook_time" class="form-control" id="pre_time" placeholder="0">
                                     </div>
                                     <div class="col-6">
-                                        <select name="prepTimeMHD" id="prepTimeMHD">
-                                            <option value="mins">mins</option>
-                                            <option value="hours">hours</option>
-                                            <option value="days">days</option>
+                                        <select class="form-select" name="cookMHD">
+                                            <option value="min">min</option>
+                                            <option value="hour">hour</option>
+                                            <option value="day">day</option>
                                         </select>
                                     </div>
                                 </div>
@@ -113,11 +123,9 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h5>Make this recipe public?</h5>
-                                        <input type="radio" name="yes">
+                                        <input type="radio" name="status">
                                         <label class="input-radio-circle-label-inner">Public Recipe</label><br>
-                                        <input class="mx-4" type="checkbox" name="" id="">
-                                        <label class="input-radio-circle-label-inner">Submit this recipe for publication?<a href="">Learn More</a></label><br>
-                                        <input type="radio" name="yes">
+                                        <input type="radio" name="status">
                                         <label class="input-radio-circle-label-inner">Personal Recipe</label><br>
                                     </div>
                                     <div class="col-6">
