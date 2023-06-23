@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="contact-form-area">
-                            <form action="#" method="post">
+                            <form action="{{route('storerecipe')}}" method="post">
                                 <div class="row">
                                     <div class="col-12">
                                         <h5>Recipe Title</h5>
@@ -49,41 +49,19 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <h5>Tag:</h5>
-                                            <select class=" form-control" name="state[]" multiple>
-                                                <option selected>Kebab</option>
-                                                <option>Pizza</option>
-                                                <option>Taco</option>
-                                                <option selected>Kofte</option>
-                                                <option selected>Burger</option>
-                                                <option>Chicken</option>
+                                            <select class="form-control select2" name="tags[]" id="tags" data-placeholder="Select Tags" style="width: 100%;" multiple>
+                                                    @foreach($tags as $id => $tag)
+                                                        <option value="{{ $id }}" {{ in_array($id, old('tags', [])) ? 'selected' : '' }}>{{ $tag->tag_display_name}}</option>
+                                                    @endforeach
                                             </select>
                                         </div>
                                         </div>
                     </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="col-12 addIngre">
-                                        <h5 class="mx-3">Ingredients</h5>
-                                        <input type="text" class="form-control" id="ingredients_1" placeholder="e.g 2 cups flour,sifted">
-                                        <input type="text" class="form-control" id="ingredients_2" placeholder="e.g 1 cup sugar">
-                                        <input type="text" class="form-control" id="ingredients_3" placeholder="e.g 2 tablespoons butter,softened ">
-                                    </div>
-                                    <div class="col-4 p-2">
-                                        <button type="button" class="btnIngre btn-lightGreen btn mt-30">+ ADD INGREDIENT</button>
-                                    </div>
-                                </div>
+                                @livewire('ingredients')
+
                                 <hr>
-                                <div class="row">
-                                    <div class="col-12 addStep">
-                                        <h5 class="mx-3">Step</h5>
-                                        <input type="text" class="form-control" id="ingredients_1" placeholder="e.g ...">
-                                        <input type="text" class="form-control" id="ingredients_2" placeholder="e.g ...">
-                                        <input type="text" class="form-control" id="ingredients_3" placeholder="e.g ...">
-                                    </div>
-                                    <div class="col-4 p-2">
-                                        <button type="button" class="btnStep btn btn-lightGreen  mt-30">+ ADD STEP</button>
-                                    </div>
-                                </div>
+                                @livewire('steps')
                                 <hr>
                                 <div class="row">
                                     <div class="col-6">
@@ -160,16 +138,22 @@
 
 @endsection
 @section('scripts')
+    <!-- Select2 -->
+    <script src="{{asset('Admin/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{asset('Admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <script src="{{asset('home/recipe.js')}}"></script>
     <script>
-        $(document).ready(function (){
-            $(".select-tag").select2({
-                tags: true
-            });
-        });
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+        })
 </script>
 
 @endsection

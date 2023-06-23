@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Recipe;
+use App\Models\Tag;
+use App\Models\TagRecipe;
+use Auth;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
@@ -14,31 +17,62 @@ class RecipeController extends Controller
 
     public function AddRecipe()
     {
-        return view('user.Recipe');
+        $tags = Tag::get();
+        return view('user.Recipe',compact('tags'));
     }
 
     public function StoreRecipe(Request $request){
-        $request->validate([
-            'name'=>'required|unique:recipes',
-            'category_id'=>'required',
-        'description'=>'required',
-        'serving'=>'required',
-        'prep_time'=>'required',
-        'cook_time'=>'required',
+        $user = Auth::id();
+
+        $validatedData = $request->validate([
+            'recipe_name' => 'required|unique:recipes',
+            'category_id' => 'required',
+            'description' => 'required',
+            'serving' => 'required',
+            'prep_time' => 'required',
+            'cook_time' => 'required',
             'video' => 'nullable|file|mimetypes:video/mp4,video/mpeg,video/quicktime,video/x-msvideo,video/x-flv|max:20480',
-                        'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'tags' => 'nullable|array',
+            'tags.*' => 'integer|exists:tags,id',
+            'ingredient_name' => 'required',
+            ]);
 
-
-        ]);
         $image = $request->file('image');
-        $image_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        $request->image->move(public_path('upload/images'),$image_name);
-        $img_url = 'upload/images'.$image_name;
+        $image_name = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('upload/images'), $image_name);
+        $img_url = 'upload/images/' . $image_name;
 
         $video = $request->file('video');
-        $video_name = hexdec(uniqid()).'.'.$video->getClientOriginalExtension();
-        $request->video->move(public_path('upload/videos'),$video_name);
-        $img_url = 'upload/videos'.$video_name;
+        if ($video) {
+            $video_name = hexdec(uniqid()) . '.' . $video->getClientOriginalExtension();
+            $video->move(public_path('upload/videos'), $video_name);
+            $mp4_url = 'upload/videos/' . $video_name;
+        } else {
+            $mp4_url = null;
+        }
+
+        $event_id = $request->event_id;
+        $country_id = $request->country_id;
+
+        $recipeData = [
+            'user_id' => $user,
+            'recipe_name' => $request->recipe_name,
+            'description' => $request->description,
+            'serving' => $request->serving,
+            'prep_time' => $request->prep_time,
+            'cook_time' => $request->cook_time,
+            'image' => $img_url,
+            'video' => $mp4_url,
+            'event_id' => $event_id,
+            'country_id' => $country_id,
+        ];
+
+        $recipe = Recipe::create($recipeData);
+
+        if (!empty($validatedData['tags'])) {
+            $recipe->tags()->attach($validatedData['tags']);
+        }
 
     }
     /**

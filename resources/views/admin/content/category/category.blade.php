@@ -50,8 +50,8 @@
                             @foreach($categories as $category)
                             <tr>
                                 <td>{{$category->id}}</td>
-                                <td>{{$category->name}}</td>
-                                <td>{{$category->display_name}}</td>
+                                <td>{{$category->category_name}}</td>
+                                <td>{{$category->category_display_name}}</td>
                                     <td>{{$category->tag_count}}</td>
                                     <td>{{$category->recipe_count}}</td>
                                     <td><a href="{{route('updatecate',$category->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>

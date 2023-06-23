@@ -40,10 +40,10 @@
                             @csrf
                             <input type="hidden" value="{{$category->id}}" name="id">
                             <label for="name">Category Name:</label>                        <br>
-                            <input class="form-control" type="text" id="name" name="name" placeholder="{{$category->name}}">
+                            <input class="form-control" type="text" id="name" name="category_name" placeholder="{{$category->category_name}}">
                             <br>
                             <label for="display_name">Display Name:</label>                        <br>
-                            <input class="form-control" type="text" id="display_name" name="display_name" placeholder="{{$category->display_name}}">
+                            <input class="form-control" type="text" id="display_name" name="category_display_name" placeholder="{{$category->category_display_name}}">
                             <br>
 
                             <div class="justify-content-end">

@@ -50,9 +50,9 @@
                             @foreach($tags as $tag)
                                 <tr>
                                     <td>{{$tag->id}}</td>
-                                    <td>{{$tag->name}}</td>
-                                    <td>{{$tag->display_name}}</td>
-                                    <td>{{$tag->category->name}}</td>
+                                    <td>{{$tag->tag_name}}</td>
+                                    <td>{{$tag->tag_display_name}}</td>
+                                    <td>{{$tag->category->category_name}}</td>
                                     <td>{{$tag->recipe_count}}</td>
                                     <td><a href="{{route('updatetag',$tag->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                         <a href="{{route('deletetag',$tag->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>

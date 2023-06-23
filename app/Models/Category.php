@@ -10,8 +10,8 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable=[
-        'name',
-        'display_name'
+        'category_name',
+        'category_display_name'
     ];
     public function tags(){
       return  $this->hasMany(Tag::class);

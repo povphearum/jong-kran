@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
-            $table->string('name');
-            $table->mediumText('description');
+            $table->string('recipe_name');
+            $table->mediumText('recipe_description');
             $table->integer('serving');
             $table->integer('prep_time');
             $table->integer('cook_time');
             $table->string('image')->nullable();
             $table->string('video')->nullable();
-            $table->string('status')->default('pending');
-            $table->foreignId('cate_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('status')->default('public');
             $table->foreignId('event_id')->constrained('events')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('country_id')->constrained('countries')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

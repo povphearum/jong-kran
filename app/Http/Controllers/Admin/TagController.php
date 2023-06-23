@@ -24,13 +24,13 @@ class TagController extends Controller
 
     public function StoreTag(Request $request){
         $request->validate([
-            'name'=>'required|unique:tags',
+            'tag_name'=>'required|unique:tags',
             'category_id'=>'required'
         ]);
             $category_id = $request->category_id;
         Tag::create([
-            'name'=>$request->name,
-            'display_name'=>$request->display_name,
+            'tag_name'=>$request->tag_name,
+            'tag_display_name'=>$request->tag_display_name,
             'category_id'=>$category_id,
         ]);
         Category::where('id', $category_id)->increment('tag_count',1);
@@ -48,12 +48,12 @@ class TagController extends Controller
         $tag_id = $request->id;
 
         $request->validate([
-            'name'=> 'required|unique:tags',
-            'display_name'=> 'required|unique:tags'
+            'tag_name'=> 'required|unique:tags',
+            'tag_display_name'=> 'required|unique:tags'
         ]);
         Tag::findOrFail($tag_id)->update([
-            'name' => $request->name,
-            'display_name' => $request->display_name,
+            'tag_name' => $request->tag_name,
+            'tag_display_name' => $request->tag_display_name,
         ]);
         return redirect()->route('tag')->with('message','Tag Updated Successfully!');
     }

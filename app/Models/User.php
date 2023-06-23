@@ -69,4 +69,8 @@ class User extends Authenticatable
     public function user_info(){
         return $this->hasOne('App\Models\UserInformation');
     }
+
+    public function user_recipe(){
+        return $this->hasMany('App\Models\Recipe');
+    }
 }

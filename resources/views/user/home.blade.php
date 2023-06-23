@@ -19,6 +19,8 @@
     <!-- User Stylesheet-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{asset('Admin/plugins/select2/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
     <style>
         html,
         body {
@@ -59,6 +61,7 @@
     </style>
     <link href="{{asset('home/dist/css/select2.min.css')}}" rel="stylesheet" />
     <script src="{{asset('home/dist/js/select2.min.js')}}"></script>
+    @livewireStyles
 </head>
 
 <body>
@@ -333,6 +336,7 @@
 {{--    }</script>--}}
 
 @yield('scripts')
+@livewireScripts
 </body>
 
 </html>

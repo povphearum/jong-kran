@@ -39,16 +39,16 @@
                         <form action="{{route('storetag')}}" method="POST">
                             @csrf
                             <label for="Tag_name">Tag Name:</label>                        <br>
-                            <input class="form-control" type="text" id="Tag_name" name="name" placeholder="Enter Tag Name">
+                            <input class="form-control" type="text" id="Tag_name" name="tag_name" placeholder="Enter Tag Name">
                             <br>
                             <label for="display_name">Display Name:</label>                        <br>
-                            <input class="form-control" type="text" id="display_name" name="display_name" placeholder="Enter Display Name">
+                            <input class="form-control" type="text" id="display_name" name="tag_display_name" placeholder="Enter Display Name">
                             <br>
                             <label id="Cateogy_name">Category</label>
                             <select class="form-control select2 select2-danger" name="category_id" id="category_id" data-dropdown-css-class="select2-danger" style="width: 100%;">
                                 @foreach($categories as $cate)
 
-                                    <option value="{{$cate->id}}" >{{$cate->name}}</option>
+                                    <option value="{{$cate->id}}" >{{$cate->category_name}}</option>
 
                                 @endforeach
                             </select>
