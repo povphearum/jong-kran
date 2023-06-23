@@ -26,27 +26,31 @@ class RecipeController extends Controller
 
         $validatedData = $request->validate([
             'recipe_name' => 'required|unique:recipes',
-            'category_id' => 'required',
-            'description' => 'required',
+            'recipe_description' => 'required',
             'serving' => 'required',
             'prep_time' => 'required',
             'cook_time' => 'required',
+            'cookMHD' => 'required',
+            'prepMHD' => 'required',
             'video' => 'nullable|file|mimetypes:video/mp4,video/mpeg,video/quicktime,video/x-msvideo,video/x-flv|max:20480',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tags' => 'nullable|array',
             'tags.*' => 'integer|exists:tags,id',
-            'ingredient_name' => 'required',
+//            'ingredients' => 'nullable|array',
+//            'ingredients.*' => 'string|exists:ingredients,id',
+//            'steps' => 'nullable|array',
+//            'steps.*' => 'string|exists:steps,id',
             ]);
 
         $image = $request->file('image');
-        $image_name = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('upload/images'), $image_name);
-        $img_url = 'upload/images/' . $image_name;
+        $image_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $request->image->move(public_path('upload/images'),$image_name);
+        $img_url = 'upload/images'.$image_name;
 
         $video = $request->file('video');
         if ($video) {
             $video_name = hexdec(uniqid()) . '.' . $video->getClientOriginalExtension();
-            $video->move(public_path('upload/videos'), $video_name);
+            $request->video->move(public_path('upload/videos'), $video_name);
             $mp4_url = 'upload/videos/' . $video_name;
         } else {
             $mp4_url = null;
@@ -58,12 +62,13 @@ class RecipeController extends Controller
         $recipeData = [
             'user_id' => $user,
             'recipe_name' => $request->recipe_name,
-            'description' => $request->description,
+            'recipe_description' => $request->description,
             'serving' => $request->serving,
             'prep_time' => $request->prep_time,
             'cook_time' => $request->cook_time,
             'image' => $img_url,
             'video' => $mp4_url,
+            'Note'=>$request->note,
             'event_id' => $event_id,
             'country_id' => $country_id,
         ];
@@ -73,6 +78,16 @@ class RecipeController extends Controller
         if (!empty($validatedData['tags'])) {
             $recipe->tags()->attach($validatedData['tags']);
         }
+
+        foreach ($request->ingredients as $ingredient) {
+            $recipe->ingredients()->attach(['ingredient_name'=>$ingredient['ingredient_name']]);
+        }
+
+        foreach ($request->steps as $step) {
+            $recipe->steps()->attach(['step'=>$step['step']]);
+        }
+
+        return redirect()->route('recipe')->with('message','recipe add successfully');
 
     }
     /**

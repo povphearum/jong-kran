@@ -29,6 +29,12 @@
 
                     <!-- /.card-header -->
                     <div class="card-body">
+                        @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{session()->get('message')}}
+                            </div>
+
+                        @endif
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>

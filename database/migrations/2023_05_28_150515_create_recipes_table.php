@@ -18,12 +18,15 @@ return new class extends Migration
             $table->mediumText('recipe_description');
             $table->integer('serving');
             $table->integer('prep_time');
+            $table->string('prepMHD');
             $table->integer('cook_time');
-            $table->string('image')->nullable();
+            $table->string('cookMHD');
+            $table->string('image');
             $table->string('video')->nullable();
+            $table->mediumText('Note')->nullable();
             $table->string('status')->default('public');
-            $table->foreignId('event_id')->constrained('events')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('country_id')->constrained('countries')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('event_id')->nullable()->constrained('events')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('country_id')->nullable()->constrained('countries')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
