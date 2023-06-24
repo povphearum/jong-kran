@@ -21,6 +21,6 @@ class Tag extends Model
     }
     public function recipes()
     {
-        return $this->belongsToMany(Recipe::class, 'tag_recipes','recipe_id','tag_id');
+        return $this->belongsToMany(Recipe::class, 'tag_recipes', 'tag_id', 'recipe_id');
     }
 }

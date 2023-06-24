@@ -30,7 +30,7 @@ class Recipe extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'tag_recipes','tag_id','recipe_id');
+        return $this->belongsToMany(Tag::class, 'tag_recipes','recipe_id','tag_id');
     }
 
     public function ingredients(){
