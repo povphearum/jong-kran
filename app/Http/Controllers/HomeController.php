@@ -45,9 +45,11 @@ class HomeController extends Controller
     {
         return view('user.contact');
     }
-    public function fullrecipe()
+    public function FullRecipe($id)
     {
-        return view('user.fullrecipe');
+        $recipe =Recipe::findOrFail($id);
+
+        return view('user.fullrecipe', compact('recipe'));
     }
     public function elements()
     {
