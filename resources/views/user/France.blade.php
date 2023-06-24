@@ -17,7 +17,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="img/bg-img/r1.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="{{route('fullrecipe')}}">
                                 <h5>Sushi Easy Receipy</h5>
                             </a>
                             <div class="ratings">
@@ -36,7 +36,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="img/bg-img/r2.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="{{route('fullrecipe')}}">
                                 <h5>Homemade Burger</h5>
                             </a>
                             <div class="ratings">
@@ -55,7 +55,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="img/bg-img/r3.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="{{route('fullrecipe')}}">
                                 <h5>Vegan Smoothie</h5>
                             </a>
                             <div class="ratings">
@@ -74,7 +74,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="img/bg-img/r4.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="{{route('fullrecipe')}}">
                                 <h5>Calabasa soup</h5>
                             </a>
                             <div class="ratings">
@@ -93,7 +93,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="img/bg-img/r5.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="{{route('fullrecipe')}}">
                                 <h5>Homemade Breakfast</h5>
                             </a>
                             <div class="ratings">
@@ -112,7 +112,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="img/bg-img/r6.jpg" alt="">
                         <div class="receipe-content">
-                            <a href="receipe-post.html">
+                            <a href="{{route('fullrecipe')}}">
                                 <h5>Healthy Fruit Desert</h5>
                             </a>
                             <div class="ratings">

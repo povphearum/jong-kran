@@ -92,6 +92,7 @@
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
                             </div>
+
                             <div class="receipe-duration">
                                 <h6>Prep: {{$recipe->prep_time}} {{$recipe->prepMHD}}</h6>
                                 <h6>Cook: {{$recipe->cook_time}} {{$recipe->cookMHD}}</h6>
@@ -100,7 +101,12 @@
                         </div>
                     </div>
                 </div>
-
+                {{-- new modify --}}
+                <div class="row">
+                    <div class="col-12 mx-4">
+                        <video controls src="uploads/videos/test.mp4" width="500"></video>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-12 col-lg-8">
