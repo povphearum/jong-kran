@@ -24,14 +24,15 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{route('storerecipe')}}" method="post">
+                            <form action="{{route('storerecipe')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <div class="container">
                                 <div class="row">
                                     <div class="col-12">
                                         <h5>Recipe Title</h5>
                                         <input type="text" class="form-control" id="recipe_name" name="recipe_name" placeholder="Recipe Name">
                                         <h5>Add imgae</h5>
-                                        <input type="file" id="image" name="image"/>
+                                        <input class="form-control" type="file" name="image"/>
 
 {{--                                        <div class="file-upload col-12">--}}
 {{--                                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>--}}
@@ -63,9 +64,9 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <h5>Tag:</h5>
-                                            <select class="form-control select2" name="tags[]" id="tags" data-placeholder="Select Tags" style="width: 100%;" multiple>
+                                            <select class="form-control select2" name="tags[]" id="tags" data-placeholder="Select Tags" style="width: 100%;" multiple="multiple">
                                                     @foreach($tags as $id => $tag)
-                                                        <option value="{{ $id }}" {{ in_array($id, old('tags', [])) ? 'selected' : '' }}>{{ $tag->tag_display_name}}</option>
+                                                        <option value="{{ $tag->id }}">{{ $tag->tag_display_name}}</option>
                                                     @endforeach
                                             </select>
                                         </div>
@@ -123,17 +124,18 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h5>Make this recipe public?</h5>
-                                        <input type="radio" name="status">
+                                        <input type="radio" name="status" value="public">
                                         <label class="input-radio-circle-label-inner">Public Recipe</label><br>
-                                        <input type="radio" name="status">
+                                        <input type="radio" name="status" value="private">
                                         <label class="input-radio-circle-label-inner">Personal Recipe</label><br>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-danger mt-30" type="submit">Cancel</button>
+                                        <button class="btn btn-danger mt-30" type="button" href="/">Cancel</button>
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-lightGreen mt-30" type="submit">Save</button>
                                     </div>
+                                </div>
                                 </div>
                             </form>
                         </div>
@@ -153,7 +155,8 @@
 
     <script src="{{asset('home/recipe.js')}}"></script>
     <script>
-        $(function () {
+
+        $(document).ready(function () {
             //Initialize Select2 Elements
             $('.select2').select2()
 

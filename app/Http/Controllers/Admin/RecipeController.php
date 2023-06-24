@@ -33,19 +33,15 @@ class RecipeController extends Controller
             'cookMHD' => 'required',
             'prepMHD' => 'required',
             'video' => 'nullable|file|mimetypes:video/mp4,video/mpeg,video/quicktime,video/x-msvideo,video/x-flv|max:20480',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'tags' => 'nullable|array',
-            'tags.*' => 'integer|exists:tags,id',
-//            'ingredients' => 'nullable|array',
-//            'ingredients.*' => 'string|exists:ingredients,id',
-//            'steps' => 'nullable|array',
-//            'steps.*' => 'string|exists:steps,id',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status'=>'required',
             ]);
 
+
         $image = $request->file('image');
-        $image_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $image_name = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
         $request->image->move(public_path('upload/images'),$image_name);
-        $img_url = 'upload/images'.$image_name;
+        $img_url = 'upload/images/' . $image_name;
 
         $video = $request->file('video');
         if ($video) {
@@ -62,30 +58,38 @@ class RecipeController extends Controller
         $recipeData = [
             'user_id' => $user,
             'recipe_name' => $request->recipe_name,
-            'recipe_description' => $request->description,
+            'recipe_description' => $request->recipe_description,
             'serving' => $request->serving,
             'prep_time' => $request->prep_time,
             'cook_time' => $request->cook_time,
+            'prepMHD'=>$request->prepMHD,
+            'cookMHD'=>$request->cookMHD,
             'image' => $img_url,
             'video' => $mp4_url,
-            'Note'=>$request->note,
+            'Note'=>$request->Note,
             'event_id' => $event_id,
             'country_id' => $country_id,
+            'status'=>$request->status,
         ];
 
         $recipe = Recipe::create($recipeData);
 
-        if (!empty($validatedData['tags'])) {
-            $recipe->tags()->attach($validatedData['tags']);
-        }
+        $recipe->tags()->attach($request->tags);
 
-        foreach ($request->ingredients as $ingredient) {
-            $recipe->ingredients()->attach(['ingredient_name'=>$ingredient['ingredient_name']]);
-        }
+//
+//        foreach ($request->ingredients as $ingredient) {
+//            $recipe->ingredients()->create([
+//                'ingredient_name' => $ingredient['ingredient_name'],
+//            ]);
+//        }
+//
+//        foreach ($request->steps as $step) {
+//            $recipe->steps()->create([
+//                'step' => $step['step'],
+//            ]);
+//        }
 
-        foreach ($request->steps as $step) {
-            $recipe->steps()->attach(['step'=>$step['step']]);
-        }
+
 
         return redirect()->route('recipe')->with('message','recipe add successfully');
 

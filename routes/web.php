@@ -68,7 +68,7 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
 
     Route::controller(RecipeController::class)->group(function (){
         Route::get('/add-recipe','AddRecipe')->name('addrecipe');
-        Route::post('/recipe/store-recipe','StoreRecipe')->name('storerecipe');
+        Route::post('/add-recipe/store-recipe','StoreRecipe')->name('storerecipe');
 
     });
 

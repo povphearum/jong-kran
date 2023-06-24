@@ -6,7 +6,7 @@
             <input type="text" class="form-control" name="ingredients[{{$index}}][ingredient_name]" placeholder="e.g 2 cups flour,sifted" wire:model="ingredients.{{$index}}.ingredient_name">
         </div>
         <div class="col-6 mt-3">
-            <a class="text-danger" href="" wire:click.prevent="removeIngredient({{$index}})">Delete</a>
+            <a class="text-danger" wire:click.prevent="removeIngredient({{$index}})">Delete</a>
         </div>
     @endforeach
 

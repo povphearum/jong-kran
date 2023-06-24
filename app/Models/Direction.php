@@ -12,4 +12,9 @@ class Direction extends Model
       'step'
     ];
     use HasFactory;
+
+    public function recipes()
+    {
+        return $this->belongsTo(Recipe::class);
+    }
 }

@@ -12,4 +12,9 @@ protected $fillable=[
     'ingredient_name',
 ];
     use HasFactory;
+
+    public function recipes()
+    {
+        return $this->belongsTo(Recipe::class);
+    }
 }
