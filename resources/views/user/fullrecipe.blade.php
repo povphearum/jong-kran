@@ -48,151 +48,143 @@
     </div>
     <!-- ##### Breadcumb Area End ##### -->
 
-    <div class="receipe-post-area section-padding-80">
+    <div class="container">
+        <div class="receipe-post-area section-padding-80">
 
-        <!-- Receipe Post Search -->
-        <div class="receipe-post-search mb-80">
-            <div class="container">
+            <!-- Receipe Post Search -->
+            <div class="receipe-post-search mb-80">
+                <div class="container">
+                </div>
             </div>
-        </div>
 
-        <!-- Receipe Slider -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="receipe-slider owl-carousel">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                        <img src="img/bg-img/bg5.jpg" alt="">
+            <!-- Receipe Slider -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="receipe-slider owl-carousel">
+                            <img src="img/bg-img/bg5.jpg" alt="">
+                            <img src="img/bg-img/bg5.jpg" alt="">
+                            <img src="img/bg-img/bg5.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Receipe Content Area -->
-        <div class="receipe-content-area">
-            <div class="container">
-                @php
-                    $date = $recipe->created_at;
-                    $date = Carbon\Carbon::parse($date);
-                    $elapsed = $date->diffForHumans();
-                @endphp
+            <!-- Receipe Content Area -->
+            <div class="receipe-content-area">
+                <div class="container">
+                    @php
+                        $date = $recipe->created_at;
+                        $date = Carbon\Carbon::parse($date);
+                        $elapsed = $date->diffForHumans();
+                    @endphp
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="receipe-headline my-3">
+                                <span>{{$elapsed}}</span>
+                                <h2>{{$recipe->recipe_name}}</h2>
+                                <div class="receipe-ratings">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
 
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="receipe-headline my-3">
-                            <span>{{$elapsed}}</span>
-                            <h2>{{$recipe->recipe_name}}</h2>
-                            <div class="receipe-ratings">
-                                <div class="ratings">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <div class="receipe-duration">
+                                    <h6>Prep: {{$recipe->prep_time}} {{$recipe->prepMHD}}</h6>
+                                    <h6>Cook: {{$recipe->cook_time}} {{$recipe->cookMHD}}</h6>
+                                    <h6>Yields: {{$recipe->serving}} Servings</h6>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    {{-- new modify --}}
+                    <div class="row">
+                        <div class="col-12 mx-4">
+                            <video controls src="uploads/videos/test.mp4" width="500"></video>
+                        </div>
+                    </div>
 
-                            <div class="receipe-duration">
-                                <h6>Prep: {{$recipe->prep_time}} {{$recipe->prepMHD}}</h6>
-                                <h6>Cook: {{$recipe->cook_time}} {{$recipe->cookMHD}}</h6>
-                                <h6>Yields: {{$recipe->serving}} Servings</h6>
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <!-- Single Preparation Step -->
+                            <div class="single-preparation-step d-flex">
+                                <h4>01.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                            </div>
+                            <!-- Single Preparation Step -->
+                            <div class="single-preparation-step d-flex">
+                                <h4>02.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                            </div>
+                            <!-- Single Preparation Step -->
+                            <div class="single-preparation-step d-flex">
+                                <h4>03.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                            </div>
+                            <!-- Single Preparation Step -->
+                            <div class="single-preparation-step d-flex">
+                                <h4>04.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                            </div>
+                        </div>
+
+                        <!-- Ingredients -->
+                        <div class="col-12 col-lg-4">
+                            <div class="ingredients">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="section-heading text-left">
+                                    <h3>Write a Review:</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                {{-- new modify --}}
-                <div class="row">
-                    <div class="col-12 mx-4">
-                        <video controls src="uploads/videos/test.mp4" width="500"></video>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-lg-8">
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>01.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>02.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>03.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>04.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                    </div>
-
-                    <!-- Ingredients -->
-                    <div class="col-12 col-lg-4">
-                        <div class="ingredients">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-heading text-left">
-                            <h3>Write a Review:</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="contact-form-area">
-                            @if(Route::has('login'))
-                                @auth
-                                    <form action="{{route('store-review')}}" method="POST">
-                                        @csrf
-                                        <input type="hidden" value="{{$recipe->id}}" name="recipe_id">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <p class="float-right">{{Auth::user()->name}}</p>
-                                            </div>
-                                            <div class="col-4 col-lg-12">
-                                                <div class="float-left">
-                                                    <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle elevation-2"
-                                                         alt="{{ Auth::user()->name }}">
-                                                </div>
-                                                <div class="float-right">
-                                                    <input type="text" name="prep_time" class="form-control" id="pre_time" placeholder="0">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 rating">
-                                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                                            </div>
-
-                                            <div class="col-12 ">
-                                                <button class="btn delicious-btn mt-30 mb-30" type="submit">Post Comments</button>
+                    <div class="container">
+                        @if(Route::has('login'))
+                            @auth
+                                <form action="{{route('store-review')}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" value="{{$recipe->id}}" name="recipe_id">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="float-right">{{Auth::user()->name}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle elevation-2" alt="{{ Auth::user()->name }}">
+                                            <p>{{Auth::user()->email}}</p>
+                                        </div>
+                                        <div class="col-11">
+                                            <textarea class="form-control" cols="40"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="ms-0">
+                                            <div class="rating">
+                                                <input type="radio" name="rating" value="5" id="5"><label for="5" style="font-size:35px">☆</label>
+                                                <input type="radio" name="rating" value="4" id="4"><label for="4" style="font-size:35px">☆</label>
+                                                <input type="radio" name="rating" value="3" id="3"><label for="3" style="font-size:35px">☆</label>
+                                                <input type="radio" name="rating" value="2" id="2"><label for="2" style="font-size:35px">☆</label>
+                                                <input type="radio" name="rating" value="1" id="1"><label for="1" style="font-size:35px">☆</label>
                                             </div>
                                         </div>
-
-                                    </form>
-                                @else
-                                    <a href="{{route('login')}}" class="btn delicious-btn btn-4 m-1">Login</a>
-                                    @if(Route::has('register'))
-
-                                    @endif
-
-                                @endauth
-
+                                    </div>
+                                    <button class="btn delicious-btn mt-30 mb-30" type="submit">Post Comments</button>
+                                </form>
+                            @else
+                                <a href="{{route('login')}}" class="btn delicious-btn btn-4 m-1">Login</a>
+                                @if(Route::has('register'))
                                 @endif
-
-                        </div>
+                            @endauth
+                        @endif
                     </div>
                 </div>
             </div>
