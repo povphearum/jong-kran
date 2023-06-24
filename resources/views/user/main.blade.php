@@ -12,7 +12,7 @@
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <h2 data-animation="fadeInUp" data-delay="300ms">Asean cuisine</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Asian food incorporates a few significant provincial cooking styles: Central Asian, East Asian, North Asian, South Asian, Southeast Asian, and West Asian.</p>
-                                <a href="{{route('fullrecipe')}}" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                                <a href="/" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <h2 data-animation="fadeInUp" data-delay="300ms">European cuisine</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">The cuisines of Western countries are diverse, although there are common characteristics that distinguish them from those of other regions.</p>
-                                <a href="{{route('fullrecipe')}}" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                                <a href="/" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <h2 data-animation="fadeInUp" data-delay="300ms">North Africa</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">African cuisine is a staple of the continent's culture, and its history is enwined with the story of the people of Africa. The foods that Africans eat have been influenced by their religions, as well as by their climates and lifestyles.</p>
-                                <a href="{{route('fullrecipe')}}" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                                <a href="/" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="top-cta-content">
                             <h3>Strawberry Cake</h3>
                             <h6>Simple &amp; Delicios</h6>
-                            <a href="{{route('fullrecipe')}}" class="btn delicious-btn">See Full Receipe</a>
+                            <a href="/" class="btn delicious-btn">See Full Receipe</a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         <div class="top-cta-content">
                             <h3>Strawberry Cake</h3>
                             <h6>Simple &amp; Delicios</h6>
-                            <a href="{{route('fullrecipe')}}" class="btn delicious-btn">See Full Receipe</a>
+                            <a href="/" class="btn delicious-btn">See Full Receipe</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="{{$recipe->image}}" alt="food_img">
                         <div class="receipe-content">
-                            <a href="{{route('fullrecipe',[$recipe->id,$recipe->recipe_name])}}">
+                            <a href="{{route('full-recipe',[$recipe->id,$recipe->recipe_name])}}">
                                 <h5>{{$recipe->recipe_name}}</h5>
                             </a>
                             <div class="ratings">
@@ -118,100 +118,100 @@
                 </div>
                 @endforeach
 
-                <!-- Single Best Receipe Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-best-receipe-area mb-30">
-                        <img src="img/bg-img/r2.jpg" alt="">
-                        <div class="receipe-content">
-                            <a href="{{route('fullrecipe')}}">
-                                <h5>Homemade Burger</h5>
-                            </a>
-                            <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Best Receipe Area -->--}}
+{{--                <div class="col-12 col-sm-6 col-lg-4">--}}
+{{--                    <div class="single-best-receipe-area mb-30">--}}
+{{--                        <img src="img/bg-img/r2.jpg" alt="">--}}
+{{--                        <div class="receipe-content">--}}
+{{--                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                <h5>Homemade Burger</h5>--}}
+{{--                            </a>--}}
+{{--                            <div class="ratings">--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Best Receipe Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-best-receipe-area mb-30">
-                        <img src="img/bg-img/r3.jpg" alt="">
-                        <div class="receipe-content">
-                            <a href="{{route('fullrecipe')}}">
-                                <h5>Vegan Smoothie</h5>
-                            </a>
-                            <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Best Receipe Area -->--}}
+{{--                <div class="col-12 col-sm-6 col-lg-4">--}}
+{{--                    <div class="single-best-receipe-area mb-30">--}}
+{{--                        <img src="img/bg-img/r3.jpg" alt="">--}}
+{{--                        <div class="receipe-content">--}}
+{{--                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                <h5>Vegan Smoothie</h5>--}}
+{{--                            </a>--}}
+{{--                            <div class="ratings">--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Best Receipe Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-best-receipe-area mb-30">
-                        <img src="img/bg-img/r4.jpg" alt="">
-                        <div class="receipe-content">
-                            <a href="{{route('fullrecipe')}}}">
-                                <h5>Calabasa soup</h5>
-                            </a>
-                            <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Best Receipe Area -->--}}
+{{--                <div class="col-12 col-sm-6 col-lg-4">--}}
+{{--                    <div class="single-best-receipe-area mb-30">--}}
+{{--                        <img src="img/bg-img/r4.jpg" alt="">--}}
+{{--                        <div class="receipe-content">--}}
+{{--                            <a href="{{route('fullrecipe')}}}">--}}
+{{--                                <h5>Calabasa soup</h5>--}}
+{{--                            </a>--}}
+{{--                            <div class="ratings">--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Best Receipe Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-best-receipe-area mb-30">
-                        <img src="img/bg-img/r5.jpg" alt="">
-                        <div class="receipe-content">
-                            <a href="{{route('fullrecipe')}}">
-                                <h5>Homemade Breakfast</h5>
-                            </a>
-                            <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Best Receipe Area -->--}}
+{{--                <div class="col-12 col-sm-6 col-lg-4">--}}
+{{--                    <div class="single-best-receipe-area mb-30">--}}
+{{--                        <img src="img/bg-img/r5.jpg" alt="">--}}
+{{--                        <div class="receipe-content">--}}
+{{--                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                <h5>Homemade Breakfast</h5>--}}
+{{--                            </a>--}}
+{{--                            <div class="ratings">--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Best Receipe Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-best-receipe-area mb-30">
-                        <img src="img/bg-img/r6.jpg" alt="">
-                        <div class="receipe-content">
-                            <a href="{{route('fullrecipe')}}">
-                                <h5>Healthy Fruit Desert</h5>
-                            </a>
-                            <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Best Receipe Area -->--}}
+{{--                <div class="col-12 col-sm-6 col-lg-4">--}}
+{{--                    <div class="single-best-receipe-area mb-30">--}}
+{{--                        <img src="img/bg-img/r6.jpg" alt="">--}}
+{{--                        <div class="receipe-content">--}}
+{{--                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                <h5>Healthy Fruit Desert</h5>--}}
+{{--                            </a>--}}
+{{--                            <div class="ratings">--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -226,7 +226,7 @@
                     <div class="cta-content text-center">
                         <h2>Gluten Free Receipies</h2>
                         <p>Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sed accumsan neque. Ut vulputate, lectus vel aliquam congue, risus leo elementum nibh</p>
-                        <a href="{{route('fullrecipe')}}" class="btn delicious-btn">Discover all the receipies</a>
+                        <a href="/" class="btn delicious-btn">Discover all the receipies</a>
                     </div>
                 </div>
             </div>

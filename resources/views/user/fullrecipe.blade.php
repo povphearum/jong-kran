@@ -1,7 +1,41 @@
 @extends('user.home')
+@section('stylecss')
+    <style>
+    .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    }
+
+    .rating > input{ display:none;}
+
+    .rating > label {
+    position: relative;
+    width: 1em;
+    font-size: 6vw;
+    color: #FFD600;
+    cursor: pointer;
+    }
+    .rating > label::before{
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+    }
+    .rating > label:hover:before,
+    .rating > label:hover ~ label:before {
+    opacity: 1 !important;
+    }
+
+    .rating > input:checked ~ label:before{
+    opacity:1;
+    }
+
+    .rating:hover > input:checked ~ label:before{ opacity: 0.4; }
+</style>
+@endsection
 @section('main-content')
     <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url({{asset('img/bg-img/breadcumb3.jpg')}});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -38,12 +72,17 @@
         <!-- Receipe Content Area -->
         <div class="receipe-content-area">
             <div class="container">
+                @php
+                    $date = $recipe->created_at;
+                    $date = Carbon\Carbon::parse($date);
+                    $elapsed = $date->diffForHumans();
+                @endphp
 
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="receipe-headline my-3">
-                            <span>April 05, 2018</span>
-                            <h2>Vegetarian cheese salad</h2>
+                            <span>{{$elapsed}}</span>
+                            <h2>{{$recipe->recipe_name}}</h2>
                             <div class="receipe-ratings">
                                 <div class="ratings">
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -53,10 +92,11 @@
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
                             </div>
-                            <div class="receipe-duration col-6​​">
-                                <h6>Prep: 15 mins</h6>
-                                <h6>Cook: 30 mins</h6>
-                                <h6>Yields: 8 Servings</h6>
+
+                            <div class="receipe-duration">
+                                <h6>Prep: {{$recipe->prep_time}} {{$recipe->prepMHD}}</h6>
+                                <h6>Cook: {{$recipe->cook_time}} {{$recipe->cookMHD}}</h6>
+                                <h6>Yields: {{$recipe->serving}} Servings</h6>
                             </div>
                         </div>
                     </div>
@@ -101,7 +141,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-heading text-left">
-                            <h3>Leave a comment</h3>
+                            <h3>Write a Review:</h3>
                         </div>
                     </div>
                 </div>
@@ -109,25 +149,49 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="contact-form-area">
-                            <form action="#" method="post">
-                                <div class="row">
-                                    <div class="col-12 col-lg-6">
-                                        <input type="text" class="form-control" id="name" placeholder="Name">
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
-                                    </div>
-                                    <div class="col-12">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                    </div>
-                                    <div class="col-12 ">
-                                        <button class="btn delicious-btn mt-30 mb-30" type="submit">Post Comments</button>
-                                    </div>
-                                </div>
-                            </form>
+                            @if(Route::has('login'))
+                                @auth
+                                    <form action="{{route('store-review')}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" value="{{$recipe->id}}" name="recipe_id">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-6">
+                                                <div class="image">
+                                                    <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle elevation-2"
+                                                         alt="{{ Auth::user()->name }}">
+
+                                                </div>
+                                                <div >
+                                                <a>{{Auth::user()->name}}</a>
+                                                <p>{{Auth::user()->email}}</p>
+                                                    </div>
+                                            </div>
+                                            <div class="col-12 rating">
+                                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea name="comment" class="form-control" id="comment" cols="30" rows="10" placeholder="write something"></textarea>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <button class="btn delicious-btn mt-30 mb-30" type="submit">Post Comments</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                @else
+                                    <a href="{{route('login')}}" class="btn delicious-btn btn-4 m-1">Login</a>
+                                    @if(Route::has('register'))
+
+                                    @endif
+
+                                @endauth
+
+                                @endif
+
                         </div>
                     </div>
                 </div>

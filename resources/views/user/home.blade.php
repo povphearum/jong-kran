@@ -12,7 +12,7 @@
     <title>Jong-Kran</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{asset('style.css')}}">
@@ -61,6 +61,7 @@
     </style>
     <link href="{{asset('home/dist/css/select2.min.css')}}" rel="stylesheet" />
     <script src="{{asset('home/dist/js/select2.min.js')}}"></script>
+    @yield('stylecss');
     @livewireStyles
 </head>
 
@@ -68,7 +69,7 @@
 <!-- Preloader -->
 <div id="preloader">
     <i class="circle-preloader"></i>
-    <img src="img/core-img/salad.png" alt="">
+    <img src="{{asset('img/core-img/salad.png')}}" alt="">
 </div>
 
 <!-- Search Wrapper -->
@@ -129,7 +130,7 @@
                 <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="{{ url('/') }}"><img height="180" width="180" src="img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="{{ url('/') }}"><img height="180" width="180" src="{{asset('img/core-img/logo.png')}}" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -265,7 +266,7 @@
                 </div>
                 <!-- Footer Logo -->
                 <div class="footer-logo">
-                    <a href="{{ url('/') }}"><img height="120" width="120" src="img/core-img/logo.png" alt=""></a>
+                    <a href="{{ url('/') }}"><img height="120" width="120" src="{{asset('img/core-img/logo.png')}}" alt=""></a>
                 </div>
                 <!-- Copywrite -->
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

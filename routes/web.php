@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,7 @@ Route::controller(HomeController::class)->group(function () {
     route::get('/about',[HomeController::class,'about']);
     route::get('/blog',[HomeController::class,'blog']);
     route::get('/contact',[HomeController::class,'contact']);
-    route::get('/fullrecipe',[HomeController::class,'fullrecipe'])->name('fullrecipe');
+    route::get('/full-recipe/{id}/{recipe_name}','FullRecipe')->name('full-recipe');
     route::get('/elements',[HomeController::class,'elements']);
 
     route::get('/england',[HomeController::class,'england'])->name('england');
@@ -69,8 +70,9 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
     Route::controller(RecipeController::class)->group(function (){
         Route::get('/add-recipe','AddRecipe')->name('addrecipe');
         Route::post('/add-recipe/store-recipe','StoreRecipe')->name('storerecipe');
-
+        Route::post('full-recipe/store-review','StoreReview')->name('store-review');
     });
+
 
 });
 
