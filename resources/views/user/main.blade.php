@@ -101,9 +101,9 @@
                 @foreach($recipes as $recipe)
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="{{$recipe->image}}" alt="">
+                        <img src="{{$recipe->image}}" alt="food_img">
                         <div class="receipe-content">
-                            <a href="{{route('fullrecipe')}}">
+                            <a href="{{route('fullrecipe',[$recipe->id,$recipe->recipe_name])}}">
                                 <h5>{{$recipe->recipe_name}}</h5>
                             </a>
                             <div class="ratings">

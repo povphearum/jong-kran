@@ -19,7 +19,8 @@ class HomeController extends Controller
             return view('admin.content.main');
         }
         elseif ($user->hasRole('user')){
-            return view('user.main');
+            $recipes = Recipe::get();
+            return view('user.main',compact('recipes'));
         }
         else{
             return view('admin.content.main');
