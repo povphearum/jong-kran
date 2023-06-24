@@ -28,7 +28,7 @@
             height: 100%;
         }
 
-        body {
+        body{
             background: #eee;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
@@ -150,7 +150,7 @@
                                 <li class="active"><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('/') }}">Home</a></li>
+                                        <li><a href="{{ url('/')}}">Home</a></li>
                                         <li><a href="{{ url('/about') }}">About Us</a></li>
                                         <li><a href="{{ url('/blog') }}">Blog Post</a></li>
                                         <li><a href="{{ url('/fullrecipe') }}">Receipe Post</a></li>
@@ -228,10 +228,7 @@
 
 
                                         @endauth
-
                                 @endif
-
-
                                 </li>
 
 

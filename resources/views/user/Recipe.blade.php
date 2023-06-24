@@ -33,7 +33,6 @@
                                         <input type="text" class="form-control" id="recipe_name" name="recipe_name" placeholder="Recipe Name">
                                         <h5>Add imgae</h5>
                                         <input class="form-control" type="file" name="image"/>
-
 {{--                                        <div class="file-upload col-12">--}}
 {{--                                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>--}}
 {{--                                            <div class="image-upload-wrap">--}}
