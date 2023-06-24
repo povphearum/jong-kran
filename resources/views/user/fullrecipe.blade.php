@@ -155,17 +155,19 @@
                                         @csrf
                                         <input type="hidden" value="{{$recipe->id}}" name="recipe_id">
                                         <div class="row">
-                                            <div class="col-12 col-lg-6">
-                                                <div class="image">
+                                            <div class="col-12">
+                                                <p class="float-right">{{Auth::user()->name}}</p>
+                                            </div>
+                                            <div class="col-4 col-lg-12">
+                                                <div class="float-left">
                                                     <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle elevation-2"
                                                          alt="{{ Auth::user()->name }}">
-
                                                 </div>
-                                                <div >
-                                                <a>{{Auth::user()->name}}</a>
-                                                <p>{{Auth::user()->email}}</p>
-                                                    </div>
+                                                <div class="float-right">
+                                                    <input type="text" name="prep_time" class="form-control" id="pre_time" placeholder="0">
+                                                </div>
                                             </div>
+
                                             <div class="col-12 rating">
                                                 <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
                                                 <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
@@ -173,9 +175,7 @@
                                                 <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
                                                 <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                                             </div>
-                                            <div class="col-12">
-                                                <textarea name="comment" class="form-control" id="comment" cols="30" rows="10" placeholder="write something"></textarea>
-                                            </div>
+
                                             <div class="col-12 ">
                                                 <button class="btn delicious-btn mt-30 mb-30" type="submit">Post Comments</button>
                                             </div>

@@ -40,6 +40,7 @@ Route::controller(HomeController::class)->group(function () {
     route::get('/about',[HomeController::class,'about']);
     route::get('/blog',[HomeController::class,'blog']);
     route::get('/contact',[HomeController::class,'contact']);
+
     route::get('/full-recipe/{id}/{recipe_name}','FullRecipe')->name('full-recipe');
     route::get('/elements',[HomeController::class,'elements']);
 

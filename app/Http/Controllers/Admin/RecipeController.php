@@ -35,7 +35,7 @@ class RecipeController extends Controller
             'video' => 'nullable|file|mimetypes:video/mp4,video/mpeg,video/quicktime,video/x-msvideo,video/x-flv|max:20480',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status'=>'required',
-            ]);
+        ]);
 
 
         $image = $request->file('image');
