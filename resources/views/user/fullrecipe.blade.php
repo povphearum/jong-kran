@@ -102,11 +102,14 @@
                         </div>
                     </div>
                     {{-- new modify --}}
+
+                    @if($recipe->video)
                     <div class="row">
                         <div class="col-12 mx-4">
-                            <video controls src="uploads/videos/test.mp4" width="500"></video>
+                            <video controls src="{{asset($recipe->video)}}" width="500"></video>
                         </div>
                     </div>
+                    @endif
 
                     <div class="row">
                         <div class="col-12 col-lg-8">
@@ -131,6 +134,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
                             </div>
                         </div>
+                    </div>
 
                         <!-- Ingredients -->
                         <div class="col-12 col-lg-4">
@@ -146,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
+                    <div class="container bg-white">
                         @if(Route::has('login'))
                             @auth
                                 <form action="{{route('store-review')}}" method="POST">
@@ -168,6 +172,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="ms-0">
+                                            <p class="ml-2">Rating: </p>
                                             <div class="rating">
                                                 <input type="radio" name="rating" value="5" id="5"><label for="5" style="font-size:35px">☆</label>
                                                 <input type="radio" name="rating" value="4" id="4"><label for="4" style="font-size:35px">☆</label>
@@ -186,6 +191,53 @@
                             @endauth
                         @endif
                     </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            @foreach($comments as $comment)
+                                <a>{{ $comment->user_review->name }}</a>
+                                <div class="receipe-ratings">
+                                    <div class="ratings">
+                                        @if($comment->rating==5)
+
+
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        @elseif($comment->rating>=4)
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        @elseif($comment->rating>=3)
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        @elseif($comment->rating>=2)
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        @elseif($comment->rating>=1)
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
