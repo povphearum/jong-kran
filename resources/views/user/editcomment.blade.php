@@ -34,132 +34,90 @@
     </style>
 @endsection
 @section('main-content')
-    <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url({{asset('img/bg-img/breadcumb3.jpg')}});">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcumb-text text-center">
-                        <h2>Recipe</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Breadcumb Area End ##### -->
-
-    <div class="container">
-        <div class="receipe-post-area section-padding-80">
-
-            <!-- Receipe Post Search -->
-            <div class="receipe-post-search mb-80">
-                <div class="container">
-                </div>
-            </div>
-
-            <!-- Receipe Slider -->
+    <link rel="stylesheet" href="{{asset('home/recipe.css')}}">
+    <div class="receipe-post-area section-padding-80">
+        <div class="receipe-content-area">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="receipe-slider owl-carousel">
-                            <img src="img/bg-img/bg5.jpg" alt="">
-                            <img src="img/bg-img/bg5.jpg" alt="">
-                            <img src="img/bg-img/bg5.jpg" alt="">
+                        <div class="section-heading text-left">
+                            <h3>Edit Review</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="contact-form-area">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form action="{{route('storerecipe')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="container">
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5>Comment</h5>
+                                            <input type="text" class="form-control" id="recipe_name" name="recipe_name" placeholder="Comment">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <h5 class="float-left mt-2">Rating</h5>
+                                            <div class="rating float-right">
+                                                <input type="radio" name="rating" value="5" id="5"><label for="5" style="font-size:30px">☆</label>
+                                                <input type="radio" name="rating" value="4" id="4"><label for="4" style="font-size:30px">☆</label>
+                                                <input type="radio" name="rating" value="3" id="3"><label for="3" style="font-size:30px">☆</label>
+                                                <input type="radio" name="rating" value="2" id="2"><label for="2" style="font-size:30px">☆</label>
+                                                <input type="radio" name="rating" value="1" id="1"><label for="1" style="font-size:30px">☆</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button class="btn btn-danger mt-30" type="button" href="/">Cancel</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-lightGreen mt-30" type="submit">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Receipe Content Area -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <form>
-                            <input type="text" name="comment" id="comment" placeholder="Comment">
-                        </form>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    </div>
 
-    <!-- ##### Follow Us Instagram Area Start ##### -->
-    <div class="follow-us-instagram">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 ">
-                    <h5>Follow Us Instragram</h5>
-                </div>
-            </div>
-        </div>
-        <!-- Instagram Feeds -->
-        <div class="insta-feeds d-flex flex-wrap">
-            <!-- Single Insta Feeds -->
-            <div class="single-insta-feeds">
-                <img src="img/bg-img/insta1.jpg" alt="">
-                <!-- Icon -->
-                <div class="insta-icon">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
 
-            <!-- Single Insta Feeds -->
-            <div class="single-insta-feeds">
-                <img src="img/bg-img/insta2.jpg" alt="">
-                <!-- Icon -->
-                <div class="insta-icon">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <!-- Single Insta Feeds -->
-            <div class="single-insta-feeds">
-                <img src="img/bg-img/insta3.jpg" alt="">
-                <!-- Icon -->
-                <div class="insta-icon">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <!-- Single Insta Feeds -->
-            <div class="single-insta-feeds">
-                <img src="img/bg-img/insta4.jpg" alt="">
-                <!-- Icon -->
-                <div class="insta-icon">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <!-- Single Insta Feeds -->
-            <div class="single-insta-feeds">
-                <img src="img/bg-img/insta5.jpg" alt="">
-                <!-- Icon -->
-                <div class="insta-icon">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <!-- Single Insta Feeds -->
-            <div class="single-insta-feeds">
-                <img src="img/bg-img/insta6.jpg" alt="">
-                <!-- Icon -->
-                <div class="insta-icon">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <!-- Single Insta Feeds -->
-            <div class="single-insta-feeds">
-                <img src="img/bg-img/insta7.jpg" alt="">
-                <!-- Icon -->
-                <div class="insta-icon">
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- ##### Follow Us Instagram Area End ##### -->
 @endsection
+@section('scripts')
+    <!-- Select2 -->
+    <script src="{{asset('Admin/plugins/select2/js/select2.full.min.js')}}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{asset('Admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
+    <script src="{{asset('home/recipe.js')}}"></script>
+    <script>
+
+        $(document).ready(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+        })
+    </script>
+
+@endsection
