@@ -71,6 +71,7 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
         Route::post('update-review','UpdateReview')->name('update-review');
         Route::get('remove-review/{id}','RemoveReview')->name('remove-review');
         Route::post('store-feedback','StoreFeedback')->name('store-feedback');
+        Route::post('store-question','StoreQuestion')->name('store-question');
 
     });
     Route::controller(ClientController::class)->group(function (){
