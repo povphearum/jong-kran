@@ -92,8 +92,8 @@
                                         <i class="fa fa-star-o" aria-hidden="true"></i>
                                     </div>
                                 </div>
-
-                                <div class="receipe-duration">
+                                <button type="button" class="btn btn-primary">Save To Collection</button>
+                                <div class="receipe-duration mt-5">
                                     <h6>Prep: {{$recipe->prep_time}} {{$recipe->prepMHD}}</h6>
                                     <h6>Cook: {{$recipe->cook_time}} {{$recipe->cookMHD}}</h6>
                                     <h6>Yields: {{$recipe->serving}} Servings</h6>
