@@ -297,29 +297,75 @@
                                 </div>
                                 <!--More Recipe -->
                                 <div class="tab-pane" id="recipe">
-                                    <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="col-12 col-sm-6 col-lg-4 mb-3">
                                         <div class="single-best-receipe-area mb-30">
-                                            <img src="img/bg-img/r1.jpg" alt="">
-                                            <div class="receipe-content">
-                                                <a href="/">
-                                                    <h5>Sushi Easy Receipy</h5>
-                                                </a>
-                                                <div class="ratings">
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <div class="row">
+                                                <div class="mt-4 col-6 float-left">
+                                                    <img src="{{asset('upload/images/image1.jpg')}}" width="100%" alt="">
+                                                </div>
+                                                <div class="receipe-content col-6 float-right">
+                                                    <a href="/">
+                                                        <h5>Hello</h5>
+                                                    </a>
+                                                    <div class="ratings">
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <ul>
+                                                            <li><a href="" class="text-danger">Delete</a></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="border border-bottom border-black"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                        <div class="single-best-receipe-area mb-30">
+                                            <div class="row">
+                                                <div class="mt-4 col-6 float-left">
+                                                    <img src="{{asset('upload/images/image1.jpg')}}" width="100%" alt="">
+                                                </div>
+                                                <div class="receipe-content col-6 float-right">
+                                                    <a href="/">
+                                                        <h5>Hello</h5>
+                                                    </a>
+                                                    <div class="ratings">
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <ul>
+                                                            <li><a href="" class="text-danger">Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="border border-bottom border-black"></div>
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <!-- More Collections -->
                                 <div class="tab-pane" id="collection">
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="single-best-receipe-area mb-30">
-                                            <img src="img/bg-img/r4.jpg" alt="">
+                                            <img src="" alt="">
                                             <div class="receipe-content">
                                                 <a href="/">
                                                     <h5>Sushi Easy Receipy</h5>
