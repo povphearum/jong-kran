@@ -70,6 +70,7 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
         Route::get('edit-review/{id}','EditReview')->name('edit-review');
         Route::post('update-review','UpdateReview')->name('update-review');
         Route::get('remove-review/{id}','RemoveReview')->name('remove-review');
+        Route::post('store-feedback','StoreFeedback')->name('store-feedback');
 
     });
     Route::controller(ClientController::class)->group(function (){
