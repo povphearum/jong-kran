@@ -66,12 +66,13 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
 
         route::get('/out',[HomeController::class,'out'])->name('out');
         route::get('/info',[HomeController::class,'Info'])->name('info');
+        Route::post('full-recipe/store-review','StoreReview')->name('store-review');
+
     });
 
     Route::controller(RecipeController::class)->group(function (){
         Route::get('/add-recipe','AddRecipe')->name('addrecipe');
         Route::post('/add-recipe/store-recipe','StoreRecipe')->name('storerecipe');
-        Route::post('full-recipe/store-review','StoreReview')->name('store-review');
     });
 
 

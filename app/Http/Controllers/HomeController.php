@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Recipe;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -51,6 +52,18 @@ class HomeController extends Controller
 
         return view('user.fullrecipe', compact('recipe'));
     }
+
+public function StoreReview(Request $request){
+    $comment = $request->comment;
+    $rating = $request->rating;
+    Review::create([
+        'recipe_id'=> $request->recipe_id,
+        'user_id'=>Auth::id(),
+        'comment'=>$request->comment,
+        'rating'=>$rating,]);
+    return redirect()->back();
+
+}
     public function elements()
     {
         return view('user.elements');
