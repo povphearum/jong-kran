@@ -67,6 +67,9 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
 
         route::get('/out',[HomeController::class,'out'])->name('out');
         Route::post('full-recipe/store-review','StoreReview')->name('store-review');
+        Route::get('edit-review/{id}','EditReview')->name('edit-review');
+        Route::post('update-review','UpdateReview')->name('update-review');
+        Route::get('remove-review/{id}','RemoveReview')->name('remove-review');
 
     });
     Route::controller(ClientController::class)->group(function (){

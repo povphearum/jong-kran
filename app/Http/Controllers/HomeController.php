@@ -67,6 +67,31 @@ public function StoreReview(Request $request){
 
 }
 
+    public function RemoveReview($id){
+        Review::findOrFail($id)->delete();
+        return redirect()->back()->with('message', 'Your Review has been deleted!');
+    }
+
+    public function EditReview($id){
+        $reviewinfo =Review::findOrFail($id);
+        return view('user.editcomment', compact('reviewinfo'));
+    }
+
+    public function UpdateReview(Request $request){
+        $comment_id = $request->id;
+        $user = Auth::user()->id;
+        $request->validate([
+            'comment'=>'required',
+            'rating'=>'required',
+        ]);
+        Review::findOrFail($comment_id)->update([
+            'comment' => $request->comment,
+            'rating' => $request->rating,
+        ]);
+        return redirect()->route('full-recipe')->with('message','The comment Updated Successfully!');
+
+    }
+
 public function SearchRecipe(){
     $search_text = request()->input('search');
     $recipes = Recipe::where('recipe_name', 'LIKE', '%' . $search_text . '%')->get();
