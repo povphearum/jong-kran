@@ -94,6 +94,11 @@ class RecipeController extends Controller
         return redirect()->route('recipe')->with('message','recipe add successfully');
 
     }
+
+    public function RemoveRecipe($id){
+        Recipe::findOrFail($id)->delete();
+        return redirect()->route('')->with('message', 'Recipe was Deleted Successfully!');
+    }
     /**
      * Display a listing of the resource.
      */

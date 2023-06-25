@@ -11,13 +11,11 @@
                         <div class="card-body box-profile">
                             <div class="text-center mb-3">
                                 <img class="profile-user-img pf-img"
-                                     src="img/user_pf/img.png"
-                                     alt="User profile picture">
+                                     src="{{Auth::user()->profile_photo_url}}"
+                                     alt="{{Auth::user()->name}}">
                             </div>
 
-                            <h3 class="profile-username text-center">Ngang Puthsabbos</h3>
-
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
@@ -84,7 +82,7 @@
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a class="nav-link active" href="#personalinfo" data-toggle="tab">Personal Info</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#recipe" data-toggle="tab">My Recipr</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#recipe" data-toggle="tab">My Recipe</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#collection" data-toggle="tab">Collection</a></li>
                             </ul>
                         </div><!-- /.card-header -->
@@ -176,7 +174,7 @@
                                                         <div class="single-best-receipe-area ">
                                                             <img src="img/bg-img/r1.jpg" alt="">
                                                             <div class="receipe-content">
-                                                                <a href="{{route('fullrecipe')}}">
+                                                                <a href="/">
                                                                     <h5>Sushi Easy Receipy</h5>
                                                                 </a>
                                                                 <div class="ratings">
@@ -193,7 +191,7 @@
                                                         <div class="single-best-receipe-area">
                                                             <img src="img/bg-img/r2.jpg" alt="">
                                                             <div class="receipe-content">
-                                                                <a href="{{route('fullrecipe')}}">
+                                                                <a href="/">
                                                                     <h5>Sushi Easy Receipy</h5>
                                                                 </a>
                                                                 <div class="ratings">
@@ -210,7 +208,7 @@
                                                         <div class="single-best-receipe-area">
                                                             <img src="img/bg-img/r3.jpg" alt="">
                                                             <div class="receipe-content">
-                                                                <a href="{{route('fullrecipe')}}">
+                                                                <a href="/">
                                                                     <h5>Sushi Easy Receipy</h5>
                                                                 </a>
                                                                 <div class="ratings">
@@ -242,7 +240,7 @@
                                                     <div class="single-best-receipe-area ">
                                                         <img src="img/bg-img/r4.jpg" alt="">
                                                         <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
+                                                            <a href="/">
                                                                 <h5>Sushi Easy Receipy</h5>
                                                             </a>
                                                             <div class="ratings">
@@ -259,7 +257,7 @@
                                                     <div class="single-best-receipe-area">
                                                         <img src="img/bg-img/r5.jpg" alt="">
                                                         <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
+                                                            <a href="/">
                                                                 <h5>Sushi Easy Receipy</h5>
                                                             </a>
                                                             <div class="ratings">
@@ -276,7 +274,7 @@
                                                     <div class="single-best-receipe-area">
                                                         <img src="img/bg-img/r6.jpg" alt="">
                                                         <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
+                                                            <a href="/">
                                                                 <h5>Sushi Easy Receipy</h5>
                                                             </a>
                                                             <div class="ratings">
@@ -303,7 +301,7 @@
                                         <div class="single-best-receipe-area mb-30">
                                             <img src="img/bg-img/r1.jpg" alt="">
                                             <div class="receipe-content">
-                                                <a href="{{route('fullrecipe')}}">
+                                                <a href="/">
                                                     <h5>Sushi Easy Receipy</h5>
                                                 </a>
                                                 <div class="ratings">
@@ -323,7 +321,7 @@
                                         <div class="single-best-receipe-area mb-30">
                                             <img src="img/bg-img/r4.jpg" alt="">
                                             <div class="receipe-content">
-                                                <a href="{{route('fullrecipe')}}">
+                                                <a href="/">
                                                     <h5>Sushi Easy Receipy</h5>
                                                 </a>
                                                 <div class="ratings">
