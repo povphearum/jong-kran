@@ -263,6 +263,7 @@
                         <!-- Form -->
                         <div class="newsletter-form bg-img bg-overlay" style="background-image: url({{asset('img/bg-img/bg1.jpg')}});">
                             <form action="{{ route('store-feedback') }}" method="POST">
+                                @csrf
                                 <input type="text" name="feedback" placeholder="Feedback here">
                                 <button type="submit" class="btn delicious-btn w-100">Submit</button>
                             </form>
