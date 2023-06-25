@@ -73,4 +73,11 @@ class User extends Authenticatable
     public function user_recipe(){
         return $this->hasMany('App\Models\Recipe');
     }
+
+    public function user_feedback(){
+        return $this->hasMany(Feedback::class,'user_id');
+    }
+    public function user_question(){
+        return $this->hasMany(Question::class,'user_id');
+    }
 }
