@@ -66,6 +66,12 @@ public function StoreReview(Request $request){
     return redirect()->back();
 
 }
+
+public function SearchRecipe(){
+    $search_text = request()->input('search');
+    $recipes = Recipe::where('recipe_name', 'LIKE', '%' . $search_text . '%')->get();
+        return view('user.search',compact('recipes','search_text'));
+}
     public function elements()
     {
         return view('user.elements');
@@ -129,9 +135,6 @@ public function StoreReview(Request $request){
         return view('user.Out');
     }
 
-    public function Info(){
-        return view('user.user_profile.profile');
-    }
 
 
 

@@ -43,6 +43,7 @@ Route::controller(HomeController::class)->group(function () {
 
     route::get('/full-recipe/{id}/{recipe_name}','FullRecipe')->name('full-recipe');
     route::get('/elements',[HomeController::class,'elements']);
+    Route::get('/search','SearchRecipe')->name('search');
 
     route::get('/england',[HomeController::class,'england'])->name('england');
     route::get('/germany',[HomeController::class,'germany'])->name('germany');
@@ -65,8 +66,11 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
 
 
         route::get('/out',[HomeController::class,'out'])->name('out');
-        route::get('/info',[HomeController::class,'Info'])->name('info');
         Route::post('full-recipe/store-review','StoreReview')->name('store-review');
+
+    });
+    Route::controller(ClientController::class)->group(function (){
+        route::get('/info/{id}/{name}','Info')->name('info');
 
     });
 

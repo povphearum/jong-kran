@@ -61,7 +61,7 @@
     </style>
     <link href="{{asset('home/dist/css/select2.min.css')}}" rel="stylesheet" />
     <script src="{{asset('home/dist/js/select2.min.js')}}"></script>
-    @yield('stylecss');
+    @yield('stylecss')
     @livewireStyles
 </head>
 
@@ -80,8 +80,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form action="#" method="post">
-                    <input type="search" name="search" placeholder="Type any keywords...">
+                <form action="{{route('search')}}" type="get">
+                    <input type="search" name="search" placeholder="Search for Recipes">
                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
             </div>
@@ -200,7 +200,7 @@
                                             <li><a href="#" >{{ Auth::user()->name }}</a>
                                                 <ul class="dropdown">
                                                     <li><a href="{{ url('/user/profile') }}">Profile</a></li>
-                                                    <li><a href="{{route('info')}}">User</a></li>
+                                                    <li><a href="{{route('info',[$id=Auth::user()->id,$name=Auth::user()->name])}}">User</a></li>
                                                     <li><a href="{{route('addrecipe')}}">Add Recipe</a></li>
                                                     <form method="POST" action="{{ route('logout') }}">
                                                         @csrf
