@@ -261,10 +261,9 @@
                     <div class="feedback">
                         <h4>Give your feedback here</h4>
                         <!-- Form -->
-                        <div class="newsletter-form bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
-                            <form action="#" method="post">
-                                <input type="email" name="email" placeholder="Input name here">
-                                <input type="email" name="email" placeholder="Feedback here">
+                        <div class="newsletter-form bg-img bg-overlay" style="background-image: url({{asset('img/bg-img/bg1.jpg')}});">
+                            <form action="{{ route('store-feedback') }}" method="POST">
+                                <input type="text" name="feedback" placeholder="Feedback here">
                                 <button type="submit" class="btn delicious-btn w-100">Submit</button>
                             </form>
                             <p>Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.</p>

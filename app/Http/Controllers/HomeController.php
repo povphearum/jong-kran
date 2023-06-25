@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Feedback;
 use App\Models\Recipe;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -96,6 +97,15 @@ public function SearchRecipe(){
     $search_text = request()->input('search');
     $recipes = Recipe::where('recipe_name', 'LIKE', '%' . $search_text . '%')->get();
         return view('user.search',compact('recipes','search_text'));
+}
+
+public function StoreFeedback(Request $request){
+        $user = Auth::user()->id;
+        Feedback::create([
+            'user_id'=>$user,
+            'feedback'=>$request->feedback
+        ]);
+    return redirect()->back();
 }
     public function elements()
     {
