@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Feedback;
+use App\Models\Question;
 use App\Models\Recipe;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -107,6 +108,15 @@ public function StoreFeedback(Request $request){
         ]);
     return redirect()->back();
 }
+    public function StoreQuestion(Request $request){
+        $user = Auth::user()->id;
+        Question::create([
+            'user_id'=>$user,
+            'question'=>$request->question,
+        ]);
+        return redirect()->back();
+    }
+
     public function elements()
     {
         return view('user.elements');
