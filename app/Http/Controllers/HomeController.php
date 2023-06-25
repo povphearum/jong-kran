@@ -50,7 +50,9 @@ class HomeController extends Controller
     {
         $recipe =Recipe::findOrFail($id);
 
-        return view('user.fullrecipe', compact('recipe'));
+        $comments = Review::where('recipe_id',$id)->get();
+
+        return view('user.fullrecipe', compact('recipe','comments'));
     }
 
 public function StoreReview(Request $request){
