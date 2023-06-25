@@ -196,6 +196,17 @@
                         <div class="col-12">
                             @foreach($comments as $comment)
                                 <a>{{ $comment->user_review->name }}</a>
+                                    <div class="classynav">
+                                        <ul>
+                                        <li><a href="#">-</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{route('edit-review',$comment->id)}}">Edit</a></li>
+                                            <li><a class="text-danger" href="{{route('remove-review',$comment->id)}}">Delete</a></li>
+                                        </ul>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                <p>{{$comment->comment}}</p>
                                 <div class="receipe-ratings">
                                     <div class="ratings">
                                         @if($comment->rating==5)
@@ -231,9 +242,11 @@
                                             <i class="fa fa-star-o" aria-hidden="true"></i>
                                             <i class="fa fa-star-o" aria-hidden="true"></i>
                                         @endif
+
+
                                     </div>
                                 </div>
-
+                                <hr>
                             @endforeach
                         </div>
                     </div>
