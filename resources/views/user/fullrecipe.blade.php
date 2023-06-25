@@ -170,9 +170,9 @@
                                             <textarea class="form-control" name="comment" cols="40"></textarea>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="mt-0">Rating: </div>
+                                    <div class="row mt-0">
                                         <div class="ms-0">
-                                            <p class="ml-2">Rating: </p>
                                             <div class="rating">
                                                 <input type="radio" name="rating" value="5" id="5"><label for="5" style="font-size:35px">☆</label>
                                                 <input type="radio" name="rating" value="4" id="4"><label for="4" style="font-size:35px">☆</label>
@@ -193,25 +193,23 @@
                     </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-11 mt-4">
                             @foreach($comments as $comment)
                                 <a>{{ $comment->user_review->name }}</a>
-                                    <div class="classynav">
-                                        <ul>
-                                        <li><a href="#">-</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{{route('edit-review',$comment->id)}}">Edit</a></li>
-                                            <li><a class="text-danger" href="{{route('remove-review',$comment->id)}}">Delete</a></li>
-                                        </ul>
-                                        </li>
-                                        </ul>
-                                    </div>
+                                <div class="dropdown float-right">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    </button>
+                                    <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="{{route('edit-review',$comment->id)}}">Edit</a></li>
+                                        <li><a class="dropdown-item" href="{{route('remove-review',$comment->id)}}">Delete</a></li>
+
+                                    </ul>
+                                </div>
                                 <p>{{$comment->comment}}</p>
                                 <div class="receipe-ratings">
                                     <div class="ratings">
                                         @if($comment->rating==5)
-
-
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -331,5 +329,6 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- ##### Follow Us Instagram Area End ##### -->
 @endsection
