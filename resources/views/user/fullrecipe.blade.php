@@ -163,7 +163,7 @@
                                             <p>{{Auth::user()->email}}</p>
                                         </div>
                                         <div class="col-11">
-                                            <textarea class="form-control" cols="40"></textarea>
+                                            <textarea class="form-control" name="comment" cols="40"></textarea>
                                         </div>
                                     </div>
                                     <div class="row">
