@@ -160,44 +160,20 @@
                                 <li><a href="#">Mega Menu</a>
                                     <div class="megamenu">
                                         <ul class="single-mega cn-col-4">
-                                            <li class="title">Europe</li>
-                                            <li><a href="{{route('england')}}">England</a></li>
-                                            <li><a href="{{route('germany')}}">Germany</a></li>
-                                            <li><a href="{{route('italy')}}">Italy</a></li>
-                                            <li><a href="{{route('france')}}">France</a></li>
 
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">ASEA</li>
-                                            <li><a href="{{route('cam')}}">Cambodia</a></li>
-                                            <li><a href="{{route('thai')}}">Thailand</a></li>
-                                            <li><a href="{{route('viet')}}">Vietnam</a></li>
-                                            <li><a href="{{route('loa')}}">Loa</a></li>
-                                            <li><a href="{{route('indo')}}">Indonesia</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">North Africa</li>
-                                            <li><a href="{{route('us')}}">United State</a></li>
-                                            <li><a href="{{route('canada')}}">Canada</a></li>
-                                            <li><a href="{{route('mexico')}}">Mexico</a></li>
+                                            @foreach($categories as $category)
+                                                <li><a href="">{{$category->category_display_name}}</a></li>
 
+                                            @endforeach
                                         </ul>
-                                        <div class="single-mega cn-col-4">
-                                            <div class="receipe-slider owl-carousel">
-                                                <a href="#"><img src="img/bg-img/bg1.jpg" alt=""></a>
-                                                <a href="#"><img src="img/bg-img/bg6.jpg" alt=""></a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </li>
-
                                 <li>
                                 @if (Route::has('login'))
 
                                         @auth
                                             <li><a href="#" >{{ Auth::user()->name }}</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="{{ url('/user/profile') }}">Profile</a></li>
                                                     <li><a href="{{route('info',[$id=Auth::user()->id,$name=Auth::user()->name])}}">User</a></li>
                                                     <li><a href="{{route('addrecipe')}}">Add Recipe</a></li>
                                                     <form method="POST" action="{{ route('logout') }}">
