@@ -41,6 +41,15 @@
                             <label for="Country_name">Country Name:</label>                        <br>
                             <input class="form-control" type="text" id="Country_name" name="name" placeholder="Enter Country Name">
                             <br>
+                            <label id="Continent_name">Continent</label>
+                            <select class="form-control select2 select2-danger" name="continent_id" id="continent_id" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                                @foreach($continents as $continent)
+
+                                    <option value="{{$continent->id}}" >{{$continent->name}}</option>
+
+                                @endforeach
+                            </select>
+                            <br>
 
                             <div class="justify-content-end">
                                 <button type="submit" class="btn btn-success justify-content-end">Submit</button>

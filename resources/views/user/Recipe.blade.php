@@ -84,6 +84,11 @@
                                     </div>
                                 </div>
                                 <hr>
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-6" >--}}
+
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                 <div class="row">
                                     <div class="col-4">
                                         <p>Prep Time</p>
