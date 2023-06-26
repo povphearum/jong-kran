@@ -9,7 +9,7 @@ function urLIs($value): bool
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard 2</title>
+    <title>Jong-kran | Admin</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -262,6 +262,32 @@ function urLIs($value): bool
                                 </a>
                             </li>
 
+                            <li class="nav-item">
+                                <a href="{{route('add-continent')}}" class="nav-link <?php echo urLIs('/admin/add-continent') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p class="text-dark">
+                                        Add Continent
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('add-county')}}" class="nav-link <?php echo urLIs('/admin/add-country') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p class="text-dark">
+                                        Add Country
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('add-events')}}" class="nav-link <?php echo urLIs('/admin/add-events') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p class="text-dark">
+                                        Add Event
+                                    </p>
+                                </a>
+                            </li>
+
+
                         </ul>
                     </li>
                     <li class="nav-item menu-open">
@@ -334,7 +360,16 @@ function urLIs($value): bool
                                     <p class="text-dark">Question</p>
                                 </a>
                             </li>
+                          
                         </ul>
+                    <li class="nav-item">
+                        <a href="{{route('user')}}" class="nav-link <?php echo urLIs('/admin/user') ? 'active bg-green' : 'nav-link';?>">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p class="text-dark">
+                                User
+                            </p>
+                        </a>
+                    </li>
                     </li>
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link bg-gradient-green">

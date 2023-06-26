@@ -7,6 +7,7 @@ use App\Models\Feedback;
 use App\Models\Question;
 use App\Models\Recipe;
 use App\Models\Review;
+use Egulias\EmailValidator\Parser\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -51,10 +52,11 @@ class HomeController extends Controller
     public function FullRecipe($id)
     {
         $recipe =Recipe::findOrFail($id);
+        $recipe_rating =Review::where('recipe_id',$id)->count();
 
         $comments = Review::where('recipe_id',$id)->get();
 
-        return view('user.fullrecipe', compact('recipe','comments'));
+        return view('user.fullrecipe', compact('recipe','comments','recipe_rating'));
     }
 
 public function StoreReview(Request $request){
