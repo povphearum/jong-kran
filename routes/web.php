@@ -73,9 +73,11 @@ Route::middleware(['auth', 'role:user|admin|manager',])->group(function (){
         Route::post('store-feedback','StoreFeedback')->name('store-feedback');
         Route::post('store-question','StoreQuestion')->name('store-question');
 
+
     });
     Route::controller(ClientController::class)->group(function (){
         route::get('/info/{id}/{name}','Info')->name('info');
+        Route::get('/profile/update-info',ClientController::class)->name('profile-update');
 
     });
 
@@ -119,6 +121,31 @@ Route::middleware(['auth', 'role:admin|manager'])->group(function (){
     Route::controller(ReviewController::class)->group(function (){
         Route::get('/admin/comment','Comment')->name('comment');
         Route::get('/admin/reviews','Review')->name('review');
+        Route::get('/admin/feedback','FeedBack')->name('feedback');
+        Route::get('/admin/question','Question')->name('question');
+    });
+    Route::controller(AdminController::class)->group(function (){
+       Route::get('/admin/continent','Continent')->name('continent');
+       Route::get('/admin/country','Country')->name('country');
+       Route::get('/admin/events','Events')->name('events');
+       Route::get('/admin/add-continent','AddContinent')->name('add-continent');
+       Route::get('/admin/add-county','AddCounty')->name('add-county');
+       Route::get('/admin/add-events','AddEvents')->name('add-events');
+       Route::post('/admin/store-continent','StoreContinent')->name('store-continent');
+       Route::post('/admin/store-county','StoreCounty')->name('store-county');
+       Route::post('/admin/store-evens','StoreEvents')->name('store-evens');
+
+        Route::get('/admin/edit-continent','EditContinent')->name('edit-continent');
+        Route::get('/admin/edit-county','EditCounty')->name('edit-county');
+        Route::get('/admin/edit-events','EditEvents')->name('edit-events');
+
+        Route::post('/admin/update-continent','UpdateContinent')->name('update-continent');
+        Route::post('/admin/update-county','UpdateCounty')->name('update-county');
+        Route::post('/admin/update-evens','UpdateEvens')->name('update-evens');
+
+        Route::get('/admin/delete-continent','DeleteContinent')->name('delete-continent');
+        Route::get('/admin/delete-county','DeleteCounty')->name('delete-county');
+        Route::get('/admin/delete-events','DeleteEvents')->name('delete-events');
     });
 
 

@@ -29,7 +29,8 @@
                                 </li>
                             </ul>
 
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                            <a href="{{route('profile-update')}}" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
+                            <a href="#" class="btn btn-primary btn-block"><b>Change Password</b></a>
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -101,6 +102,7 @@
                                                 </h6>
                                             </div>
                                             <div class="col-lg-7">
+
                                                 <div class="form-group row">
                                                     <div class="col-sm-10 mt-4">
                                                         <label for="inputName">Name</label>

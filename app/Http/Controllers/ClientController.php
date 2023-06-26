@@ -13,4 +13,8 @@ class ClientController extends Controller
         $user = User::findOrFail($id);
         return view('user.user_profile.profile', compact('user'));
     }
+
+    public function __invoke(){
+        return view('user.user_profile.profile');
+    }
 }

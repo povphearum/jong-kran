@@ -124,182 +124,182 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Recipe & Collection-->
-                                <div class="row px-3 mt-3">
-                                    <!-- Recipe -->
-                                    <div class=" col-lg-6 bg-white shadow  ">
-                                        <div class="row justify-content-center mt-4">
-                                            <h2 class="font-semibold text-xl text-center text-gray-800 leading-tight">
-                                                {{ __('My Recipe') }}
-                                            </h2>
-                                        </div>
-                                        <div class="swiper mySwiper ">
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide justify-content-center ">
-                                                    <div class="single-best-receipe-area ">
-                                                        <img src="img/bg-img/r1.jpg" alt="">
-                                                        <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
-                                                                <h5>Sushi Easy Receipy</h5>
-                                                            </a>
-                                                            <div class="ratings">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="single-best-receipe-area">
-                                                        <img src="img/bg-img/r2.jpg" alt="">
-                                                        <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
-                                                                <h5>Sushi Easy Receipy</h5>
-                                                            </a>
-                                                            <div class="ratings">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="single-best-receipe-area">
-                                                        <img src="img/bg-img/r3.jpg" alt="">
-                                                        <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
-                                                                <h5>Sushi Easy Receipy</h5>
-                                                            </a>
-                                                            <div class="ratings">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 text-center mb-4">
-                                            <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Recipe >>></a>
-                                        </div>
-                                    </div>
-                                    <!--Collection-->
-                                    <div class=" col-lg-6 bg-white shadow  ">
-                                        <div class="row justify-content-center mt-4">
-                                            <h2 class="font-semibold text-xl text-center text-gray-800 leading-tight">
-                                                {{ __('Collections') }}
-                                            </h2>
-                                        </div>
-                                        <div class="swiper mySwiper ">
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide justify-content-center ">
-                                                    <div class="single-best-receipe-area ">
-                                                        <img src="img/bg-img/r4.jpg" alt="">
-                                                        <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
-                                                                <h5>Sushi Easy Receipy</h5>
-                                                            </a>
-                                                            <div class="ratings">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="single-best-receipe-area">
-                                                        <img src="img/bg-img/r5.jpg" alt="">
-                                                        <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
-                                                                <h5>Sushi Easy Receipy</h5>
-                                                            </a>
-                                                            <div class="ratings">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="single-best-receipe-area">
-                                                        <img src="img/bg-img/r6.jpg" alt="">
-                                                        <div class="receipe-content">
-                                                            <a href="{{route('fullrecipe')}}">
-                                                                <h5>Sushi Easy Receipy</h5>
-                                                            </a>
-                                                            <div class="ratings">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 text-center mb-4">
-                                            <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Collections >>></a>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                <!-- Recipe & Collection-->--}}
+{{--                                <div class="row px-3 mt-3">--}}
+{{--                                    <!-- Recipe -->--}}
+{{--                                    <div class=" col-lg-6 bg-white shadow  ">--}}
+{{--                                        <div class="row justify-content-center mt-4">--}}
+{{--                                            <h2 class="font-semibold text-xl text-center text-gray-800 leading-tight">--}}
+{{--                                                {{ __('My Recipe') }}--}}
+{{--                                            </h2>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="swiper mySwiper ">--}}
+{{--                                            <div class="swiper-wrapper">--}}
+{{--                                                <div class="swiper-slide justify-content-center ">--}}
+{{--                                                    <div class="single-best-receipe-area ">--}}
+{{--                                                        <img src="img/bg-img/r1.jpg" alt="">--}}
+{{--                                                        <div class="receipe-content">--}}
+{{--                                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                                            </a>--}}
+{{--                                                            <div class="ratings">--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="swiper-slide">--}}
+{{--                                                    <div class="single-best-receipe-area">--}}
+{{--                                                        <img src="img/bg-img/r2.jpg" alt="">--}}
+{{--                                                        <div class="receipe-content">--}}
+{{--                                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                                            </a>--}}
+{{--                                                            <div class="ratings">--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="swiper-slide">--}}
+{{--                                                    <div class="single-best-receipe-area">--}}
+{{--                                                        <img src="img/bg-img/r3.jpg" alt="">--}}
+{{--                                                        <div class="receipe-content">--}}
+{{--                                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                                            </a>--}}
+{{--                                                            <div class="ratings">--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-lg-12 text-center mb-4">--}}
+{{--                                            <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Recipe >>></a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <!--Collection-->--}}
+{{--                                    <div class=" col-lg-6 bg-white shadow  ">--}}
+{{--                                        <div class="row justify-content-center mt-4">--}}
+{{--                                            <h2 class="font-semibold text-xl text-center text-gray-800 leading-tight">--}}
+{{--                                                {{ __('Collections') }}--}}
+{{--                                            </h2>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="swiper mySwiper ">--}}
+{{--                                            <div class="swiper-wrapper">--}}
+{{--                                                <div class="swiper-slide justify-content-center ">--}}
+{{--                                                    <div class="single-best-receipe-area ">--}}
+{{--                                                        <img src="img/bg-img/r4.jpg" alt="">--}}
+{{--                                                        <div class="receipe-content">--}}
+{{--                                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                                            </a>--}}
+{{--                                                            <div class="ratings">--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="swiper-slide">--}}
+{{--                                                    <div class="single-best-receipe-area">--}}
+{{--                                                        <img src="img/bg-img/r5.jpg" alt="">--}}
+{{--                                                        <div class="receipe-content">--}}
+{{--                                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                                            </a>--}}
+{{--                                                            <div class="ratings">--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="swiper-slide">--}}
+{{--                                                    <div class="single-best-receipe-area">--}}
+{{--                                                        <img src="img/bg-img/r6.jpg" alt="">--}}
+{{--                                                        <div class="receipe-content">--}}
+{{--                                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                                            </a>--}}
+{{--                                                            <div class="ratings">--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-lg-12 text-center mb-4">--}}
+{{--                                            <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Collections >>></a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </div>
-                            <!--More Recipe -->
-                            <div class="tab-pane" id="recipe">
-                                <div class="col-12 col-sm-6 col-lg-4">
-                                    <div class="single-best-receipe-area mb-30">
-                                        <img src="img/bg-img/r1.jpg" alt="">
-                                        <div class="receipe-content">
-                                            <a href="{{route('fullrecipe')}}">
-                                                <h5>Sushi Easy Receipy</h5>
-                                            </a>
-                                            <div class="ratings">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- More Collections -->
-                            <div class="tab-pane" id="collection">
-                                <div class="col-12 col-sm-6 col-lg-4">
-                                    <div class="single-best-receipe-area mb-30">
-                                        <img src="img/bg-img/r4.jpg" alt="">
-                                        <div class="receipe-content">
-                                            <a href="{{route('fullrecipe')}}">
-                                                <h5>Sushi Easy Receipy</h5>
-                                            </a>
-                                            <div class="ratings">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <!--More Recipe -->--}}
+{{--                            <div class="tab-pane" id="recipe">--}}
+{{--                                <div class="col-12 col-sm-6 col-lg-4">--}}
+{{--                                    <div class="single-best-receipe-area mb-30">--}}
+{{--                                        <img src="img/bg-img/r1.jpg" alt="">--}}
+{{--                                        <div class="receipe-content">--}}
+{{--                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                            </a>--}}
+{{--                                            <div class="ratings">--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <!-- More Collections -->--}}
+{{--                            <div class="tab-pane" id="collection">--}}
+{{--                                <div class="col-12 col-sm-6 col-lg-4">--}}
+{{--                                    <div class="single-best-receipe-area mb-30">--}}
+{{--                                        <img src="img/bg-img/r4.jpg" alt="">--}}
+{{--                                        <div class="receipe-content">--}}
+{{--                                            <a href="{{route('fullrecipe')}}">--}}
+{{--                                                <h5>Sushi Easy Receipy</h5>--}}
+{{--                                            </a>--}}
+{{--                                            <div class="ratings">--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                                <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                         <!-- /.tab-content -->
                     </div><!-- /.card-body -->

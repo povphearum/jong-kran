@@ -228,7 +228,6 @@ function urLIs($value): bool
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-
                     <li class="nav-item">
                         <a href="{{route('adminhome')}}"  class="nav-link act <?php echo urLIs('/admin/dashboard') ? 'active bg-green' : 'nav-link';?> ">
                             <i class="nav-icon fas fa-th"></i>
@@ -237,19 +236,48 @@ function urLIs($value): bool
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link bg-gradient-green">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p class="text-dark">
+                                Management
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('addcate')}}" class="nav-link <?php echo urLIs('/admin/category/add') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p class="text-dark">
+                                        Add Category
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('addtag')}}" class="nav-link <?php echo urLIs('/admin/tag/add') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p class="text-dark">
+                                        Add Tag
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link bg-gradient-green">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p class="text-dark">
+                                View
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{route('category')}}" class="nav-link <?php echo urLIs('/admin/category') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p class="text-dark">
                                 Category
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('addcate')}}" class="nav-link <?php echo urLIs('/admin/category/add') ? 'active bg-green' : 'nav-link';?>">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p class="text-dark">
-                                Add Category
                             </p>
                         </a>
                     </li>
@@ -262,14 +290,6 @@ function urLIs($value): bool
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('addtag')}}" class="nav-link <?php echo urLIs('/admin/tag/add') ? 'active bg-green' : 'nav-link';?>">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p class="text-dark">
-                                Add Tag
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{route('recipe')}}" class="nav-link <?php echo urLIs('/admin/recipe') ? 'active bg-green' : 'nav-link';?>">
                             <i class="nav-icon fas fa-th"></i>
                             <p class="text-dark">
@@ -277,14 +297,10 @@ function urLIs($value): bool
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{route('user')}}" class="nav-link <?php echo urLIs('/admin/user') ? 'active bg-green' : 'nav-link';?>">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p class="text-dark">
-                                User
-                            </p>
-                        </a>
+                        </ul>
                     </li>
+
+
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -306,7 +322,56 @@ function urLIs($value): bool
                                     <p class="text-dark">Rating</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{route('feedback')}}" class="nav-link <?php echo urLIs('/admin/Feedback') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p class="text-dark">Feedback</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('question')}}" class="nav-link <?php echo urLIs('/admin/question') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p class="text-dark">Question</p>
+                                </a>
+                            </li>
                         </ul>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link bg-gradient-green">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p class="text-dark">
+                                Others
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('continent')}}" class="nav-link <?php echo urLIs('/admin/continent') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p class="text-dark">Continent</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('country')}}" class="nav-link <?php echo urLIs('/admin/country') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p class="text-dark">Country</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('events')}}" class="nav-link <?php echo urLIs('/admin/event') ? 'active bg-green' : 'nav-link';?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p class="text-dark">Event</p>
+                                </a>
+                            </li>
+                        </ul>
+                    <li class="nav-item">
+                        <a href="{{route('user')}}" class="nav-link <?php echo urLIs('/admin/user') ? 'active bg-green' : 'nav-link';?>">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p class="text-dark">
+                                User
+                            </p>
+                        </a>
+                    </li>
                     </li>
                 </ul>
             </nav>
@@ -371,8 +436,7 @@ function urLIs($value): bool
 <!-- ChartJS -->
 <script src="{{asset('Admin/plugins/chart.js/Chart.min.js')}}"></script>
 
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('Admin/dist/js/demo.js')}}"></script>
+
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('Admin/dist/js/pages/dashboard2.js')}}"></script>
 

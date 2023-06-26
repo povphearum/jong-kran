@@ -76,18 +76,18 @@ class RecipeController extends Controller
 
         $recipe->tags()->attach($request->tags);
 
-//
-//        foreach ($request->ingredients as $ingredient) {
-//            $recipe->ingredients()->create([
-//                'ingredient_name' => $ingredient['ingredient_name'],
-//            ]);
-//        }
-//
-//        foreach ($request->steps as $step) {
-//            $recipe->steps()->create([
-//                'step' => $step['step'],
-//            ]);
-//        }
+
+        foreach ($request->ingredients as $ingredient) {
+            $recipe->ingredients()->create([
+                'ingredient_name' => $ingredient['ingredient_name'],
+            ]);
+        }
+
+        foreach ($request->directions as $direction) {
+            $recipe->directions()->create([
+                'step' => $direction['step'],
+            ]);
+        }
 
 
 

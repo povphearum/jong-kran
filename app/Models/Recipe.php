@@ -34,12 +34,12 @@ class Recipe extends Model
     }
 
     public function ingredients(){
-        return $this->hasMany(Ingredients::class);
+        return $this->hasMany(Ingredient::class);
     }
 
 
-    public function steps(){
-        return $this->hasMany(Steps::class);
+    public function directions(){
+        return $this->hasMany(Direction::class);
     }
 
     public function category(){
