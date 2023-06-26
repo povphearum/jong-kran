@@ -153,8 +153,6 @@
                                     <ul class="dropdown">
                                         <li><a href="{{ url('/')}}">Home</a></li>
                                         <li><a href="{{ url('/about') }}">About Us</a></li>
-                                        <li><a href="{{ url('/blog') }}">Blog Post</a></li>
-                                        <li><a href="{{ url('/fullrecipe') }}">Receipe Post</a></li>
                                         <li><a href="{{ url('/contact') }}">Contact</a></li>
 
                                     </ul>
