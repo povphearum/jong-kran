@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Feedback;
+use App\Models\Question;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
@@ -18,11 +20,13 @@ class ReviewController extends Controller
     }
 
     public function FeedBack(){
-        return view('admin.content.review.feedback');
+        $feedbacks = Feedback::get();
+        return view('admin.content.review.feedback',compact('feedbacks'));
     }
 
     public function Question(){
-        return view('admin.content.review.question');
+        $questions = Question::get();
+        return view('admin.content.review.question',compact('questions'));
     }
     /**
      * Display a listing of the resource.

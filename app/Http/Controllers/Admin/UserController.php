@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
+use App\Models\Recipe;
+use App\Models\Review;
 use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
@@ -25,7 +27,9 @@ class UserController extends Controller
 
         public function UserShow($id){
         $user = User::findOrFail($id);
-        return view('admin.content.user.singleuser',compact('user'));
+        $recipe = Recipe::where('user_id',$id)->count();
+        $comment = Review::where('user_id',$id)->count();
+        return view('admin.content.user.singleuser',compact('user','recipe','comment'));
 
         }
 

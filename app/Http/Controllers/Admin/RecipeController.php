@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Livewire\Ingredients;
+use App\Models\Ingredient;
 use App\Models\Recipe;
 use App\Models\Tag;
 use App\Models\TagRecipe;
@@ -12,7 +14,9 @@ use Illuminate\Http\Request;
 class RecipeController extends Controller
 {
     public function Recipe(){
-        return view('admin.content.recipe.recipe');
+        $recipes = Recipe::get();
+
+        return view('admin.content.recipe.recipe',compact('recipes'));
     }
 
     public function AddRecipe()
