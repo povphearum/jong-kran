@@ -140,7 +140,7 @@ function urLIs($value): bool
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item menu-open">
+                    <li class="nav-item">
                         <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p class="text-dark">
@@ -194,7 +194,7 @@ function urLIs($value): bool
 
                         </ul>
                     </li>
-                    <li class="nav-item menu-open">
+                    <li class="nav-item">
                         <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p class="text-dark">
@@ -231,7 +231,7 @@ function urLIs($value): bool
                     </li>
 
 
-                    <li class="nav-item menu-open">
+                    <li class="nav-item">
                         <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p class="text-dark">
@@ -266,7 +266,7 @@ function urLIs($value): bool
                             </li>
 
                         </ul>
-                    <li class="nav-item menu-open">
+                    <li class="nav-item">
                         <a href="#" class="nav-link bg-gradient-green">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p class="text-dark">
