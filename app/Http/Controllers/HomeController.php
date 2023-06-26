@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Category;
 use App\Models\Direction;
 use App\Models\Feedback;
 use App\Models\Ingredient;
@@ -35,7 +36,8 @@ class HomeController extends Controller
     public function index()
     {
         $recipes = Recipe::get();
-        return view('user.main',compact('recipes'));
+        $categories = Category::get();
+        return view('user.main',compact('recipes','categories'));
     }
 
 
@@ -80,12 +82,10 @@ public function StoreReview(Request $request){
         Review::findOrFail($id)->delete();
         return redirect()->back()->with('message', 'Your Review has been deleted!');
     }
-
     public function EditReview($id){
         $reviewinfo =Review::findOrFail($id);
         return view('user.editcomment', compact('reviewinfo'));
     }
-
     public function UpdateReview(Request $request){
         $comment_id = $request->id;
         $user = Auth::user()->id;
@@ -186,8 +186,6 @@ public function StoreFeedback(Request $request){
     {
         return view('user.Out');
     }
-
-
 
 
 }
