@@ -11,13 +11,17 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
  public function Continent(){
-     return view('admin.content.other.continent');
+
+     $continents = Continent::get();
+     return view('admin.content.other.continent',compact('continents'));
  }
     public function Country(){
-        return view('admin.content.other.country');
+     $countries = Country::get();
+        return view('admin.content.other.country',compact('countries'));
     }
     public function Events(){
-        return view('admin.content.other.event');
+     $events = Event::get();
+        return view('admin.content.other.event', compact('events'));
     }
 
     public function AddContinent(Request $request){
