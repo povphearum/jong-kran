@@ -261,6 +261,7 @@ function urLIs($value): bool
                                     </p>
                                 </a>
                             </li>
+
                             <li class="nav-item">
                                 <a href="{{route('add-continent')}}" class="nav-link <?php echo urLIs('/admin/add-continent') ? 'active bg-green' : 'nav-link';?>">
                                     <i class="nav-icon fas fa-th"></i>
@@ -285,6 +286,7 @@ function urLIs($value): bool
                                     </p>
                                 </a>
                             </li>
+
 
                         </ul>
                     </li>
@@ -358,7 +360,16 @@ function urLIs($value): bool
                                     <p class="text-dark">Question</p>
                                 </a>
                             </li>
+                          
                         </ul>
+                    <li class="nav-item">
+                        <a href="{{route('user')}}" class="nav-link <?php echo urLIs('/admin/user') ? 'active bg-green' : 'nav-link';?>">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p class="text-dark">
+                                User
+                            </p>
+                        </a>
+                    </li>
                     </li>
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link bg-gradient-green">

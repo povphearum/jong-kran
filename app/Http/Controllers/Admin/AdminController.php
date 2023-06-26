@@ -19,6 +19,7 @@ class AdminController extends Controller
     public function Events(){
         return view('admin.content.other.event');
     }
+
     public function AddContinent(Request $request){
         return view('admin.content.other.addcontinent');
     }
@@ -65,6 +66,7 @@ class AdminController extends Controller
 
         ]);
         return redirect()->route('events')->with('message','Even Added Successfully!');
+
 
     }
 }
