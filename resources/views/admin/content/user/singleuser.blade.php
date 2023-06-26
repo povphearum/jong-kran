@@ -42,14 +42,13 @@
                                 <b>Email:</b> <a class="float-right">{{$user->email}}</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Recipe</b> <a class="float-right">13,287</a>
+                                <b>Recipe</b> <a class="float-right">{{$recipe}}</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Comment</b> <a class="float-right">13,287</a>
+                                <b>Comment</b> <a class="float-right">{{$comment}}</a>
                             </li>
                         </ul>
 
-                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -72,8 +71,14 @@
                                         <div class="col-lg-7">
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
-                                                    <label for="inputName">Full Name</label>
-                                                    <input type="email" class="form-control" id="inputName" placeholder="{{$user->user_info->last_name}} {{$user->user_info->first_name}}" readonly>
+                                                    <label for="inputName">Last Name</label>
+                                                    <input type="email" class="form-control" id="inputName" placeholder="{{$user->user_info->last_name}}" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-10">
+                                                    <label for="inputName">First Name</label>
+                                                    <input type="email" class="form-control" id="inputName" placeholder="{ {{$user->user_info->first_name}}" readonly>
                                                 </div>
                                             </div>
 

@@ -40,8 +40,6 @@
                             <tr>
                                 <th>User </th>
                                 <th>Recipe Name</th>
-                                <th>Category</th>
-                                <th>Subcategory</th>
                                 <th>Ingredients</th>
                                 <th>Review</th>
                                 <th>Overall Rating</th>
@@ -51,13 +49,19 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 4.0
-                                </td>
-                                <td>Win 95+</td>
-                                <td>4.9</td>
+                                @foreach($recipes as $recipe)
+                                <td>{{$recipe->user_id}}</td>
+                                <td>{{$recipe->recipe_name}}</td>
 
+                                    @foreach($recipe->ingredients as $ingredient)
+
+                                            <td>
+                                                {{$ingredient->ingredient_name}}
+                                            </td>
+
+                                    @endforeach
+
+                                @endforeach
                             </tr>
 
                             </tbody>

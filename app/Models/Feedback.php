@@ -12,4 +12,8 @@ class Feedback extends Model
       'feedback',
     ];
     use HasFactory;
+
+    public function feedback_user(){
+        return $this->belongsTo(User::class);
+    }
 }
