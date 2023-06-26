@@ -79,18 +79,7 @@
                         $elapsed = $date->diffForHumans();
 
 
-                    @endphp
-
-                    @foreach($comments as $comment)
-                        @php
-                        $rating =$rating + $comment->rating;
-
-
-                        @endphp
-                    @endforeach
-                    @php
-
-                    @endphp
+                  @endphp
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="receipe-headline my-3">
