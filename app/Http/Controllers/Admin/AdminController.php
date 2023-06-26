@@ -28,7 +28,8 @@ class AdminController extends Controller
         return view('admin.content.other.addcontinent');
     }
     public function AddCounty(Request $request){
-        return view('admin.content.other.addcounty');
+     $continents = Continent::get();
+        return view('admin.content.other.addcounty',compact('continents'));
     }
     public function AddEvents(Request $request){
         return view('admin.content.other.addevens');
@@ -50,10 +51,14 @@ class AdminController extends Controller
     public function StoreCounty(Request $request){
         $request->validate([
             'name'=>'required|unique:countries',
+            'continent_id'=>'required'
         ]);
+
+        $continent_id = $request->continent_id;
 
         Country::create([
             'name' => $request->name,
+            'continent_id' => $continent_id
 
 
         ]);

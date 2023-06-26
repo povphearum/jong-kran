@@ -53,73 +53,61 @@
                                 <div class="active tab-pane" id="personalinfo">
                                     <!-- info -->
                                     <div class="bg-white shadow px-2">
-                                        <div class="form-horizontal row justify-content-center">
-                                            <div class="col-lg-5 justify-content-center text-center py-4 px-4">
-                                                <h2 class="font-semibold text-xl text-center text-gray-800 leading-tight">
-                                                    {{ __('Profile Information') }}
-                                                </h2>
-                                                <h6 class=" text-muted">
-                                                    {{ __('Update your account\'s profile information and email address') }}
-                                                </h6>
-                                            </div>
+                                        <div class="form-horizontal row justify-content-right ml-1">
+                                            <form action="">
                                             <div class="col-lg-7">
 
                                                 <div class="form-group row">
-                                                    <div class="col-sm-10 mt-4">
-                                                        <label for="inputName">Name</label>
-                                                        <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-10 ">
-                                                        <label for="inputEmail">Email</label>
-                                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                                    <div class="row justify-content-end">
-                                                        <div class="px-3 mt-3">
-                                                            <button type="submit" class="btn btn-danger">Save</button>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pw -->
-                                    <div class="bg-white shadow px-2 mt-3 ">
-                                        <div class="form-horizontal row justify-content-center">
-                                            <div class="col-lg-5 justify-content-center text-center py-4 px-4">
-                                                <h2 class="font-semibold text-xl text-center text-gray-800 leading-tight ">
-                                                    {{ __('Update Password') }}
-                                                </h2>
-                                                <h6 class=" text-muted">
-                                                    {{ __('Ensure your account is using a long, random password to stay secure') }}
-                                                </h6>
-                                            </div>
-                                            <div class="col-lg-7">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-10 mt-4">
-                                                        <label for="inputcpw">Current Password</label>
-                                                        <input type="password" class="form-control" id="inputpw" placeholder="Current Password">
+                                                    <div class="col-sm-10">
+                                                        <label for="inputName">Last Name</label>
+                                                        <input type="text" name="last_name" class="form-control" id="inputName" value="{{$user->user_info->last_name}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-10">
-                                                        <label for="inputnpw">New Password</label>
-                                                        <input type="password" class="form-control" id="inputnpw" placeholder="New Password">
+                                                        <label for="inputName">First Name</label>
+                                                        <input type="text" name="first_name" class="form-control" id="inputName" value="{ {{$user->user_info->first_name}}" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                        <label for="inputName">Phone Number</label>
+                                                        <input type="text" class="form-control" name="phone_number" id="inputName" value="{{$user->user_info->phone_number}}" >
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <div class="col-sm-10 ">
-                                                        <label for="inputcpw">Confirm Password</label>
-                                                        <input type="password" class="form-control" id="inputcpw" placeholder="Confirm Password">
+                                                    <div class="col-sm-10">
+                                                        <label for="inputEmail">Date Of Birth</label>
+                                                        <input type="date" class="form-control" id="inputEmail" value="{{$user->user_info->date_birth}}">
                                                         <div class="row justify-content-end">
-                                                            <div class="px-3 mt-3">
-                                                                <button type="submit" class="btn btn-danger">Save</button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                        <label for="inputEmail">Country</label>
+                                                        <input type="email" class="form-control" id="inputEmail" value="{{$user->user_info->country}}" >
+                                                        <div class="row justify-content-end">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                        <label for="inputEmail">Country</label>
+                                                        <input type="email" class="form-control" id="inputEmail" value="{{$user->user_info->city}}" >
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                        <label for="inputZipCode">Zip Code</label>
+                                                        <input type="email" class="form-control" id="inputEmail" value="{{$user->user_info->zip_code}}">
+                                                    </div>
+                                                </div>
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                     <!-- Recipe & Collection-->

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Direction;
 use App\Models\Feedback;
+use App\Models\Ingredient;
 use App\Models\Question;
 use App\Models\Recipe;
 use App\Models\Review;
@@ -54,9 +56,12 @@ class HomeController extends Controller
         $recipe =Recipe::findOrFail($id);
         $recipe_rating =Review::where('recipe_id',$id)->count();
 
+        $ingredents = Ingredient::where('recipe_id',$id)->get();
+        $steps = Direction::where('recipe_id',$id)->get();
+
         $comments = Review::where('recipe_id',$id)->get();
 
-        return view('user.fullrecipe', compact('recipe','comments','recipe_rating'));
+        return view('user.fullrecipe', compact('recipe','comments','ingredents','steps'));
     }
 
 public function StoreReview(Request $request){
