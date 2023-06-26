@@ -6,22 +6,22 @@ use Livewire\Component;
 
 class Steps extends Component
 {
-    public $steps = [];
+    public $directions = [];
 
     public function mount(){
-        $this->steps =[
+        $this->directions =[
             ['step'=>'']
         ];
     }
 
     public function addStep(){
-        $this->steps[] =
+        $this->directions[] =
             ['step'=>''];
     }
 
     public function removeStep($index){
-        unset($this->steps[$index]);
-        $this->steps = array_values($this->steps);
+        unset($this->directions[$index]);
+        $this->directions = array_values($this->directions);
     }
 
     public function render()

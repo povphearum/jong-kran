@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-
     public function Comment(){
         return view('admin.content.comment');
     }
@@ -16,6 +15,14 @@ class ReviewController extends Controller
 
     public function Review(){
         return view('admin.content.reviews');
+    }
+
+    public function FeedBack(){
+        return view('admin.content.review.feedback');
+    }
+
+    public function Question(){
+        return view('admin.content.review.question');
     }
     /**
      * Display a listing of the resource.
