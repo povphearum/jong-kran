@@ -36,45 +36,6 @@
                     </div>
                     <!-- /.card -->
 
-                    <!-- About Me Box -->
-                    <div class="card card-primary mt-5 ">
-                        <div class="card-header">
-                            <h3 class="card-title">About Me</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <strong><i class="bi bi-mortarboard"></i> Education</strong>
-
-                            <p class="text-muted">
-                                Major in Computer Science from Cambodia Academy of Digital Technology
-                            </p>
-
-                            <hr>
-
-                            <strong><i class="bi bi-geo-alt"></i> Location</strong>
-
-                            <p class="text-muted">Malibu, California</p>
-
-                            <hr>
-
-                            <strong><i class="bi bi-gear"></i> Skills</strong>
-
-                            <p class="text-muted">
-                                <span class="tag tag-danger">UI Design</span>
-                                <span class="tag tag-success">Coding</span>
-                                <span class="tag tag-info">Javascript</span>
-                                <span class="tag tag-warning">PHP</span>
-                                <span class="tag tag-primary">Node.js</span>
-                            </p>
-
-                            <hr>
-
-                            <strong><i class="bi bi-journal-text"></i> Notes</strong>
-
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->

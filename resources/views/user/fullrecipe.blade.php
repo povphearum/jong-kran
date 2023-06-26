@@ -77,6 +77,19 @@
                         $date = $recipe->created_at;
                         $date = Carbon\Carbon::parse($date);
                         $elapsed = $date->diffForHumans();
+
+
+                    @endphp
+
+                    @foreach($comments as $comment)
+                        @php
+                        $rating =$rating + $comment->rating;
+
+
+                        @endphp
+                    @endforeach
+                    @php
+
                     @endphp
                     <div class="row">
                         <div class="col-12 col-md-6">
@@ -85,14 +98,49 @@
                                 <h2>{{$recipe->recipe_name}}</h2>
                                 <div class="receipe-ratings">
                                     <div class="ratings">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+{{--                                        @elseif($total_rating>=4)--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                        @elseif($total_rating>=3)--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                        @elseif($total_rating>=2)--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                        @elseif($total_rating>=1)--}}
+{{--                                            <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                        @else--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+{{--                                            <i class="fa fa-star-o" aria-hidden="true"></i>--}}
+
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary">Save To Collection</button>
+                                @if($recipe->user_id == Auth::user()->id)
+                                    <button type="button" class="btn btn-primary">Save To Collection</button>
+
+                                @endif
                                 <div class="receipe-duration mt-5">
                                     <h6>Prep: {{$recipe->prep_time}} {{$recipe->prepMHD}}</h6>
                                     <h6>Cook: {{$recipe->cook_time}} {{$recipe->cookMHD}}</h6>
